@@ -1433,12 +1433,12 @@
 							"raw": "{\r\n  \"ledger_id\": \"{{virtual_ledger_id}}\",\r\n  \"amount\": \"1000\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseurl}}/dev/customer/transactions/manual-credit",
+							"raw": "{{baseurl}}/v1/customer/transactions/manual-credit",
 							"host": [
 								"{{baseurl}}"
 							],
 							"path": [
-								"dev",
+								"v1",
 								"customer",
 								"transactions",
 								"manual-credit"
@@ -1483,12 +1483,12 @@
 							"raw": "{\r\n  \"ledger_id\": \"{{virtual_ledger_id}}\",\r\n  \"amount\": \"25.25\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseurl}}/dev/customer/transactions/manual-credit",
+							"raw": "{{baseurl}}/v1/customer/transactions/manual-credit",
 							"host": [
 								"{{baseurl}}"
 							],
 							"path": [
-								"dev",
+								"v1",
 								"customer",
 								"transactions",
 								"manual-credit"
