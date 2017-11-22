@@ -1483,7 +1483,7 @@
 							"raw": "{\r\n  \"ledger_id\": \"{{virtual_ledger_id}}\",\r\n  \"amount\": \"25.25\"\r\n}"
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/transactions/manual-credit",
+							"raw": "{{baseurl}}/v1/customer/transactions/manual-debit",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -1491,7 +1491,7 @@
 								"v1",
 								"customer",
 								"transactions",
-								"manual-credit"
+								"manual-debit"
 							]
 						},
 						"description": ""
