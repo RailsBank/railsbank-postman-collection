@@ -633,7 +633,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"amount\": \"10.00\",\r\n  \"sender_account\": {\r\n    \"iban\": \"SK4402005678901234567890\"\r\n  },\r\n  \"sender_agent\": {\r\n    \"bic\": \"SPSRSKBAXXX\"\r\n  },\r\n  \"receiver_agent\": {\r\n    \"bic\": \"SPSRSKBAXXX\"\r\n  },\r\n  \"receiver_account\": {\r\n    \"iban\": \"{{iban}}\"\r\n  },\r\n  \"remittance_information_unstructured\": \"{{test_info}}\"\r\n}"
+							"raw": "{\r\n  \"amount\": 10.00,\r\n  \"iban\": \"{{iban}}\",\r\n  \"bic_swift\": \"{{bic_swift_1}}\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/dev/customer/transactions/receive",
@@ -686,17 +686,7 @@
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									"var jsonData = JSON.parse(responseBody);",
-									"var balance_after = environment.current_balance + 10;",
-									"tests[\"balance + 10 EUR\"] = _.parseInt(jsonData.amount) === balance_after;",
-									"",
-									"if (tests[\"balance + 10 EUR\"]){",
-									"        postman.setEnvironmentVariable(\"current_balance\",jsonData.amount);",
-									"    }",
-									"    ",
-									"    else {",
-									"        postman.setNextRequest(\"Helper: Balance 10s\");",
-									"    }"
+									"var jsonData = JSON.parse(responseBody);"
 								]
 							}
 						}
@@ -1350,6 +1340,207 @@
 								"customer",
 								"ledgers",
 								"{{ledger_id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Whisky Ledger for Enduser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"whisky_ledger_id\", jsonData.ledger_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"whisky\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/virtual",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"virtual"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Credit virtual ledger with 1000",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"environment.delayTimerStart = new Date();"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ledger_id\": \"{{virtual_ledger_id}}\",\r\n  \"amount\": \"1000\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/dev/customer/transactions/manual-credit",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"dev",
+								"customer",
+								"transactions",
+								"manual-credit"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Debit virtual ledger with 25.25 copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"environment.delayTimerStart = new Date();"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ledger_id\": \"{{virtual_ledger_id}}\",\r\n  \"amount\": \"25.25\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/dev/customer/transactions/manual-credit",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"dev",
+								"customer",
+								"transactions",
+								"manual-credit"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Check Whisky Ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody)"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{whisky_ledger_id}}/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{whisky_ledger_id}}",
+								""
 							]
 						},
 						"description": ""
