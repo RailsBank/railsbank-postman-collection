@@ -1,14 +1,13 @@
 {
 	"info": {
 		"name": "Railsbank API",
-		"_postman_id": "8a9bd641-3255-9df4-d005-f43b9f076df5",
+		"_postman_id": "8f2ad49c-65b4-3758-bbe2-af1c9bd1c811",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Railsbank API",
-			"description": "",
 			"item": [
 				{
 					"name": "Whoami",
@@ -143,8 +142,7 @@
 								"customer",
 								"partners"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -194,8 +192,7 @@
 								"customer",
 								"endusers"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -239,8 +236,7 @@
 								"customer",
 								"endusers"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -285,8 +281,7 @@
 								"endusers",
 								"{{enduser_id}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -332,8 +327,7 @@
 								"{{enduser_id}}",
 								"wait"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -383,8 +377,7 @@
 								"customer",
 								"ledgers"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -439,8 +432,7 @@
 								"{{ledger_id}}",
 								"wait"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -487,8 +479,7 @@
 								"{{ledger_id}}",
 								"wait"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -538,8 +529,7 @@
 								"{{ledger_id}}",
 								"assign-iban"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -596,8 +586,7 @@
 								"{{ledger_id}}",
 								"wait"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -646,8 +635,7 @@
 								"transactions",
 								"receive"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -671,8 +659,7 @@
 								"delay",
 								"10"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -719,8 +706,7 @@
 								"{{ledger_id}}",
 								"wait"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -737,6 +723,57 @@
 									"var jsonData = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"beneficiary_id\", jsonData.beneficiary_id);"
 								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries"
+							]
+						},
+						"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a New Beneficiary (Company)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"beneficiary_id\", jsonData.beneficiary_id);"
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -821,8 +858,7 @@
 								"{{beneficiary_id}}",
 								"wait"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -972,8 +1008,7 @@
 								"transactions",
 								"{{transaction_id_no_fixed_time}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1018,8 +1053,7 @@
 								"ledgers",
 								"{{ledger_id}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1071,8 +1105,7 @@
 								"customer",
 								"ledgers"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1123,8 +1156,7 @@
 								"{{second_ledger_id}}",
 								"wait"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1174,8 +1206,7 @@
 								"{{second_ledger_id}}",
 								"assign-iban"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1249,8 +1280,7 @@
 								"delay",
 								"10"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1295,8 +1325,7 @@
 								"ledgers",
 								"{{ledger_id}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1341,8 +1370,7 @@
 								"ledgers",
 								"{{ledger_id}}"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1393,8 +1421,7 @@
 								"ledgers",
 								"virtual"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1430,7 +1457,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"ledger_id\": \"{{virtual_ledger_id}}\",\r\n  \"amount\": \"1000\"\r\n}"
+							"raw": "{\r\n  \"ledger_id\": \"{{whisky_ledger_id}}\",\r\n  \"amount\": \"1000\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions/manual-credit",
@@ -1443,8 +1470,7 @@
 								"transactions",
 								"manual-credit"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1480,7 +1506,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"ledger_id\": \"{{virtual_ledger_id}}\",\r\n  \"amount\": \"25.25\"\r\n}"
+							"raw": "{\r\n  \"ledger_id\": \"{{whisky_ledger_id}}\",\r\n  \"amount\": \"25.25\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions/manual-debit",
@@ -1493,8 +1519,7 @@
 								"transactions",
 								"manual-debit"
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				},
@@ -1504,12 +1529,15 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "c9115137-53f9-4f92-9623-d08c8c7911f6",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									"var jsonData = JSON.parse(responseBody)"
+									"var jsonData = JSON.parse(responseBody)",
+									"",
+									"pm.globals.unset(\"variable_key\");"
 								]
 							}
 						}
@@ -1542,8 +1570,7 @@
 								"{{whisky_ledger_id}}",
 								""
 							]
-						},
-						"description": ""
+						}
 					},
 					"response": []
 				}
