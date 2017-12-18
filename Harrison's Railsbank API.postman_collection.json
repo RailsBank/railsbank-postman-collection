@@ -1,18 +1,16 @@
 {
 	"info": {
 		"name": "Harrison's Railsbank API",
-		"_postman_id": "8f2ad49c-65b4-3758-bbe2-af1c9bd1c811",
+		"_postman_id": "72f8c521-2635-cea5-5607-ae351910ed23",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Railsbank API",
-			"description": null,
 			"item": [
 				{
 					"name": "Endusers",
-					"description": "",
 					"item": [
 						{
 							"name": "Check List of Endusers",
@@ -54,8 +52,7 @@
 										"customer",
 										"endusers"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -100,8 +97,7 @@
 										"endusers",
 										"{{enduser_id}}"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -147,8 +143,7 @@
 										"{{enduser_id}}",
 										"wait"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -201,8 +196,7 @@
 										"customer",
 										"endusers"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -262,244 +256,1028 @@
 				},
 				{
 					"name": "Ledgers",
-					"description": "",
 					"item": [
 						{
-							"name": "Helper: Delay 10s",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "https://postman-echo.com/delay/10",
-									"protocol": "https",
-									"host": [
-										"postman-echo",
-										"com"
-									],
-									"path": [
-										"delay",
-										"10"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Create a EUR Ledger for Enduser",
-							"event": [
+							"name": "EUR",
+							"description": "",
+							"item": [
 								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"var jsonData = JSON.parse(responseBody);",
-											"postman.setEnvironmentVariable(\"ledger_id\", jsonData.ledger_id);"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Create a GBP Ledger for Enduser",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"var jsonData = JSON.parse(responseBody);",
-											"postman.setEnvironmentVariable(\"GBPledger_id\", jsonData.ledger_id);"
-										],
-										"id": "788ec632-7d05-4777-8d35-3951ceb73055",
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Find ledgers based on iban",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"var jsonData = JSON.parse(responseBody);",
-											"    postman.setEnvironmentVariable(\"iban\", jsonData.iban);"
-										],
-										"id": "ae1bd1bd-737c-439d-818c-1e1ceacf9333",
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"body": {},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/by-iban?iban=SK7400000381513352022249",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"by-iban"
-									],
-									"query": [
-										{
-											"key": "iban",
-											"value": "SK7400000381513352022249",
-											"equals": true
+									"name": "Helper: Delay 3s",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "https://postman-echo.com/delay/3",
+											"protocol": "https",
+											"host": [
+												"postman-echo",
+												"com"
+											],
+											"path": [
+												"delay",
+												"3"
+											]
 										}
-									]
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "Find ledgers based on address",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										],
-										"id": "f8bc122a-5c71-4ef8-b3d8-398b74e662a6",
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
 									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"body": {},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/by-uk-address?uk_account_number=00000364&uk_sort_code=040052",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"by-uk-address"
-									],
-									"query": [
+									"response": []
+								},
+								{
+									"name": "Create a EUR Ledger for Enduser",
+									"event": [
 										{
-											"key": "uk_account_number",
-											"value": "00000364",
-											"equals": true
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"var jsonData = JSON.parse(responseBody);",
+													"postman.setEnvironmentVariable(\"ledger_id\", jsonData.ledger_id);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ledger Wait",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{ledger_id}}",
+												"wait"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Assign an IBAN for ledger",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+												],
+												"id": "49d0d3f1-6be5-424f-b4b0-124f07a5b167",
+												"type": "text/javascript"
+											}
 										},
 										{
-											"key": "uk_sort_code",
-											"value": "040052",
-											"equals": true
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+												"type": "text/javascript"
+											}
 										}
-									]
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/assign-iban",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{ledger_id}}",
+												"assign-iban"
+											]
+										}
+									},
+									"response": []
 								},
-								"description": ""
-							},
-							"response": []
+								{
+									"name": "Check Status of IBAN",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"",
+													"var jsonData = JSON.parse(responseBody);",
+													"postman.setEnvironmentVariable(\"iban\", jsonData.iban);",
+													"postman.setEnvironmentVariable(\"current_balance\", jsonData.amount);",
+													"postman.setEnvironmentVariable(\"bic_swift_1\", jsonData.bic_swift);",
+													"var ledger_iban_status = jsonData.ledger_iban_status === \"ledger-iban-status-ok\";",
+													"tests[\"IBAN status ok\"] = ledger_iban_status;",
+													"",
+													"if(!ledger_iban_status){",
+													"    postman.setNextRequest(null);",
+													"}"
+												],
+												"id": "70a1fe8c-647d-4db4-9565-a0bca46eed2c",
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{ledger_id}}",
+												"wait"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "See Balance Change",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"var jsonData = JSON.parse(responseBody);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{ledger_id}}",
+												"wait"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Second Ledger",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"if (responseCode.code === 200){",
+													"    var jsonData = JSON.parse(responseBody);",
+													"    postman.setEnvironmentVariable(\"second_ledger_id\", jsonData.ledger_id);",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Check Waiting Status for Second Ledger",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"var jsonData = JSON.parse(responseBody);",
+													"",
+													"",
+													"postman.setEnvironmentVariable(\"second_ledger_amount\", jsonData.amount);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}/wait",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{second_ledger_id}}",
+												"wait"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Assign IBAN to Second Ledger",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}/assign-iban",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{second_ledger_id}}",
+												"assign-iban"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Check Status of Ledgers",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"",
+													"var jsonData = JSON.parse(responseBody);",
+													"var ledger_status = jsonData.ledger_status === \"ledger-status-ok\";",
+													"tests[\"Ledger status ok\"] = ledger_status;",
+													"",
+													"if(!ledger_status){",
+													"    postman.setNextRequest(null);",
+													"}",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{ledger_id}}",
+												"wait"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find ledgers based on iban",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"var jsonData = JSON.parse(responseBody);",
+													"    postman.setEnvironmentVariable(\"iban\", jsonData.iban);"
+												],
+												"id": "ae1bd1bd-737c-439d-818c-1e1ceacf9333",
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/by-iban?iban={{iban}}",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"by-iban"
+											],
+											"query": [
+												{
+													"equals": true,
+													"key": "iban",
+													"value": "{{iban}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ledger Debited by 2 EUR (Fetch ledger entity)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{ledger_id}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ledger Credited by 2.5 EUR (Fetch ledger entity)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{ledger_id}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ledger Debited by 2.5 EUR (Fetch Ledger entity)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{ledger_id}}"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "GBP",
+							"description": "",
+							"item": [
+								{
+									"name": "Create a GBP Ledger for Enduser",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"var jsonData = JSON.parse(responseBody);",
+													"postman.setEnvironmentVariable(\"GBPledger_id\", jsonData.ledger_id);"
+												],
+												"id": "788ec632-7d05-4777-8d35-3951ceb73055",
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Check Status of GBP Ledger",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"",
+													"var jsonData = JSON.parse(responseBody);",
+													"var ledger_status = jsonData.ledger_status === \"ledger-status-ok\";",
+													"tests[\"Ledger status ok\"] = ledger_status;",
+													"postman.setEnvironmentVariable(\"uk_sort_code\", jsonData.uk_sort_code);",
+													"postman.setEnvironmentVariable(\"uk_account_number\", jsonData.uk_account_number);",
+													"",
+													"if(!ledger_status){",
+													"    postman.setNextRequest(null);",
+													"}",
+													""
+												],
+												"id": "a4d8b5c6-dbb2-4fa0-b931-d65f9072112c",
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{GBPledger_id}}/wait",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{GBPledger_id}}",
+												"wait"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find ledgers based on address",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+												],
+												"id": "f8bc122a-5c71-4ef8-b3d8-398b74e662a6",
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/by-uk-address?uk_account_number={{uk_account_number}}&uk_sort_code={{uk_sort_code}}",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"by-uk-address"
+											],
+											"query": [
+												{
+													"equals": true,
+													"key": "uk_account_number",
+													"value": "{{uk_account_number}}"
+												},
+												{
+													"equals": true,
+													"key": "uk_sort_code",
+													"value": "{{uk_sort_code}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Whisky",
+							"description": "",
+							"item": [
+								{
+									"name": "Create a Whisky Ledger for Enduser",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"var jsonData = JSON.parse(responseBody);",
+													"postman.setEnvironmentVariable(\"whisky_ledger_id\", jsonData.ledger_id);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"whisky\"\r\n}"
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/virtual",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"virtual"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Check Whisky Ledger",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+													"var jsonData = JSON.parse(responseBody)",
+													"",
+													"pm.globals.unset(\"variable_key\");"
+												],
+												"id": "c9115137-53f9-4f92-9623-d08c8c7911f6",
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/{{whisky_ledger_id}}/",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"{{whisky_ledger_id}}",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "MultiCCY",
+							"description": "",
+							"item": [
+								{
+									"name": "List of ledgers unassigned",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"tests[\"Status code is 200\"] = responseCode.code === 200;",
+													"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+												],
+												"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{customer_api_key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{baseurl}}/v1/customer/ledgers/unassigned",
+											"host": [
+												"{{baseurl}}"
+											],
+											"path": [
+												"v1",
+												"customer",
+												"ledgers",
+												"unassigned"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						},
 						{
 							"name": "List of modified ledgers",
@@ -528,7 +1306,10 @@
 										"value": "application/json"
 									}
 								],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/ledgers/changed?from_date={{start_date}}",
 									"host": [
@@ -547,57 +1328,12 @@
 											"equals": true
 										}
 									]
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "List of ledgers unassigned",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										],
-										"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
-										"type": "text/javascript"
-									}
 								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/unassigned",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"unassigned"
-									]
-								},
-								"description": ""
 							},
 							"response": []
 						},
 						{
-							"name": "Helper: Delay 10s",
+							"name": "Helper: Delay 3s",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -606,7 +1342,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "https://postman-echo.com/delay/10",
+									"raw": "https://postman-echo.com/delay/3",
 									"protocol": "https",
 									"host": [
 										"postman-echo",
@@ -614,621 +1350,7 @@
 									],
 									"path": [
 										"delay",
-										"10"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Create a Whisky Ledger for Enduser",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"var jsonData = JSON.parse(responseBody);",
-											"postman.setEnvironmentVariable(\"whisky_ledger_id\", jsonData.ledger_id);"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"whisky\"\r\n}"
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/virtual",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"virtual"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Ledger Debited by 2 EUR (Fetch ledger entity)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Ledger Debited by 2.5 EUR (Fetch Ledger entity)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Ledger Credited by 2.5 EUR (Fetch ledger entity)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Assign an IBAN for ledger",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										],
-										"id": "49d0d3f1-6be5-424f-b4b0-124f07a5b167",
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"exec": [
-											""
-										],
-										"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/x-www-form-urlencoded"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/assign-iban",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}",
-										"assign-iban"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Assign IBAN to Second Ledger",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}/assign-iban",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{second_ledger_id}}",
-										"assign-iban"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Create Second Ledger",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"if (responseCode.code === 200){",
-											"    var jsonData = JSON.parse(responseBody);",
-											"    postman.setEnvironmentVariable(\"second_ledger_id\", jsonData.ledger_id);",
-											"}"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Check Whisky Ledger",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "c9115137-53f9-4f92-9623-d08c8c7911f6",
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"var jsonData = JSON.parse(responseBody)",
-											"",
-											"pm.globals.unset(\"variable_key\");"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{whisky_ledger_id}}/",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{whisky_ledger_id}}",
-										""
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Check Waiting Status for Second Ledger",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"var jsonData = JSON.parse(responseBody);",
-											"",
-											"",
-											"postman.setEnvironmentVariable(\"second_ledger_amount\", jsonData.amount);"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}/wait",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{second_ledger_id}}",
-										"wait"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "See Balance Change",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"var jsonData = JSON.parse(responseBody);"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}",
-										"wait"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Ledger Wait",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}",
-										"wait"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Check Status of IBAN",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"",
-											"var jsonData = JSON.parse(responseBody);",
-											"postman.setEnvironmentVariable(\"iban\", jsonData.iban);",
-											"postman.setEnvironmentVariable(\"current_balance\", jsonData.amount);",
-											"postman.setEnvironmentVariable(\"bic_swift_1\", jsonData.bic_swift);",
-											"var ledger_iban_status = jsonData.ledger_iban_status === \"ledger-iban-status-ok\";",
-											"tests[\"IBAN status ok\"] = ledger_iban_status;",
-											"",
-											"if(!ledger_iban_status){",
-											"    postman.setNextRequest(null);",
-											"}"
-										],
-										"id": "70a1fe8c-647d-4db4-9565-a0bca46eed2c",
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}",
-										"wait"
+										"3"
 									]
 								}
 							},
@@ -1291,120 +1413,7 @@
 											"equals": true
 										}
 									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Check Status of Ledgers",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"",
-											"var jsonData = JSON.parse(responseBody);",
-											"var ledger_status = jsonData.ledger_status === \"ledger-status-ok\";",
-											"tests[\"Ledger status ok\"] = ledger_status;",
-											"",
-											"if(!ledger_status){",
-											"    postman.setNextRequest(null);",
-											"}",
-											""
-										]
-									}
 								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}",
-										"wait"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Check Status of GBP Ledger",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											"",
-											"var jsonData = JSON.parse(responseBody);",
-											"var ledger_status = jsonData.ledger_status === \"ledger-status-ok\";",
-											"tests[\"Ledger status ok\"] = ledger_status;",
-											"",
-											"if(!ledger_status){",
-											"    postman.setNextRequest(null);",
-											"}",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{GBPledger_id}}/wait",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{GBPledger_id}}",
-										"wait"
-									]
-								},
-								"description": null
 							},
 							"response": []
 						},
@@ -1473,7 +1482,6 @@
 				},
 				{
 					"name": "Beneficiaries",
-					"description": "",
 					"item": [
 						{
 							"name": "Add a New Beneficiary (Individual)",
@@ -1624,8 +1632,7 @@
 										"{{beneficiary_id}}",
 										"wait"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -1671,8 +1678,7 @@
 										"{{beneficiary_id}}",
 										"wait"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						}
@@ -1681,7 +1687,6 @@
 				},
 				{
 					"name": "Transactions",
-					"description": "",
 					"item": [
 						{
 							"name": "Send 2 EUR to Benny with no Fixed Time",
@@ -1835,8 +1840,7 @@
 										"transactions",
 										"receive"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -1881,8 +1885,7 @@
 										"transactions",
 										"{{transaction_id_no_fixed_time}}"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -1931,8 +1934,7 @@
 										"transactions",
 										"manual-credit"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -1981,8 +1983,7 @@
 										"transactions",
 										"manual-debit"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -2092,7 +2093,6 @@
 				},
 				{
 					"name": "Info about self",
-					"description": "",
 					"item": [
 						{
 							"name": "Whoami",
@@ -2166,7 +2166,10 @@
 										"value": "application/json"
 									}
 								],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/me/ledgers",
 									"host": [
@@ -2178,8 +2181,7 @@
 										"me",
 										"ledgers"
 									]
-								},
-								"description": ""
+								}
 							},
 							"response": []
 						},
@@ -2210,7 +2212,10 @@
 										"value": "{{customer_api_key}}"
 									}
 								],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/webhook",
 									"host": [
@@ -2221,8 +2226,7 @@
 										"customer",
 										"webhook"
 									]
-								},
-								"description": ""
+								}
 							},
 							"response": []
 						},
@@ -2256,7 +2260,10 @@
 										"value": "{{customer_api_key}}"
 									}
 								],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/notifications?from_date=2017-11-09&to_date=2017-10-10",
 									"host": [
@@ -2279,8 +2286,7 @@
 											"equals": true
 										}
 									]
-								},
-								"description": ""
+								}
 							},
 							"response": []
 						}
@@ -2289,7 +2295,6 @@
 				},
 				{
 					"name": "Compliance",
-					"description": "",
 					"item": [
 						{
 							"name": "Compliance manual",
@@ -2331,8 +2336,7 @@
 										"customer",
 										"compliance-manual"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -2376,8 +2380,7 @@
 										"customer",
 										"compliance-contact"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -2423,8 +2426,7 @@
 										"transactions",
 										"history"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -2470,8 +2472,7 @@
 										"endusers",
 										"history"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -2517,8 +2518,7 @@
 										"beneficiaries",
 										"history"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -2563,8 +2563,7 @@
 										"compliance-firewall-static-data",
 										"{dataset_id}"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -2595,7 +2594,10 @@
 										"value": "{{customer_api_key}}"
 									}
 								],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/quarantine",
 									"host": [
@@ -2606,8 +2608,7 @@
 										"customer",
 										"quarantine"
 									]
-								},
-								"description": ""
+								}
 							},
 							"response": []
 						}
@@ -2616,7 +2617,6 @@
 				},
 				{
 					"name": "Other",
-					"description": "",
 					"item": [
 						{
 							"name": "Get Version ",
@@ -2725,8 +2725,7 @@
 										"{{ledger_id}}",
 										"assign"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						}
@@ -2735,7 +2734,6 @@
 				},
 				{
 					"name": "Partners",
-					"description": "",
 					"item": [
 						{
 							"name": "See Avaliable Partners",
@@ -2776,8 +2774,7 @@
 										"customer",
 										"partners"
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						}
