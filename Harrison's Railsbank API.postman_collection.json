@@ -189,7 +189,115 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n      \"person\": { \n       \"name\": \"Eric Wimp\", \n       \"email\": \"bananaman@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\" \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+									"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\" \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+								},
+								"url": {
+									"raw": "{{baseurl}}/v1/customer/endusers",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"v1",
+										"customer",
+										"endusers"
+									]
+								},
+								"description": null
+							},
+							"response": []
+						},
+						{
+							"name": "Create an Enduser (me)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"enduser_id\", jsonData.enduser_id);"
+										],
+										"id": "f1d4ec33-80a5-4fa4-94fc-8270371062ff",
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{customer_api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n      \"person\": { \n       \"name\": \"Harrison Smith\", \n       \"email\": \"harrison@railsbank.com\", \n       \"date_of_birth\": \"1999-08-21\", \n       \"telephone\": \"+44 7429576044\", \n       \"address\": {  \n         \"address_refinement\": \"Bramber\", \n         \"address_number\": \"65\", \n         \"address_street\": \"Chalkwell Esplanade\", \n         \"address_city\": \"Westcliff-on-Sea\", \n         \"address_postal_code\": \"SS0 8JH\", \n         \"address_iso_country\": \"GBR\" \n       }, \n   \n       \"nationality\": [ \n         \"British\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2018-01-01\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+								},
+								"url": {
+									"raw": "{{baseurl}}/v1/customer/endusers",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"v1",
+										"customer",
+										"endusers"
+									]
+								},
+								"description": null
+							},
+							"response": []
+						},
+						{
+							"name": "Create an Enduser (company)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"enduser_id\", jsonData.enduser_id);"
+										],
+										"id": "f1d4ec33-80a5-4fa4-94fc-8270371062ff",
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{customer_api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"person\": {\r\n    \"name\": \"\",\r\n    \"email\": \"\",\r\n    \"date_of_birth\": \"\",\r\n    \"telephone\": \"\",\r\n    \"address\": {\r\n      \"address_refinement\": \"\",\r\n      \"address_number\": \"\",\r\n      \"address_street\": \"\",\r\n      \"address_city\": \"\",\r\n      \"address_postal_code\": \"\",\r\n      \"address_region\": \"\",\r\n      \"address_iso_country\": \"\",\r\n      \"proofs\": [\r\n        \"58fe0b596ec7-44c3-ab94-2e3eb3a1cf6e\"\r\n      ]\r\n    },\r\n    \"address_history\": [\r\n    {\r\n      \"address_refinement\": \"\",\r\n      \"address_number\": \"\",\r\n      \"address_street\": \"\",\r\n      \"address_city\": \"\",\r\n      \"address_postal_code\": \"\",\r\n      \"address_region\": \"\",\r\n      \"address_iso_country\": \"\",\r\n    }\r\n        ],\r\n        \"address_start_date\": \"2000-01-01\",\r\n        \"address_end_date\": \"2099-12-31\"\r\n      }\r\n    ],\r\n    \"nationality\": [\r\n      \"British\"\r\n    ],\r\n    \"country_of_residence\": [\r\n      \"United Kingdom\"\r\n    ],\r\n    \"social_security_number\": \"\",\r\n    \"tin\": \"\",\r\n    \"tin_type\": \"\",\r\n    \"pep\": false,\r\n    \"pep_type\": \"\",\r\n    \"pep_notes\": \"\",\r\n    \"date_onboarded\": \"\"\r\n  },\r\n  \"company\": {\r\n    \"name\": \"Railsbank Technology Limited\",\r\n    \"trading_name\": \"Railsbank Techonology Limited\",\r\n    \"legal_entry_number\": \"\",\r\n    \"registration_number\": \"10076912\",\r\n    \"registration_address\": {\r\n      \"address_refinement\": \"The Old Vicaridge\",\r\n      \"address_street\": \"Hitchin Road\",\r\n      \"address_city\":\"Kimpton\",\r\n      \"address_postal_code\": \"SG4 8EF\",\r\n      \"address_region\": \"Berkshire\",\r\n      \"address_iso_country\": \"UK\",\r\n    }\r\n  }\r\n\t\"trading_addresses\": [\r\n      {\r\n      \"address_refinement\": \"The Old Vicaridge\",\r\n      \"address_street\": \"Hitchin Road\",\r\n      \"address_city\":\"Kimpton\",\r\n      \"address_postal_code\": \"SG4 8EF\",\r\n      \"address_region\": \"Berkshire\",\r\n      \"address_iso_country\": \"UK\",\r\n      }\r\n    ],\r\n   \r\n    \"incorporation_locality\": \"home\",\r\n    \"corporate_entity_type\": \"trust\",\r\n    \"industry\": \"Financial Services\",\r\n    \"web_site\": \"http://www.railsbank.com\",\r\n    \"eu_vat\": \"\",\r\n    \"vat\": \"\",\r\n    \"tin\": \"\",\r\n    \"date_onboarded\": \"2017-11-21\",\r\n    \"type\": \"\",\r\n    \"type_other\": \"\",\r\n    \"regulated_financial_service_firm\": false\r\n    \"listed_on_stock_exchange\": false,\r\n    \r\n    \"directors\": [\r\n      {\r\n        \"person\": {\r\n          \"name\": \"Nigel Verdon\",\r\n          \"email\": \"nigel@railsbank.com\",\r\n          \"date_of_birth\": \"1967-04-01\",\r\n          \"telephone\": \"0012345678912\",\r\n          \"address\": {\r\n            \"address_refinement\": \"Apartment 124, Globe View\",\r\n            \"address_number\": \"10\",\r\n            \"address_street\": \"High Timber Street\",\r\n            \"address_city\": \"London\",\r\n            \"address_postal_code\": \"EC4V 3PN\",\r\n            \"address_region\": \"Greater London\",\r\n            \"address_iso_country\": \"UK\",\r\n          }\r\n          \"nationality\": [\r\n            \"British\"\r\n          ],\r\n          \"country_of_residence\": [\r\n            \"United Kingdom\"\r\n          ],\r\n          \r\n        },\r\n        \"job_title\": \"CEO\",\r\n        \"date_appointed\": \"2016-08-01\",\r\n        \"is_also_ubo\": false\r\n      }\r\n      {\r\n      \t{\r\n        \"person\": {\r\n          \"name\": \"Clive Mitchell\",\r\n          \"email\": \"clive@railsbank.com\",\r\n          \"date_of_birth\": \"1967-04-01\",\r\n          \"telephone\": \"0012345678912\",\r\n          \"address\": {\r\n           \"address_refinement\": \"The Old Vicaridge\",\r\n           \"address_street\": \"Hitchin Road\",\r\n           \"address_city\":\"Kimpton\",\r\n           \"address_postal_code\": \"SG4 8EF\",\r\n           \"address_region\": \"Berkshire\",\r\n           \"address_iso_country\": \"UK\",\r\n        },\r\n        \"nationality\": [\r\n            \"British\"\r\n          ],\r\n          \"country_of_residence\": [\r\n            \"United Kingdom\"\r\n          ],\r\n          \r\n        },\r\n        \"job_title\": \"COO\",\r\n        \"date_appointed\": \"2016-08-01\",\r\n        \"is_also_ubo\": false\r\n      }\r\n    ],\r\n    \"ultimate_beneficial_owners\": [\r\n      {\r\n        \"person\": {\r\n          \"name\": \"Nigel Verdon\",\r\n          \"email\": \"nigel@railsbank.com\",\r\n          \"date_of_birth\": \"1967-04-01\",\r\n          \"telephone\": \"0012345678912\",\r\n          \"address\": {\r\n            \"address_refinement\": \"Apartment 124, Globe View\",\r\n            \"address_number\": \"10\",\r\n            \"address_street\": \"High Timber Street\",\r\n            \"address_city\": \"London\",\r\n            \"address_postal_code\": \"EC4V 3PN\",\r\n            \"address_region\": \"Greater London\",\r\n            \"address_iso_country\": \"UK\",\r\n          }\r\n          \"nationality\": [\r\n            \"British\"\r\n          ],\r\n          \"country_of_residence\": [\r\n            \"United Kingdom\"\r\n          ],\r\n          \r\n        },\r\n\r\n        },\r\n        \"percentage_holding\": 25<x<50\r\n      }\r\n    {\r\n        \"person\": {\r\n          \"name\": \"Clive Mitchell\",\r\n          \"email\": \"clive@railsbank.com\",\r\n          \"date_of_birth\": \"1967-04-01\",\r\n          \"telephone\": \"0012345678912\",\r\n          \"address\": {\r\n           \"address_refinement\": \"The Old Vicaridge\",\r\n           \"address_street\": \"Hitchin Road\",\r\n           \"address_city\":\"Kimpton\",\r\n           \"address_postal_code\": \"SG4 8EF\",\r\n           \"address_region\": \"Berkshire\",\r\n           \"address_iso_country\": \"UK\",\r\n        },\r\n        \"nationality\": [\r\n            \"British\"\r\n          ],\r\n          \"country_of_residence\": [\r\n            \"United Kingdom\"\r\n          ],\r\n        },\r\n\r\n        },\r\n        \"percentage_holding\": 25<x<50\r\n      }\r\n    ]\r\n  },\r\n  \"enduser_meta\": {\r\n    \"foo\": \"bar\"\r\n  }\r\n}"
 								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/endusers",
@@ -323,7 +431,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+									"raw": "{\r\n  \"holder_id\": \"5a54dfc0-b703-4f93-9ed1-4cff819e8de2\",\r\n  \"partner_product\": \"PayrNet-EUR-1\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
 								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/ledgers",
@@ -375,7 +483,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+									"raw": "{\r\n  \"holder_id\": \"5a54dfc0-b703-4f93-9ed1-4cff819e8de2\",\r\n  \"partner_product\": \"PayrNet-GBP-1\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
 								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/ledgers",
@@ -674,99 +782,7 @@
 							"response": []
 						},
 						{
-							"name": "Ledger Debited by 2 EUR (Fetch ledger entity)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Ledger Debited by 2.5 EUR (Fetch Ledger entity)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"ledgers",
-										"{{ledger_id}}"
-									]
-								},
-								"description": null
-							},
-							"response": []
-						},
-						{
-							"name": "Ledger Credited by 2.5 EUR (Fetch ledger entity)",
+							"name": "Fetch ledger entity",
 							"event": [
 								{
 									"listen": "test",
@@ -1528,6 +1544,58 @@
 							"response": []
 						},
 						{
+							"name": "Add a New Beneficiary (me)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+											"var jsonData = JSON.parse(responseBody);",
+											"pm.environment.set(\"beneficiary_id\", jsonData.beneficiary_id);"
+										],
+										"id": "b53e6b21-b686-4a85-8d43-d69794934f84",
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{customer_api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"iban\": \"SK4402005678901234567890\",\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"bic_swift\": \"SPSRSKBAXXX\",\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+								},
+								"url": {
+									"raw": "{{baseurl}}/v1/customer/beneficiaries",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"v1",
+										"customer",
+										"beneficiaries"
+									]
+								},
+								"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891"
+							},
+							"response": []
+						},
+						{
 							"name": "Update a Beneficiary",
 							"event": [
 								{
@@ -1684,7 +1752,7 @@
 					"description": "",
 					"item": [
 						{
-							"name": "Send 2 EUR to Benny with no Fixed Time",
+							"name": "Standard transaction",
 							"event": [
 								{
 									"listen": "test",
@@ -1733,7 +1801,7 @@
 										"transactions"
 									]
 								},
-								"description": "using SEPA\n"
+								"description": ""
 							},
 							"response": []
 						},
@@ -1842,6 +1910,52 @@
 						},
 						{
 							"name": "Check Transaction Status (no fixed date one)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{customer_api_key}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseurl}}/v1/customer/transactions/{{transaction_id_no_fixed_time}}",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"v1",
+										"customer",
+										"transactions",
+										"{{transaction_id_no_fixed_time}}"
+									]
+								},
+								"description": null
+							},
+							"response": []
+						},
+						{
+							"name": "Check Transaction Status (no fixed date one) copy",
 							"event": [
 								{
 									"listen": "test",
@@ -3157,7 +3271,7 @@
 							"response": []
 						},
 						{
-							"name": "Resolve beneficiary in quarantine (invalid state of entity)",
+							"name": "Resolve beneficiary in quarantine",
 							"event": [
 								{
 									"listen": "test",
@@ -3263,7 +3377,7 @@
 							"response": []
 						},
 						{
-							"name": "Resolve enduser in quarantine (invalid state of entity)",
+							"name": "Resolve enduser in quarantine",
 							"event": [
 								{
 									"listen": "test",
@@ -3369,7 +3483,7 @@
 							"response": []
 						},
 						{
-							"name": "Resolve transaction in quarantine (invalid state of entity)",
+							"name": "Resolve transaction in quarantine",
 							"event": [
 								{
 									"listen": "test",
@@ -3617,27 +3731,99 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Receiving EUR (SEPA)",
+			"description": "Will test that an outside bank account can credit a ledger.",
+			"item": []
+		},
+		{
+			"name": "Receiving GBP (Faster Payments)",
+			"description": "Will test that an outside bank account can credit a ledger",
+			"item": []
+		},
+		{
+			"name": "Interledger Transfer GBP",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Interledger Transfer EUR",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Send EUR to beneficiary",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Send GBP to beneficiary",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "ID&V to onboard an enduser",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Set-up screening to onboard an enduser",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Set personal firewall rules",
+			"description": "Will make sure that a transaction that should not pass a personal- set- firewall rule doesn't and can subsequently be found in customer quarantine before being commented on and release. ",
+			"item": [],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9a415b23-3fd9-4fd9-9912-4a19d9a80212",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2e5f3018-d3ce-478c-8227-685f08967e97",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Create, credit, and transfer virtual currency between virtual ledgers",
+			"description": "",
+			"item": []
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "76d90e6b-0448-418e-9425-64a39e2b1f71",
+				"type": "text/javascript",
 				"exec": [
 					""
-				],
-				"id": "76d90e6b-0448-418e-9425-64a39e2b1f71",
-				"type": "text/javascript"
+				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
+				"id": "de317e8e-be2e-4f84-97ab-0490eeadb6f4",
+				"type": "text/javascript",
 				"exec": [
 					""
-				],
-				"id": "de317e8e-be2e-4f84-97ab-0490eeadb6f4",
-				"type": "text/javascript"
+				]
 			}
 		}
 	]
