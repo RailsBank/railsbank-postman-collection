@@ -1,0 +1,2014 @@
+{
+	"id": "3e054be4-149f-6f96-062c-4c1c1162415a",
+	"name": "FX Testing",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3139472327,
+			"folder": null,
+			"id": "f1d18620-b789-90af-61a2-96cd805da854",
+			"name": "GBP-AUD",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"a8e83262-e31c-cd50-d8ce-8de6f42ce47c",
+				"bdcdccf2-d6dd-a78a-4efe-1b59e8c89a83",
+				"a5fa5cf4-86f5-ded2-2bc5-c5bc3509eda3",
+				"2bffa05b-b981-c49e-06f1-a9a8ded051ec",
+				"da0f5825-cf9f-2bff-1c9a-694c505d1db6",
+				"1d79bd28-0c8d-6eb4-6d1a-f29fe27b8f41",
+				"43ba7ba6-275e-66b3-4992-4257dc71b35b",
+				"68d8db82-807e-b94d-c761-434cb620e492",
+				"1f5473bb-cc0d-9e54-6db8-81b4ace0eec1"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3139129892,
+			"folder": null,
+			"id": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"name": "GBP-EUR",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"515f9c99-af4e-8c1e-9002-526aba3c6f53",
+				"010536fb-8309-63b5-81f4-48e9dfbffc16",
+				"36d85dda-a3fb-6d63-fb7c-16ecd51820b0",
+				"4b5df699-08b5-97ca-c1bc-de8b06c56d1c",
+				"110c3c90-0a18-180e-1ec1-f60e85b8250c",
+				"ec5708da-6df7-96e7-15e3-10d899132876",
+				"486c3c47-934c-1b9d-32e7-434cfe5a3706",
+				"f1ecfe49-e1c0-ce42-cfa1-4020f12ab35e",
+				"ac8ed465-fb53-25e0-6e5d-dfe302c6b0bb",
+				"6152c555-5a9e-080f-b5fd-0813e7fd0b3f",
+				"42f25872-15c0-03e4-6847-488a7afe80db",
+				"cb57ef6c-28e5-6bc4-7336-70d5ff235f2e"
+			],
+			"folders_order": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a"
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3139339205,
+			"folder": null,
+			"id": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"name": "GBP-GBP",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"be995666-81b6-afe2-39a0-f5eadbb6f423",
+				"6794a1f1-5045-9220-a239-db068f19ddbf",
+				"6c537fe2-4ff2-be82-6019-762a98eeee75",
+				"84253e8f-b79d-0d8e-4cd4-e60c79729d28",
+				"3e1e14bd-95db-9bd6-dbbe-20a81aff0ea7",
+				"87245209-bff4-b63b-0716-4fb425f401c2",
+				"7738f28a-01de-2250-90d4-58e7ed4e1c7b",
+				"994ddbcd-7d42-a306-4864-86c82ce27e23",
+				"625579be-5208-0bc1-c37b-f455cb0a3459",
+				"a66e3f9a-9374-055e-84f5-2c05415516e0",
+				"5384abec-a26d-53c2-6a0f-a92cb2fadc50",
+				"72a0116d-f48e-cbd5-c954-bc42370b3cc0",
+				"5c9d7da5-c49b-3c1f-7144-68cdc97b6409"
+			],
+			"folders_order": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a"
+		}
+	],
+	"folders_order": [
+		"45845775-3272-5112-f0a5-6f0c4d7bd3df",
+		"d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+		"f1d18620-b789-90af-61a2-96cd805da854"
+	],
+	"timestamp": 1517839071415,
+	"owner": "3319449",
+	"public": false,
+	"events": null,
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "010536fb-8309-63b5-81f4-48e9dfbffc16",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1b06a24e-3d15-49dc-a05d-b79a314cec2a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXenduser_id2\", jsonData.enduser_id);"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517840379093,
+			"name": "Create an Enduser (individual)",
+			"description": "",
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"descriptionFormat": null,
+			"variables": null,
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXenduser_id2\", jsonData.enduser_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n      \"person\": { \n       \"name\": \"Big Mac\", \n       \"email\": \"bigmac@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\"\n         \n       }, \n       \"address_history\": [ \n         { \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\",\n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+		},
+		{
+			"id": "110c3c90-0a18-180e-1ec1-f60e85b8250c",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/ledgers/{{FXEURledger_id1}}/assign-iban",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "73ed1d62-3750-4b05-b158-e7b45bd021ad",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517840536555,
+			"name": "Assign an IBAN for ledger",
+			"description": null,
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"responses": [],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"variables": null,
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "f1d18620-b789-90af-61a2-96cd805da854",
+			"id": "1d79bd28-0c8d-6eb4-6d1a-f29fe27b8f41",
+			"name": "Set product specific properties",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json\nContent-Type: application/json\n",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/products/Airwallex-FX-1",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"api_key\": \"{{Airwallex_API_Key}}\",\r\n  \"client_id\": \"{{client_id}}\"\r\n}"
+		},
+		{
+			"folder": "f1d18620-b789-90af-61a2-96cd805da854",
+			"id": "1f5473bb-cc0d-9e54-6db8-81b4ace0eec1",
+			"name": "View Beneficiary",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2425d974-7d30-4b4d-a582-cebd9d5eb7f7",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "",
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries/{{FXbeneficiary_id3}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2bffa05b-b981-c49e-06f1-a9a8ded051ec",
+			"folder": "f1d18620-b789-90af-61a2-96cd805da854",
+			"name": "Add a New Beneficiary (Individual) AUD",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "89f916bd-cb14-49b0-ab9d-0498a8ffb772",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"FXbeneficiary_id3\", jsonData.beneficiary_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npm.environment.set(\"FXbeneficiary_id3\", jsonData.beneficiary_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{FXenduser_id6}}\",\r\n  \"bank_name\": \"Transferwise Ltd\",\r\n  \"bank_country\": \"AUS\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"aud\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"California\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_region\": \"California\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+		},
+		{
+			"id": "36d85dda-a3fb-6d63-fb7c-16ecd51820b0",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3487e34d-7772-48d8-b838-cb8034caed9a",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXGBPledger_id1\", jsonData.ledger_id);",
+							""
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517841005704,
+			"name": "Create a GBP Ledger for Enduser",
+			"description": null,
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXGBPledger_id1\", jsonData.ledger_id);\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{FXenduser_id1}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"bank_name\": \"PayrNet\",\r\n  \"bank_country\": \"GB\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "3e1e14bd-95db-9bd6-dbbe-20a81aff0ea7",
+			"name": "Create a GBP Ledger for Enduser",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5207ef9-40e8-4d2c-a30d-d202aa63fc8c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXGBPledger_id3\", jsonData.ledger_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXGBPledger_id3\", jsonData.ledger_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{FXenduser_id4}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+		},
+		{
+			"id": "42f25872-15c0-03e4-6847-488a7afe80db",
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/transactions/{{FXtransaction1}}",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d474552d-4d79-47db-bea7-13f83393dd1e",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXtransaction1\", jsonData.transaction_id);"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517857074826,
+			"name": "Check Transaction Status",
+			"description": "",
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXtransaction1\", jsonData.transaction_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": ""
+		},
+		{
+			"folder": "f1d18620-b789-90af-61a2-96cd805da854",
+			"id": "43ba7ba6-275e-66b3-4992-4257dc71b35b",
+			"name": "FX Transaction",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e6fabe94-1025-46cf-a142-32abdd02587c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXtransaction3\", jsonData.transaction_id);",
+							""
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "using SEPA\n",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/fx",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXtransaction3\", jsonData.transaction_id);\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"amount\": \"3\",\r\n  \"ledger_from_id\": \"{{FXGBPledger_id4}}\",\r\n  \"partner_product_fx\": \"Airwallex-FX-1\",\r\n  \"reason\": \"p2p_sports_and_entertainment\",\r\n  \"beneficiary_id\": \"{{FXbeneficiary_id3}}\",\r\n  \"reference\": \"this is a test\",\r\n  \"transaction_meta\": {\r\n    \"foo\": \"bar\"\r\n  }\r\n\r\n}"
+		},
+		{
+			"id": "486c3c47-934c-1b9d-32e7-434cfe5a3706",
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/ledgers/{{FXGBPledger_id1}}",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65988e0e-3031-4598-b39d-d4a053235a0d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXaccountnumber1\", jsonData.uk_account_number);",
+							"postman.setEnvironmentVariable(\"FXsortcode1\", jsonData.uk_sort_code);"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517931764792,
+			"name": "Fetch GBP ledger entity",
+			"description": null,
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXaccountnumber1\", jsonData.uk_account_number);\npostman.setEnvironmentVariable(\"FXsortcode1\", jsonData.uk_sort_code);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": ""
+		},
+		{
+			"id": "4b5df699-08b5-97ca-c1bc-de8b06c56d1c",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "88871f1d-3309-46a9-b319-f2faad0ff090",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXEURledger_id1\", jsonData.ledger_id);"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517931460706,
+			"name": "Create a EUR Ledger for Enduser",
+			"description": "",
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXEURledger_id1\", jsonData.ledger_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{FXenduser_id2}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+		},
+		{
+			"id": "515f9c99-af4e-8c1e-9002-526aba3c6f53",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cc5cddf-276e-44b0-8730-b6e9d6def4bc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXenduser_id1\", jsonData.enduser_id);"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517840354010,
+			"name": "Create an Enduser (individual)",
+			"description": "",
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"descriptionFormat": null,
+			"variables": null,
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXenduser_id1\", jsonData.enduser_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\"\n         \n       }, \n       \"address_history\": [ \n         { \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\",\n         \"address_start_date\": \"2000-09-02\", \n         \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+		},
+		{
+			"id": "5384abec-a26d-53c2-6a0f-a92cb2fadc50",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/transactions/fx",
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0734e0e-c84f-4be0-813d-293efb8bee54",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXtransaction2\", jsonData.transaction_id);",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1518169843116,
+			"name": "FX Transaction",
+			"description": "using SEPA\n",
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXtransaction2\", jsonData.transaction_id);\n\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"amount\": \"2.5\",\r\n  \"ledger_from_id\": \"{{FXGBPledger_id2}}\",\r\n  \"partner_product_fx\": \"Airwallex-FX-1\",\r\n  \"reason\": \"p2p_sports_and_entertainment\",\r\n  \"beneficiary_id\": \"{{FXbeneficiary_id2}}\",\r\n  \"reference\": \"this is a test\",\r\n  \"transaction_meta\": {\r\n    \"foo\": \"bar\"\r\n  }\r\n\r\n}"
+		},
+		{
+			"id": "5c9d7da5-c49b-3c1f-7144-68cdc97b6409",
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/ledgers/{{FXGBPledger_id3}}",
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20320e2a-e755-4eb4-9fb7-78a6626bc10c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517931053320,
+			"name": "Fetch credited ledger entity",
+			"description": "",
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"timestamp": null,
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": ""
+		},
+		{
+			"id": "6152c555-5a9e-080f-b5fd-0813e7fd0b3f",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/transactions/fx",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b7180c8b-be76-45ff-8f83-e7c2a0516184",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXtransaction1\", jsonData.transaction_id);",
+							""
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517857055117,
+			"name": "FX Transaction",
+			"description": "using SEPA\n",
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXtransaction1\", jsonData.transaction_id);\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"amount\": \"3\",\r\n  \"ledger_from_id\": \"{{FXGBPledger_id1}}\",\r\n  \"partner_product_fx\": \"Airwallex-FX-1\",\r\n  \"reason\": \"p2p_sports_and_entertainment\",\r\n  \"beneficiary_id\": \"{{FXbeneficiary_id1}}\",\r\n  \"reference\": \"this is a test\",\r\n  \"transaction_meta\": {\r\n    \"foo\": \"bar\"\r\n  }\r\n\r\n}"
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "625579be-5208-0bc1-c37b-f455cb0a3459",
+			"name": "Customer's products",
+			"dataMode": "params",
+			"data": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/products",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "6794a1f1-5045-9220-a239-db068f19ddbf",
+			"name": "Create an Enduser (individual)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ec71ed3-d45a-416d-8146-c05681edfc85",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXenduser_id3\", jsonData.enduser_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXenduser_id3\", jsonData.enduser_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\"\n         \n       }, \n       \"address_history\": [ \n         { \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\",\n         \"address_start_date\": \"2000-09-02\", \n         \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+		},
+		{
+			"folder": "f1d18620-b789-90af-61a2-96cd805da854",
+			"id": "68d8db82-807e-b94d-c761-434cb620e492",
+			"name": "Check Transaction Status",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "55572323-40c2-4637-81f7-f2b42f1363e3",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "",
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/{{FXtransaction3}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "6c537fe2-4ff2-be82-6019-762a98eeee75",
+			"name": "Create an Enduser (individual)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9818fe3e-db43-4d64-acca-deb533e1d302",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXenduser_id4\", jsonData.enduser_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXenduser_id4\", jsonData.enduser_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n      \"person\": { \n       \"name\": \"Big Mac\", \n       \"email\": \"bigmac@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\"\n         \n       }, \n       \"address_history\": [ \n         { \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\",\n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "72a0116d-f48e-cbd5-c954-bc42370b3cc0",
+			"name": "Check Transaction Status",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "04505423-f4d0-437c-b9f7-7c45265a4532",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/{{FXtransaction2}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "7738f28a-01de-2250-90d4-58e7ed4e1c7b",
+			"name": "Fetch GBP ledger entity 2",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f80e4c52-93ba-4f25-b684-5705d8da5686",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXaccountnumber3\", jsonData.uk_account_number);",
+							"postman.setEnvironmentVariable(\"FXsortcode3\", jsonData.uk_sort_code);"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "",
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{FXGBPledger_id3}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXaccountnumber3\", jsonData.uk_account_number);\npostman.setEnvironmentVariable(\"FXsortcode3\", jsonData.uk_sort_code);",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "84253e8f-b79d-0d8e-4cd4-e60c79729d28",
+			"name": "Create a GBP Ledger for Enduser",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b7d89dc8-a23b-4dac-9bbe-fdec1eab13fb",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXGBPledger_id2\", jsonData.ledger_id);",
+							""
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXGBPledger_id2\", jsonData.ledger_id);\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{FXenduser_id3}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"bank_name\": \"PayrNet\",\r\n  \"bank_country\": \"GB\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "87245209-bff4-b63b-0716-4fb425f401c2",
+			"name": "Fetch GBP ledger entity 1",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "faa49f73-c423-41d8-9a16-54c3db60ac08",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXsortcode2\", jsonData.uk_sort_code);",
+							"postman.setEnvironmentVariable(\"FXaccountnumber2\", jsonData.uk_account_number);",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{FXGBPledger_id2}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXsortcode2\", jsonData.uk_sort_code);\npostman.setEnvironmentVariable(\"FXaccountnumber2\", jsonData.uk_account_number);\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "994ddbcd-7d42-a306-4864-86c82ce27e23",
+			"name": "Add a New Beneficiary (Individual) GBP",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "765376a6-82a1-4d0c-b521-de4c99700c64",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"FXbeneficiary_id2\", jsonData.beneficiary_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npm.environment.set(\"FXbeneficiary_id2\", jsonData.beneficiary_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"uk_sort_code\": \"{{FXsortcode3}}\",\r\n  \"uk_account_number\": \"{{FXaccountnumber3}}\",\r\n  \"holder_id\": \"{{FXenduser_id4}}\",\r\n  \"bank_name\": \"PayrNet\",\r\n  \"bank_country\": \"GB\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"California\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_region\": \"California\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+		},
+		{
+			"folder": "f1d18620-b789-90af-61a2-96cd805da854",
+			"id": "a5fa5cf4-86f5-ded2-2bc5-c5bc3509eda3",
+			"name": "Create a GBP Ledger for Enduser",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "caaa1607-e65e-4011-88a8-07ac5bdef807",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXGBPledger_id4\", jsonData.ledger_id);",
+							""
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXGBPledger_id4\", jsonData.ledger_id);\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{FXenduser_id5}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"bank_name\": \"PayrNet\",\r\n  \"bank_country\": \"GB\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+		},
+		{
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"id": "a66e3f9a-9374-055e-84f5-2c05415516e0",
+			"name": "Set product specific properties",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json\nContent-Type: application/json\n",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/products/Airwallex-FX-1",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"api_key\": \"{{Airwallex_API_Key}}\",\r\n  \"client_id\": \"{{client_id}}\"\r\n}"
+		},
+		{
+			"folder": "f1d18620-b789-90af-61a2-96cd805da854",
+			"id": "a8e83262-e31c-cd50-d8ce-8de6f42ce47c",
+			"name": "Create an Enduser (individual)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "40b03faf-01ef-45a4-b611-fbd92e670611",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXenduser_id5\", jsonData.enduser_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXenduser_id5\", jsonData.enduser_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\"\n         \n       }, \n       \"address_history\": [ \n         { \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\",\n         \"address_start_date\": \"2000-09-02\", \n         \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+		},
+		{
+			"id": "ac8ed465-fb53-25e0-6e5d-dfe302c6b0bb",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"name": "Set product specific properties",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "{\r\n  \"api_key\": \"{{Airwallex_API_Key}}\",\r\n  \"client_id\": \"{{client_id}}\"\r\n}",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json\nContent-Type: application/json\n",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/products/Airwallex-FX-1",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"isFromCollection": true,
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "f1d18620-b789-90af-61a2-96cd805da854",
+			"id": "bdcdccf2-d6dd-a78a-4efe-1b59e8c89a83",
+			"name": "Create an Enduser (individual)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "354109ea-61e8-49fc-baaa-fff1219930c7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXenduser_id6\", jsonData.enduser_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXenduser_id6\", jsonData.enduser_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n      \"person\": { \n       \"name\": \"Big Mac\", \n       \"email\": \"bigmac@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\"\n         \n       }, \n       \"address_history\": [ \n         { \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\",\n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+		},
+		{
+			"id": "be995666-81b6-afe2-39a0-f5eadbb6f423",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/beneficiaries",
+			"folder": "d53d9774-fdb2-cb2f-bbb3-123621d1950f",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fca10e61-5dae-4179-a4a3-e2a9083587ec",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"FXbeneficiary_id1\", jsonData.beneficiary_id);"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517841019658,
+			"name": "Add a New Beneficiary (Individual) EUR",
+			"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891",
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"responses": [],
+			"descriptionFormat": null,
+			"variables": null,
+			"isFromCollection": true,
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npm.environment.set(\"FXbeneficiary_id1\", jsonData.beneficiary_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"iban\": \"{{FXiban1}}\",\r\n  \"holder_id\": \"{{FXenduser_id2}}\",\r\n  \"bank_name\": \"PayrNet\",\r\n  \"bank_country\": \"GB\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"California\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_region\": \"California\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"bic_swift\": \"{{FXbicswift1}}\",\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+		},
+		{
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"id": "cb57ef6c-28e5-6bc4-7336-70d5ff235f2e",
+			"name": "View Beneficiary",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2425d974-7d30-4b4d-a582-cebd9d5eb7f7",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries/{{FXbeneficiary_id1}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "f1d18620-b789-90af-61a2-96cd805da854",
+			"id": "da0f5825-cf9f-2bff-1c9a-694c505d1db6",
+			"name": "Customer's products",
+			"dataMode": "params",
+			"data": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/products",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "ec5708da-6df7-96e7-15e3-10d899132876",
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/ledgers/{{FXEURledger_id1}}",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "30754852-a720-4599-a1c6-921df20a7ed0",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"FXiban1\", jsonData.iban);",
+							"postman.setEnvironmentVariable(\"FXbicswift1\", jsonData.bic_swift);"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1517840742974,
+			"name": "Fetch ledger entity",
+			"description": null,
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"responses": [],
+			"isFromCollection": true,
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"variables": null,
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"FXiban1\", jsonData.iban);\npostman.setEnvironmentVariable(\"FXbicswift1\", jsonData.bic_swift);",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "f1ecfe49-e1c0-ce42-cfa1-4020f12ab35e",
+			"folder": "45845775-3272-5112-f0a5-6f0c4d7bd3df",
+			"name": "Customer's products",
+			"dataMode": "params",
+			"data": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/products",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "3e054be4-149f-6f96-062c-4c1c1162415a",
+			"isFromCollection": true,
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}
