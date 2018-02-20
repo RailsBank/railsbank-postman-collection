@@ -1,0 +1,4876 @@
+{
+	"id": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+	"name": "Complete Railsbank API",
+	"description": null,
+	"order": [],
+	"folders": [
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3232917169,
+			"folder": "b2b2d40e-fc5f-98eb-3f13-68930f72adec",
+			"id": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"name": "Beneficiaries",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"fd135eba-401a-9c5e-0e32-cb563a93ae9f",
+				"63bfdeda-5bcf-76ce-cd48-92878176911c",
+				"a9f1d894-d859-0fa4-617b-d54a7d45623d",
+				"accd406b-4fb0-9fe3-c0b8-376816475353",
+				"97734c90-1c4f-54f4-c8e4-3f2d6c2626ff",
+				"55481e46-5edf-c05e-d33e-4cf35b8e2fb7",
+				"2e7eb8ee-49eb-1495-dee5-dc599dce856e",
+				"47497abc-0f36-e76c-ea73-60d2abd4792a",
+				"a3356134-556e-9361-2a17-d9e358961591"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3232917172,
+			"folder": "b2b2d40e-fc5f-98eb-3f13-68930f72adec",
+			"id": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"name": "Compliance",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"cff8229c-cc12-7c66-c97b-455f0a16bc45",
+				"d2d3ab7d-bf3e-a743-0b8c-d3d4274d86a5",
+				"a9fc5339-cb1a-1e05-2dd9-a0bf287431b2",
+				"7d918ea0-bffc-d331-717c-443867e22040",
+				"5cc5b84b-9451-35e4-3d7c-9452d89d90b0",
+				"916f853f-5ed9-3da0-ac61-48d613026a07",
+				"dfa95bd3-805b-aed6-3c42-e94a72170935",
+				"74e07c5c-2834-3e31-bb25-47e9c5ec58f1",
+				"8bc9616b-321c-3dd5-63c0-ba2d9baf6d99",
+				"1c856cd7-2b35-b798-712f-413ff4a6d245",
+				"d0d94668-245b-94c1-70d6-4a6ce6475eed",
+				"fa99ec8c-979e-b8a4-890f-af38af6a3b7d",
+				"eb469230-8fc5-bae4-3a28-373ad15c046d",
+				"8d32ec35-ebf6-7b93-a9fc-5afd7543409d",
+				"80a240e9-0b70-2446-f27d-e447bcdebd6a",
+				"27225b7a-a276-fca2-1852-61a6afb9d4c1",
+				"0414b2e3-98b0-7411-8b32-064e4b433be3",
+				"9b4f5d34-5437-66a0-a42e-1ecb9a3a477f",
+				"dc5e11f0-1f0f-636a-64dc-d923fb5f1441",
+				"8eb6aac0-b685-c254-308f-9fb77de9cb31"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3235039729,
+			"folder": "b2b2d40e-fc5f-98eb-3f13-68930f72adec",
+			"id": "7814c91e-8ad0-3257-2071-a4c07430fc24",
+			"name": "Endusers",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"b6a17c9b-9cfa-3668-33fa-a03f78c195ed",
+				"9b52ac0d-c095-ef13-5997-441a383e3a91",
+				"cf5bab87-cd3d-d172-03a3-13959df64843",
+				"d773eea6-34eb-e9ed-8b56-3ea0c5e45f03",
+				"66593d82-6821-6269-48f4-d09421755fd0"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3235608122,
+			"folder": "b2b2d40e-fc5f-98eb-3f13-68930f72adec",
+			"id": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"name": "Info about self",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"90cb72e5-cbc9-1af8-1214-5fc02cf403ee",
+				"608830ef-2a13-4b19-8dae-6f67f800b681",
+				"b623d18e-95d8-d165-ae6f-521cbe94c1ae",
+				"29e5cbed-fbcb-adef-2315-eea107f91b02",
+				"1a93ff54-53f9-58f9-ff67-9109c8033dfe",
+				"3074d434-91f5-4352-9efb-c19aab685b19",
+				"c38dfac3-b85f-3e32-aa78-b70bfca3c943",
+				"186d1149-74e2-0687-6728-c500e720966b",
+				"b123384d-a387-35ac-c2fd-4a98e8ddf164",
+				"21aee266-c0c7-10c6-4220-186e30775a0a",
+				"23477493-d5e8-c2bd-996b-8cfa10f27a43",
+				"b930fd4a-6542-9e93-1d0c-e3197b167d9e",
+				"2b98d051-9326-5793-db55-709137d202c4",
+				"6f4aeece-c64d-17af-7404-a36ff953c056",
+				"4c6071d4-a92f-8d1e-6d2b-1a4d7255c369",
+				"7b4e2d47-bae9-6200-860b-4bb4631b3aeb"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3241738670,
+			"folder": "b2b2d40e-fc5f-98eb-3f13-68930f72adec",
+			"id": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"name": "Ledgers",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"fa3f51ee-d219-4c12-4204-f0644180ba6c",
+				"5b074883-1353-905b-7abf-fd98a02a5376",
+				"d6e8ff30-5888-ad1b-79df-5362e4561082",
+				"32ac7546-f3e9-6ebb-aeab-665d4804d3f5",
+				"56e9eb7b-4bb3-b13a-2993-3c578211584b",
+				"b1225983-1139-8ca9-1e3f-7f2f20c507ae",
+				"665c1a92-9b97-c37f-ecd5-cfd589183121",
+				"fa4d742b-a5c4-e3df-0cd1-e97b96fc1ccd",
+				"98bdb66d-be78-37a9-1fc1-db93d97af0c3",
+				"5d084bd1-80fa-8a35-e37e-7588c1900fa7",
+				"ba35a763-1eea-2dbc-e49c-b66a5ad4f10f",
+				"391f227d-74b2-255d-356f-74bdafac7397",
+				"923b2a7f-cdc9-355a-2801-7b1ef8345781",
+				"54c14570-caff-fa0d-d73e-a627f7ce38b4",
+				"df48edfd-ddfa-188c-2caa-ce6b7ab3d6fa",
+				"dfbfb5ba-c594-18af-f567-bf957e13194b",
+				"e9318624-d900-349e-8c56-42232065f416",
+				"d6f24b13-7f62-43fb-6d47-71314e50510a",
+				"738d3c19-1544-d09b-9d24-2dfe8ad6d44a",
+				"4ed66c39-3bca-607d-f8b6-ed8ca50a0360",
+				"3a19cd47-a9ec-093d-7597-f60a02781f66",
+				"2415b03d-c2df-e986-1f09-90b9789f4fa2",
+				"0e0d2e71-55d9-58e8-cc73-7fb8a0e399d8",
+				"02592bc5-ab35-5e03-245f-1c51b1430b94",
+				"743b32c1-e69c-4c72-bb0c-2214c6265786",
+				"5c3e2930-9dc1-9b74-0629-147da3b43841",
+				"25677d11-8735-1583-43c8-d11fa6970cd4",
+				"e8daae77-168b-d78b-a017-2501aa8d1f8d",
+				"aa739d8e-2e45-1e74-7e16-0bff116aa97f"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3232917173,
+			"folder": "b2b2d40e-fc5f-98eb-3f13-68930f72adec",
+			"id": "f6584bb2-b1ee-1a75-0d63-50ef63c951bc",
+			"name": "Other",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"4d87caa3-5d4a-c31b-c5d3-dc012c58320e"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3232917174,
+			"folder": "b2b2d40e-fc5f-98eb-3f13-68930f72adec",
+			"id": "bbaf83d3-363c-f385-bb62-2fe6f099e146",
+			"name": "Partners",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"a11f7fcc-20cc-ae57-28d4-5312d8794946"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3232913587,
+			"folder": null,
+			"id": "b2b2d40e-fc5f-98eb-3f13-68930f72adec",
+			"name": "Railsbank API",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"id": "1e631e0d-893d-450e-a6ce-294721419f62",
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"id": "8e305cd7-5d8e-4b26-ab94-43e8bb877913",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"order": [],
+			"folders_order": [
+				"c1815362-2eb4-0de2-bb40-142eccbe67ea",
+				"7814c91e-8ad0-3257-2071-a4c07430fc24",
+				"06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+				"28929209-2504-de50-26d7-6e819fcd84a5",
+				"970bbed5-84fc-a5d2-2d2a-4f100938304c",
+				"26a643bb-5022-65d6-b8aa-3a0cac656462",
+				"f6584bb2-b1ee-1a75-0d63-50ef63c951bc",
+				"bbaf83d3-363c-f385-bb62-2fe6f099e146"
+			]
+		},
+		{
+			"owner": "3319449",
+			"lastUpdatedBy": "3319449",
+			"lastRevision": 3232922126,
+			"folder": "b2b2d40e-fc5f-98eb-3f13-68930f72adec",
+			"id": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"name": "Transactions",
+			"description": null,
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"de41a2fd-b1e2-ea25-951c-55f170db382e",
+				"2dfd42bf-1890-3c87-2f55-d1b7a894c5af",
+				"f253ed4f-979c-ab67-1847-d8d4200a439e",
+				"ec6a4c04-e29d-1fa8-2855-364f1abd701a",
+				"04fab77d-8dd6-9f95-61a3-4b294a35d831",
+				"6e85508e-1f77-e869-8e2b-42c57447fa77",
+				"b10b0850-b1c0-2374-51f0-8c47729b4d4d",
+				"5e3cf2e3-ecfc-bf25-200c-b94bb07435d8",
+				"d8ab6895-ba7c-8900-9a67-da4ca2ba0070",
+				"5c677ab8-cc28-6e55-6c93-9a5e54910409",
+				"15fdd66d-5e5d-ae96-e9f1-f2833722efb4",
+				"f976525b-bd51-ae4e-87f4-e8bb18b67eb0",
+				"9d7e39f2-32bc-932c-552d-e9d1053956db"
+			],
+			"folders_order": []
+		}
+	],
+	"folders_order": [
+		"b2b2d40e-fc5f-98eb-3f13-68930f72adec"
+	],
+	"timestamp": 0,
+	"owner": "3319449",
+	"public": false,
+	"events": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"exec": [
+					""
+				],
+				"id": "76d90e6b-0448-418e-9425-64a39e2b1f71",
+				"type": "text/javascript"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"exec": [
+					""
+				],
+				"id": "de317e8e-be2e-4f84-97ab-0490eeadb6f4",
+				"type": "text/javascript"
+			}
+		}
+	],
+	"variables": null,
+	"auth": null,
+	"requests": [
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "02592bc5-ab35-5e03-245f-1c51b1430b94",
+			"name": "Find ledgers based on account",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "f8bc122a-5c71-4ef8-b3d8-398b74e662a6",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/by-uk-bank-account?uk_account_number={{accountnumber}}&uk_sort_code={{sortcode}}",
+			"queryParams": [
+				{
+					"equals": true,
+					"key": "uk_account_number",
+					"value": "{{accountnumber}}"
+				},
+				{
+					"equals": true,
+					"key": "uk_sort_code",
+					"value": "{{sortcode}}"
+				}
+			],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "0414b2e3-98b0-7411-8b32-064e4b433be3",
+			"name": "Resolve enduser in quarantine",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1512f41b-1d8c-4c9a-a2cb-82d866f73c84",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"invalid-state-of-entity\"] = jsonData.error === \"invalid-state-of-entity\";",
+							""
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/quarantine/endusers/{{enduser_id}}/resolve",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;\nvar jsonData = JSON.parse(responseBody);\ntests[\"invalid-state-of-entity\"] = jsonData.error === \"invalid-state-of-entity\";\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"qr_status\": \"pass\",\n  \"comment\": \"smells like roses\"\n}"
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "04fab77d-8dd6-9f95-61a3-4b294a35d831",
+			"name": "Inter-Ledger Transfer",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9f4a12ef-5fc2-46a6-b7f6-f99104e68486",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"environment.delayTimerStart = new Date();",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"inter-ledgertransaction_id\", jsonData.transaction_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "from ledger id to second ledger id",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/inter-ledger",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nenvironment.delayTimerStart = new Date();\nvar jsonData = JSON.parse(responseBody);\npm.environment.set(\"inter-ledgertransaction_id\", jsonData.transaction_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"amount\": \"2\",\n  \"ledger_from_id\": \"{{ledger_id}}\",\n  \"ledger_to_id\": \"{{second_ledger_id}}\",\n  \"transaction_meta\": {\n    \"foo\": \"bar\"\n  }\n}"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "0e0d2e71-55d9-58e8-cc73-7fb8a0e399d8",
+			"name": "Check Waiting Status for Second Ledger",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"",
+							"postman.setEnvironmentVariable(\"second_ledger_amount\", jsonData.amount);"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\n\n\npostman.setEnvironmentVariable(\"second_ledger_amount\", jsonData.amount);",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "15fdd66d-5e5d-ae96-e9f1-f2833722efb4",
+			"name": "Helper: Delay 2s",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"id": "2bfb4859-ea8e-4050-9b93-131d4511a4cc",
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://postman-echo.com/delay/2",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "186d1149-74e2-0687-6728-c500e720966b",
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"name": "Customer Webhook fails",
+			"dataMode": "params",
+			"data": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/webhook/failed-to-deliver?from_date={{start_date}}&to_date={{end_date}}",
+			"queryParams": [
+				{
+					"key": "from_date",
+					"value": "{{start_date}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "to_date",
+					"value": "{{end_date}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "1a93ff54-53f9-58f9-ff67-9109c8033dfe",
+			"name": "Customer's endusers",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "1c856cd7-2b35-b798-712f-413ff4a6d245",
+			"name": "Firewall rules (endusers)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-rules/endusers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "21aee266-c0c7-10c6-4220-186e30775a0a",
+			"name": "Attempt to set a bad webhook",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "457d524a-cb78-4309-8784-c7a76f7f94b6",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/webhook",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"webhook_url\": \"https://requestb.in/1i45mrh1\",\r\n  \"webhook_secret\": \"our_first_webhook\"\r\n}"
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "23477493-d5e8-c2bd-996b-8cfa10f27a43",
+			"name": "Customer's partners",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/partners",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "2415b03d-c2df-e986-1f09-90b9789f4fa2",
+			"name": "Check Whisky Ledger",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c9115137-53f9-4f92-9623-d08c8c7911f6",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody)",
+							"",
+							"pm.globals.unset(\"variable_key\");"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{whisky_ledger_id}}/",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody)\n\npm.globals.unset(\"variable_key\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "25677d11-8735-1583-43c8-d11fa6970cd4",
+			"name": "Get ledger entries in time frame",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"",
+							""
+						],
+						"id": "b70d4c9b-d35a-4442-a2be-cfcc98e8fdda",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/entries?from_date={{start_date}}&to_date={{end_date}}",
+			"queryParams": [
+				{
+					"equals": true,
+					"key": "from_date",
+					"value": "{{start_date}}"
+				},
+				{
+					"equals": true,
+					"key": "to_date",
+					"value": "{{end_date}}"
+				}
+			],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "27225b7a-a276-fca2-1852-61a6afb9d4c1",
+			"name": "Comment on beneficiary in quarantine",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/quarantine/beneficiaries/{{beneficiary_id}}/comments",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"comment\": \"looks pretty good to me\"\n}"
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "29e5cbed-fbcb-adef-2315-eea107f91b02",
+			"name": "Customer's ledgers partner product filter",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers?partner_product={{euroledger_prodref}}",
+			"queryParams": [
+				{
+					"key": "partner_product",
+					"value": "{{euroledger_prodref}}",
+					"equals": true
+				}
+			],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "2b98d051-9326-5793-db55-709137d202c4",
+			"name": "Helper: Delay 2s",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://postman-echo.com/delay/2",
+			"queryParams": [],
+			"headerData": [],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "2dfd42bf-1890-3c87-2f55-d1b7a894c5af",
+			"name": "Credit virtual ledger with 4",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"environment.delayTimerStart = new Date();"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/manual-credit",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nenvironment.delayTimerStart = new Date();",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"ledger_id\": \"{{whisky_ledger_id}}\",\r\n  \"amount\": \"4\"\r\n}"
+		},
+		{
+			"folder": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"id": "2e7eb8ee-49eb-1495-dee5-dc599dce856e",
+			"name": "Return one of beneficiary's accounts",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "30d5944b-a594-4895-a29d-59bef0e80a90",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts/{{GBPbennyaccount_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "3074d434-91f5-4352-9efb-c19aab685b19",
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/webhook",
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e170a48-b5b8-4dab-ac71-74c19a2f801a",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1519143078445,
+			"name": "Attempt to set a good webhook",
+			"description": null,
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"webhook_url\": \"https://requestb.in/1eogpse1\",\r\n  \"webhook_secret\": \"our_first_webhook\"\r\n}"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "32ac7546-f3e9-6ebb-aeab-665d4804d3f5",
+			"name": "Fetch ledger entity",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"iban\", jsonData.iban);"
+						],
+						"id": "ff6639ff-7839-46f2-b026-3c636ed39f26",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"iban\", jsonData.iban);",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "391f227d-74b2-255d-356f-74bdafac7397",
+			"name": "Fetch ledger entity",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f50d7b10-ea31-4449-b77b-de90e08988d0",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"eur_iban_1\", jsonData.iban);",
+							"postman.setEnvironmentVariable(\"bic_swift_1\", jsonData.bic_swift);"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"eur_iban_1\", jsonData.iban);\npostman.setEnvironmentVariable(\"bic_swift_1\", jsonData.bic_swift);",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "3a19cd47-a9ec-093d-7597-f60a02781f66",
+			"name": "Helper: Delay 5s",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://postman-echo.com/delay/5",
+			"queryParams": [],
+			"headerData": [],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"id": "47497abc-0f36-e76c-ea73-60d2abd4792a",
+			"name": "Update one of beneficiary's accounts",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "e11dace6-a75f-4055-9fcf-c71f74c7bdf7",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts/{{GBPbennyaccount_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"person\": \"Manzanaman\"\n}"
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "4c6071d4-a92f-8d1e-6d2b-1a4d7255c369",
+			"name": "List of customer notifications",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"from_date\", jsonData.from_date);",
+							"pm.environment.set(\"to_date\", jsonData.to_date);"
+						],
+						"id": "04ec3cf5-fec7-482b-8f26-9106bd9d405e",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/notifications?from_date=2017-11-09&to_date=2019-10-10",
+			"queryParams": [
+				{
+					"key": "from_date",
+					"value": "2017-11-09",
+					"equals": true
+				},
+				{
+					"key": "to_date",
+					"value": "2019-10-10",
+					"equals": true
+				}
+			],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npm.environment.set(\"from_date\", jsonData.from_date);\npm.environment.set(\"to_date\", jsonData.to_date);",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "f6584bb2-b1ee-1a75-0d63-50ef63c951bc",
+			"id": "4d87caa3-5d4a-c31b-c5d3-dc012c58320e",
+			"name": "Get Version ",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"if (responseCode.code === 200){",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    var version = jsonData.version;",
+							"    var info = new Date().toISOString() + \" | \"+version;",
+							"    postman.setEnvironmentVariable(\"test_info\", info);",
+							"}"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "also set test time stamp",
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/version",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nif (responseCode.code === 200){\n    var jsonData = JSON.parse(responseBody);\n    var version = jsonData.version;\n    var info = new Date().toISOString() + \" | \"+version;\n    postman.setEnvironmentVariable(\"test_info\", info);\n}",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "4ed66c39-3bca-607d-f8b6-ed8ca50a0360",
+			"name": "List of ledgers unassigned",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/unassigned",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "54c14570-caff-fa0d-d73e-a627f7ce38b4",
+			"name": "Assign IBAN to Second Ledger",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}/assign-iban",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"id": "55481e46-5edf-c05e-d33e-4cf35b8e2fb7",
+			"name": "Return beneficiary's accounts",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b1cd5ff-6951-4d4e-8d01-8d120599cd7a",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "56e9eb7b-4bb3-b13a-2993-3c578211584b",
+			"name": "Create a GBP Ledger for Enduser",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"GBPledger_id\", jsonData.ledger_id);",
+							""
+						],
+						"id": "bc166afe-bbaf-473c-b01e-6df91b76bf66",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"GBPledger_id\", jsonData.ledger_id);\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "5b074883-1353-905b-7abf-fd98a02a5376",
+			"name": "Create a EUR Ledger for Enduser",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65e2a74c-4703-47eb-a0be-0b9894eaa753",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ledger_id\", jsonData.ledger_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"ledger_id\", jsonData.ledger_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "5c3e2930-9dc1-9b74-0629-147da3b43841",
+			"name": "pseudo-credit euro ledger",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d07d6ac-d449-47c7-bd99-fe1899d5d5bf",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/dev/customer/transactions/receive",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"amount\": \"4\",\r\n  \"bic_swift\": \"{{bic_swift_1}}\",\r\n  \"iban\": \"{{FXiban1}}\"\r\n}"
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "5c677ab8-cc28-6e55-6c93-9a5e54910409",
+			"name": "Inter-ledger try",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "from ledger id to second ledger id",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/inter-ledger/try",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"amount\": \"10\",\n  \"ledger_from_id\": \"{{ledger_id}}\",\n  \"ledger_to_id\": \"{{second_ledger_id}}\",\n  \"transaction_meta\": {\n    \"foo\": \"bar\"\n  }\n}"
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "5cc5b84b-9451-35e4-3d7c-9452d89d90b0",
+			"name": "Firewall rules history (transactions)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions/history",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "5d084bd1-80fa-8a35-e37e-7588c1900fa7",
+			"name": "Ledger Wait",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "5e3cf2e3-ecfc-bf25-200c-b94bb07435d8",
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"name": "FX Transaction",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Amount not positve\"] = jsonData.error_detail === \"amount-not-positive\";",
+							""
+						],
+						"id": "6bf0448e-4663-4823-9d00-952442c5df56",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "using SEPA\n",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/fx",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;\nvar jsonData = JSON.parse(responseBody);\ntests[\"Amount not positve\"] = jsonData.error_detail === \"amount-not-positive\";\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"amount\": \"0\",\r\n  \"ledger_from_id\": \"{{ledger_id}}\",\r\n  \"partner_product_fx\": \"Airwallex-FX-1\",\r\n  \"reason\": \"p2p_sports_and_entertainment\",\r\n  \"beneficiary_id\": \"{{beneficiary_id}}\",\r\n  \"reference\": \"this is a test\",\r\n  \"transaction_meta\": {\r\n    \"foo\": \"bar\"\r\n  }\r\n\r\n}"
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "608830ef-2a13-4b19-8dae-6f67f800b681",
+			"name": "Customer's ledgers",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"id": "63bfdeda-5bcf-76ce-cd48-92878176911c",
+			"name": "Add a New Beneficiary (Individual) EUR",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"beneficiary_id\", jsonData.beneficiary_id);"
+						],
+						"id": "b53e6b21-b686-4a85-8d43-d69794934f84",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npm.environment.set(\"beneficiary_id\", jsonData.beneficiary_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"iban\": \"{{iban}}\",\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"California\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_region\": \"California\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"bic_swift\": \"SPSRSKBAXXX\",\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+		},
+		{
+			"folder": "7814c91e-8ad0-3257-2071-a4c07430fc24",
+			"id": "66593d82-6821-6269-48f4-d09421755fd0",
+			"name": "Update an Enduser",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "update receiver beneficiary\n",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers/5a7d8dbb-d8a1-4e8b-a6c3-097bc25a5607",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"enduser_meta\": {\r\n     \"foo\": \"baa\",\r\n        \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n    },\r\n       \r\n  \"person\": {\r\n    \"name\": \"Eric Wimp\",\r\n    \"pep\": false,\r\n    \"address\": {  \r\n         \"address_refinement\": \"Apartment 42\", \r\n         \"address_number\": \"29\", \r\n         \"address_street\": \"Acacia Road\", \r\n         \"address_city\": \"Nuttytown\", \r\n         \"address_region\": \"Essex\",\r\n         \"address_postal_code\": \"FX20 7XS\", \r\n         \"address_iso_country\": \"GBR\"\r\n         \r\n       }\r\n  }\r\n}"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "665c1a92-9b97-c37f-ecd5-cfd589183121",
+			"name": "Fetch GBP ledger entity",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"accountnumber\", jsonData.uk_account_number);",
+							"postman.setEnvironmentVariable(\"sortcode\", jsonData.uk_sort_code);"
+						],
+						"id": "4d572602-3677-4ac9-b654-94dd772e8282",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{GBPledger_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"accountnumber\", jsonData.uk_account_number);\npostman.setEnvironmentVariable(\"sortcode\", jsonData.uk_sort_code);",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "6e85508e-1f77-e869-8e2b-42c57447fa77",
+			"name": "Transactions in time frame",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions?from-date={{start_date}}&to_date{{end_date}}=",
+			"queryParams": [
+				{
+					"key": "from-date",
+					"value": "{{start_date}}",
+					"equals": true
+				},
+				{
+					"key": "to_date{{end_date}}",
+					"value": "",
+					"equals": false
+				}
+			],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "6f4aeece-c64d-17af-7404-a36ff953c056",
+			"name": "Set product specific properties",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json\nContent-Type: application/json",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/products/Airwallex-FX-1",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"api_key\": \"{{Airwallex_API_Key}}\",\r\n  \"client_id\": \"XS7OnlTgS8msEPDMLJ0l0g\"\r\n}"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "738d3c19-1544-d09b-9d24-2dfe8ad6d44a",
+			"name": "List of ledger entries in time frame",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "fa967dca-5c3f-4c3b-8aa3-ccfdfd58d19a",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{GBPledger_id}}/entries?from_date={{start_date}}&to_date{{end_date}}=",
+			"queryParams": [
+				{
+					"key": "from_date",
+					"value": "{{start_date}}",
+					"equals": true
+				},
+				{
+					"key": "to_date{{end_date}}",
+					"value": "",
+					"equals": false
+				}
+			],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "743b32c1-e69c-4c72-bb0c-2214c6265786",
+			"name": "Check Status of IBAN",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"iban\", jsonData.iban);",
+							"postman.setEnvironmentVariable(\"current_balance\", jsonData.amount);",
+							"postman.setEnvironmentVariable(\"bic_swift_1\", jsonData.bic_swift);",
+							"var ledger_iban_status = jsonData.ledger_iban_status === \"ledger-iban-status-ok\";",
+							"tests[\"IBAN status ok\"] = ledger_iban_status;",
+							"",
+							"if(!ledger_iban_status){",
+							"    postman.setNextRequest(null);",
+							"}"
+						],
+						"id": "70a1fe8c-647d-4db4-9565-a0bca46eed2c",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"iban\", jsonData.iban);\npostman.setEnvironmentVariable(\"current_balance\", jsonData.amount);\npostman.setEnvironmentVariable(\"bic_swift_1\", jsonData.bic_swift);\nvar ledger_iban_status = jsonData.ledger_iban_status === \"ledger-iban-status-ok\";\ntests[\"IBAN status ok\"] = ledger_iban_status;\n\nif(!ledger_iban_status){\n    postman.setNextRequest(null);\n}",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "74e07c5c-2834-3e31-bb25-47e9c5ec58f1",
+			"name": "Firewall rules (beneficiaries)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-rules/beneficiaries",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "7b4e2d47-bae9-6200-860b-4bb4631b3aeb",
+			"name": "Billing summary for a month",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b1cd5ff-6951-4d4e-8d01-8d120599cd7a",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/billing/export-csv?year-month={{year_month}}",
+			"queryParams": [
+				{
+					"key": "year-month",
+					"value": "{{year_month}}",
+					"equals": true
+				}
+			],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "7d918ea0-bffc-d331-717c-443867e22040",
+			"name": "Test firewall rules",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions/test",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"compliance_firewall_rules\": \"[rules [rule :always-pass ok]]\",\n  \"transaction_id\": \"{{inter-ledgertransaction_id}}\"\n}"
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "80a240e9-0b70-2446-f27d-e447bcdebd6a",
+			"name": "Resolve beneficiary in quarantine",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "21d6e1c2-26b8-4bf0-87e3-f41537205db8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"invalid-state-of-entity\"] = jsonData.error === \"invalid-state-of-entity\";"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/quarantine/beneficiaries/{{beneficiary_id}}/resolve",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;\nvar jsonData = JSON.parse(responseBody);\ntests[\"invalid-state-of-entity\"] = jsonData.error === \"invalid-state-of-entity\";",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"qr_status\": \"pass\",\n  \"comment\": \"smells like roses\"\n}"
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "8bc9616b-321c-3dd5-63c0-ba2d9baf6d99",
+			"name": "Firewall rules (transactions)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "8d32ec35-ebf6-7b93-a9fc-5afd7543409d",
+			"name": "List of objects in quarantine",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/quarantine",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "8eb6aac0-b685-c254-308f-9fb77de9cb31",
+			"name": "Comment on transaction in quarantine",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7aa756e-d16c-427e-b211-d340a97e93f3",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"incorrect-state\"] = jsonData.error === \"incorrect-state\";"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/quarantine/transactions/{{transaction_id}}/comments",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;\nvar jsonData = JSON.parse(responseBody);\ntests[\"incorrect-state\"] = jsonData.error === \"incorrect-state\";",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"comment\": \"looks pretty good to me\"\n}"
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "90cb72e5-cbc9-1af8-1214-5fc02cf403ee",
+			"name": "Whoami",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "also set test time stamp",
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/me",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "916f853f-5ed9-3da0-ac61-48d613026a07",
+			"name": "Firewall rules history (endusers)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-rules/endusers/history",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "923b2a7f-cdc9-355a-2801-7b1ef8345781",
+			"name": "Helper: Delay 5s",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://postman-echo.com/delay/10",
+			"queryParams": [],
+			"headerData": [],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"id": "97734c90-1c4f-54f4-c8e4-3f2d6c2626ff",
+			"name": "Add a GBP account for beneficiary",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "421d2d0c-af65-493a-b692-8caacac6af8f",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"GBPbennyaccount_id\", jsonData.account_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npm.environment.set(\"GBPbennyaccount_id\", jsonData.account_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"account_number\": \"{{accountnumber}}\",\r\n  \"bank_country\": \"GB\",\r\n  \"bank_code\": \"040052\",\r\n  \"bank_name\": \"PayrNET\",\r\n  \"asset_type\": \"gbp\",\r\n  \"asset_class\": \"currency\",\r\n  \"bank_code_type\": \"sort-code\"\r\n}"
+		},
+		{
+			"id": "98bdb66d-be78-37a9-1fc1-db93d97af0c3",
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"name": "Create Second Ledger",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"if (responseCode.code === 200){",
+							"    var jsonData = JSON.parse(responseBody);",
+							"    postman.setEnvironmentVariable(\"second_ledger_id\", jsonData.ledger_id);",
+							"}"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nif (responseCode.code === 200){\n    var jsonData = JSON.parse(responseBody);\n    postman.setEnvironmentVariable(\"second_ledger_id\", jsonData.ledger_id);\n}",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "9b4f5d34-5437-66a0-a42e-1ecb9a3a477f",
+			"name": "Comment on enduser in quarantine",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/quarantine/endusers/{{enduser_id}}/comments",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"comment\": \"looks pretty good to me\"\n}"
+		},
+		{
+			"folder": "7814c91e-8ad0-3257-2071-a4c07430fc24",
+			"id": "9b52ac0d-c095-ef13-5997-441a383e3a91",
+			"name": "Check List of Endusers",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "9d7e39f2-32bc-932c-552d-e9d1053956db",
+			"name": "Update Transaction metadata",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "update receiver beneficiary\n",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/{{inter-ledgertransaction_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+		},
+		{
+			"folder": "bbaf83d3-363c-f385-bb62-2fe6f099e146",
+			"id": "a11f7fcc-20cc-ae57-28d4-5312d8794946",
+			"name": "See Avaliable Partners",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "efe803ea-4e9a-4e65-bfdf-068eaf425dd6",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/partners",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"id": "a3356134-556e-9361-2a17-d9e358961591",
+			"name": "Make one of beneficiary's accounts default",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "223c2af1-895a-4378-9d05-74552d270dd5",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts/{{GBPbennyaccount_id}}/make-default",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"id": "a9f1d894-d859-0fa4-617b-d54a7d45623d",
+			"name": "Update a Beneficiary",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "update receiver beneficiary\n",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "\r\n{\r\n  \"person\": {\r\n    \"name\": \"Bananaman\",\r\n    \"pep\": false\r\n  }\r\n}"
+		},
+		{
+			"id": "a9fc5339-cb1a-1e05-2dd9-a0bf287431b2",
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-rules/beneficiaries",
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"auth": null,
+			"time": 1519142290627,
+			"name": "Set firewall rules (beneficiaries)",
+			"description": null,
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"compliance_firewall_rules\": \"[rule :always-pass ok]\"\r\n\r\n                       }"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "aa739d8e-2e45-1e74-7e16-0bff116aa97f",
+			"name": "Helper: Delay 2s",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"id": "2bfb4859-ea8e-4050-9b93-131d4511a4cc",
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://postman-echo.com/delay/2",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"id": "accd406b-4fb0-9fe3-c0b8-376816475353",
+			"name": "View Beneficiary",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95f3c57a-2dd8-4452-8805-015da070ee61",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "b10b0850-b1c0-2374-51f0-8c47729b4d4d",
+			"name": "FX quote",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d6c52a00-ef9e-4726-b6b5-0e30bd026760",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							""
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "using SEPA\n",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "PUT",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/fx/quote",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"amount\": \"10\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_class_base\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"asset_type_base\": \"eur\",\r\n  \"partner_product_fx\": \"Airwallex-FX-1\"\r\n}"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "b1225983-1139-8ca9-1e3f-7f2f20c507ae",
+			"name": "Ledger Wait",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{GBPledger_id}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "b123384d-a387-35ac-c2fd-4a98e8ddf164",
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"name": "Customer Webhook",
+			"dataMode": "params",
+			"data": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e3fead76-8909-4c14-b59f-abaa4919c4a1",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 204\"] = responseCode.code === 204;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						]
+					}
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"method": "DELETE",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/webhook",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "b623d18e-95d8-d165-ae6f-521cbe94c1ae",
+			"name": "Customer's ledgers holder id filter",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers?holder_id={{enduser_id}}",
+			"queryParams": [
+				{
+					"key": "holder_id",
+					"value": "{{enduser_id}}",
+					"equals": true
+				}
+			],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "7814c91e-8ad0-3257-2071-a4c07430fc24",
+			"id": "b6a17c9b-9cfa-3668-33fa-a03f78c195ed",
+			"name": "Create an Enduser (individual)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"enduser_id\", jsonData.enduser_id);"
+						],
+						"id": "f1d4ec33-80a5-4fa4-94fc-8270371062ff",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"enduser_id\", jsonData.enduser_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "b930fd4a-6542-9e93-1d0c-e3197b167d9e",
+			"name": "Customer's products",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						],
+						"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/my/products",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "ba35a763-1eea-2dbc-e49c-b66a5ad4f10f",
+			"name": "Assign an IBAN for ledger",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6bedffb-ea47-4a9f-ac01-27e4c3f10cb2",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/assign-iban",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "c1815362-2eb4-0de2-bb40-142eccbe67ea",
+			"id": "c38dfac3-b85f-3e32-aa78-b70bfca3c943",
+			"name": "Customer Webhook",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/webhook",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "7814c91e-8ad0-3257-2071-a4c07430fc24",
+			"id": "cf5bab87-cd3d-d172-03a3-13959df64843",
+			"name": "Check Details for an Enduser",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers/{{enduser_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "cff8229c-cc12-7c66-c97b-455f0a16bc45",
+			"name": "Compliance officer info",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-contact",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "d0d94668-245b-94c1-70d6-4a6ce6475eed",
+			"name": "Firewall dataset",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b220a4a-2d05-45a7-8136-da722a125ba9",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"dataset_id\", jsonData.dataset_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-static-data",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"dataset_id\", jsonData.dataset_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"dataset_data\": \"Country,Risk\\nUSA,low\\nISR,high\",\n  \"dataset_name\": \"countries-by-risk-level\"\n}"
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "d2d3ab7d-bf3e-a743-0b8c-d3d4274d86a5",
+			"name": "Set firewall rules (endusers)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-rules/endusers",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"compliance_firewall_rules\": \"[rule :always-pass ok]\"\r\n\r\n                       }"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "d6e8ff30-5888-ad1b-79df-5362e4561082",
+			"name": "Ledger Wait",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "d6f24b13-7f62-43fb-6d47-71314e50510a",
+			"name": "List of modified ledgers",
+			"dataMode": null,
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"id": "fa967dca-5c3f-4c3b-8aa3-ccfdfd58d19a",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: {{customer_api_key}}\nAccept: application/json",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/changed?from_date={{start_date}}",
+			"queryParams": [
+				{
+					"equals": true,
+					"key": "from_date",
+					"value": "{{start_date}}"
+				}
+			],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "7814c91e-8ad0-3257-2071-a4c07430fc24",
+			"id": "d773eea6-34eb-e9ed-8b56-3ea0c5e45f03",
+			"name": "Enduser Wait",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/endusers/{{enduser_id}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "d8ab6895-ba7c-8900-9a67-da4ca2ba0070",
+			"name": "Transaction Try",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8647a4b3-ca8e-4681-bdb9-1cf8b5e29549",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": "from ledger id to second ledger id",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/try",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\n  \"who_pays_charges\": \"shared\",\n  \"reference\": \"123456789012345678\",\n  \"amount\": \"4.00\",\n  \"ledger_from_id\": \"{{GBPledger_id}}\",\n  \"beneficiary_id\": \"{{beneficiary_id}}\",\n  \"transaction_meta\": {\n    \"foo\": \"bar\"\n  },\n  \"cut_off_time_implementation\": \"loose\"\n}"
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "dc5e11f0-1f0f-636a-64dc-d923fb5f1441",
+			"name": "Resolve transaction in quarantine",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c007861-2631-4cc4-af15-ed99db1d3400",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"incorrect-state\"] = jsonData.error === \"incorrect-state\";",
+							""
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\nContent-Type: application/json",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/quarantine/transactions/{{transaction_id}}/resolve",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;\nvar jsonData = JSON.parse(responseBody);\ntests[\"incorrect-state\"] = jsonData.error === \"incorrect-state\";\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"qr_status\": \"pass\",\n  \"comment\": \"smells like roses\"\n}"
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "de41a2fd-b1e2-ea25-951c-55f170db382e",
+			"name": "Standard transaction",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b4fc592-be53-4d2f-9f0e-06b0b14c2013",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Amount not positve\"] = jsonData.error_detail === \"amount-not-positive\";"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;\nvar jsonData = JSON.parse(responseBody);\ntests[\"Amount not positve\"] = jsonData.error_detail === \"amount-not-positive\";",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"ledger_from_id\": \"{{GBPledger_id}}\",\r\n  \"beneficiary_id\": \"{{beneficiary_id}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"0\",\r\n  \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "df48edfd-ddfa-188c-2caa-ce6b7ab3d6fa",
+			"name": "Fetch second ledger entity",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "be94c516-f8df-44da-8434-1dfad219879f",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"secondledgeriban\", jsonData.iban);"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"secondledgeriban\", jsonData.iban);",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "dfa95bd3-805b-aed6-3c42-e94a72170935",
+			"name": "Firewall rules history (beneficiaries)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-rules/beneficiaries/history",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "dfbfb5ba-c594-18af-f567-bf957e13194b",
+			"name": "Create a Whisky Ledger for Enduser",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"whisky_ledger_id\", jsonData.ledger_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/virtual",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\nvar jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"whisky_ledger_id\", jsonData.ledger_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"whisky\"\r\n}"
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "e8daae77-168b-d78b-a017-2501aa8d1f8d",
+			"name": "Check Status of GBP Ledger",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"var ledger_status = jsonData.ledger_status === \"ledger-status-ok\";",
+							"tests[\"Ledger status ok\"] = ledger_status;",
+							"",
+							"if(!ledger_status){",
+							"    postman.setNextRequest(null);",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/ledgers/{{GBPledger_id}}/wait",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n\nvar jsonData = JSON.parse(responseBody);\nvar ledger_status = jsonData.ledger_status === \"ledger-status-ok\";\ntests[\"Ledger status ok\"] = ledger_status;\n\nif(!ledger_status){\n    postman.setNextRequest(null);\n}\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "e9318624-d900-349e-8c56-42232065f416",
+			"name": "Helper: Delay 5s",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://postman-echo.com/delay/10",
+			"queryParams": [],
+			"headerData": [],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "eb469230-8fc5-bae4-3a28-373ad15c046d",
+			"name": "Compliance manual",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-manual",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "ec6a4c04-e29d-1fa8-2855-364f1abd701a",
+			"name": "Check Transaction Status",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "91a80afd-7819-471b-b908-6ff12988b657",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/{{transaction_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "f253ed4f-979c-ab67-1847-d8d4200a439e",
+			"name": "Debit virtual ledger with 4",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ebcb1f75-eac3-403b-b39d-34dd8fb1393f",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"environment.delayTimerStart = new Date();",
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"transaction_id\", jsonData.transaction_id);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/manual-debit",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nenvironment.delayTimerStart = new Date();\nvar jsonData = JSON.parse(responseBody);\npm.environment.set(\"transaction_id\", jsonData.transaction_id);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\r\n  \"ledger_id\": \"{{whisky_ledger_id}}\",\r\n  \"amount\": \"4\"\r\n}"
+		},
+		{
+			"folder": "970bbed5-84fc-a5d2-2d2a-4f100938304c",
+			"id": "f976525b-bd51-ae4e-87f4-e8bb18b67eb0",
+			"name": "Re-run firewalls",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": "from ledger id to second ledger id",
+			"variables": null,
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/transactions/{{transaction_id}}/rerun-firewall",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "fa3f51ee-d219-4c12-4204-f0644180ba6c",
+			"name": "Helper: Delay 5s",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://postman-echo.com/delay/5",
+			"queryParams": [],
+			"headerData": [],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "06c9ad95-7dc9-4797-8bc8-ae9521ccd5f4",
+			"id": "fa4d742b-a5c4-e3df-0cd1-e97b96fc1ccd",
+			"name": "Helper: Delay 5s",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://postman-echo.com/delay/5",
+			"queryParams": [],
+			"headerData": [],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "26a643bb-5022-65d6-b8aa-3a0cac656462",
+			"id": "fa99ec8c-979e-b8a4-890f-af38af6a3b7d",
+			"name": "Firewall dataset (no dataset yet)",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/compliance-firewall-static-data/{{dataset_id}}",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"folder": "28929209-2504-de50-26d7-6e819fcd84a5",
+			"id": "fd135eba-401a-9c5e-0e32-cb563a93ae9f",
+			"name": "List all beneficiaries",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "366298c7-f705-485a-bb04-11a73740d6c9",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"rawModeData": "",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "{{baseurl}}/v1/customer/beneficiaries",
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}"
+				}
+			],
+			"pathVariableData": [],
+			"collectionId": "cad3c34b-37af-6bb6-a16f-41ab79c4d3d9",
+			"preRequestScript": null,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");\n",
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}
