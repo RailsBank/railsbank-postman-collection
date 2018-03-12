@@ -1,0 +1,808 @@
+{
+	"id": "c9f59ca4-892d-457a-552e-65dd80ad1b38",
+	"name": "Direct Debits",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"321ef932-2565-a072-2037-e560b44c7510",
+		"ffa7280a-ad16-c320-15b7-90c340c844d7",
+		"5590cba7-51a4-ec6b-de58-157c6d3ea923",
+		"f69d3b92-789a-3528-0be9-d88c8df25d51",
+		"9e8e46ae-dfac-d96a-3547-911177262999",
+		"e396f2ed-08e7-fe0f-3cf0-891cecb43799",
+		"d96ab89f-cd2b-5a34-7eca-92e8d1f009a4",
+		"a008a99c-4673-9a48-6d35-928eccb1aa4f",
+		"ffb4bbcf-e174-6ed9-4f3d-2fef670d8d08",
+		"35307502-ccae-7327-f134-d70ad57c9a75",
+		"c7ba6fa1-3190-4424-d851-d595d109c46d",
+		"88857ddc-b578-53b5-5ebe-b1bf99ab307f",
+		"ad7dcd55-f887-4718-af11-621ee089160f",
+		"ca679044-3720-45a7-92bd-374dcb001dc6"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "321ef932-2565-a072-2037-e560b44c7510",
+			"name": "Create an Enduser (individual)",
+			"url": "{{baseurl}}/v1/customer/endusers",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9fc7290c-6f23-40da-808b-7f72f061d61f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ddenduser_id\", jsonData.enduser_id);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "35307502-ccae-7327-f134-d70ad57c9a75",
+			"name": "pseudo-credit euro ledger",
+			"url": "{{baseurl}}/dev/customer/transactions/receive",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d07d6ac-d449-47c7-bd99-fe1899d5d5bf",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\r\n  \"amount\": \"4\",\r\n  \"bic_swift\": \"SPSRSKBA\",\r\n  \"iban\": \"{{ddiban1}}\"\r\n}",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "5590cba7-51a4-ec6b-de58-157c6d3ea923",
+			"name": "Create a 2nd EUR Ledger for Enduser",
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a5193d7-354c-473d-ba81-cb33096a5a75",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ddledger_id2\", jsonData.ledger_id);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{ddenduser_id}}\",\r\n  \"partner_product\": \"PayrNet-EUR-1\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "88857ddc-b578-53b5-5ebe-b1bf99ab307f",
+			"name": "Payment info",
+			"url": "{{baseurl}}/v1/customer/direct-debit/payments/{{payment_id}}",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "370e7e03-ee58-4243-94be-e0f240c33c04",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n  \"mandate_id\": \"{{mandate_id))\",\n  \"amount\": 3\n}  ",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "9e8e46ae-dfac-d96a-3547-911177262999",
+			"name": "Fetch ledger entity",
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ddledger_id1}}",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "19012372-b564-4d64-8941-f75de7b2daa6",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ddiban1\", jsonData.iban);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "",
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "a008a99c-4673-9a48-6d35-928eccb1aa4f",
+			"name": "Create mandate",
+			"url": "{{baseurl}}/v1/customer/direct-debit/mandates",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c423080-fa99-4dd6-868c-736cd557634c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"mandate_id\", jsonData.mandate_id);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n  \"iban\": \"{{ddiban1}}\",\n  \"account_holder_name\": \"Rebecca Baker\",\n  \"enduser_id\": \"{{ddenduser_id}}\",\n  \"ledger_to_id\": \"{{ddledger2}}\",\n  \"partner_product\": \"GoCardless-1\",\n  \"scheme\": \"sepa-core\",\n  \"description\": \"Gym membership\"\n}  ",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ad7dcd55-f887-4718-af11-621ee089160f",
+			"name": "Payments",
+			"url": "{{baseurl}}/v1/customer/direct-debit/payments",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "370e7e03-ee58-4243-94be-e0f240c33c04",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n  \"mandate_id\": \"{{mandate_id))\",\n  \"amount\": 3\n}  ",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c7ba6fa1-3190-4424-d851-d595d109c46d",
+			"name": "Create payment",
+			"url": "{{baseurl}}/v1/customer/direct-debit/payments",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "27930a02-3cab-4cb0-ba72-2b8fbe564035",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"payment_id\", jsonData.payment_id);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n  \"mandate_id\": \"{{mandate_id}}\",\n  \"amount\": 3,\n  \"description\": \"Gym membership\"\n}  ",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ca679044-3720-45a7-92bd-374dcb001dc6",
+			"name": "Recind mandate",
+			"url": "{{baseurl}}/v1/customer/direct-debit/mandates/{{mandate_id}}/cancel",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c423080-fa99-4dd6-868c-736cd557634c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"mandate_id\", jsonData.mandate_id);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n    \"account\": {\n      \"iban\": \"{{ddiban}}\",\n      \"bank_country\": \"GB\",\n      \"bank_code\": \"040052\",\n      \"bank_name\": \"PayrNet\",\n      \"asset_type\": \"eur\",\n      \"asset_class\": \"currency\",\n      \"bank_code_type\": \"sort-code\"\n    },\n  \"enduser_id\": \"{{ddenduser_id}}\",\n  \"ledger_to_id\": \"{{ddledger_id2}}\",\n  \"partner_product\": \"{{directdebitprodref}}\"\n}  ",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d96ab89f-cd2b-5a34-7eca-92e8d1f009a4",
+			"name": "Fetch ledger entity",
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ddledger_id2}}",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e12cf38-c3bb-4a86-997e-8b7bfbe29add",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ddiban2\", jsonData.iban);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "",
+			"headers": "Accept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "e396f2ed-08e7-fe0f-3cf0-891cecb43799",
+			"name": "Assign an IBAN for 2nd ledger",
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ddledger_id2}}/assign-iban",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe5c458f-bdbf-422d-bca2-821efc788ef8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ddiban2\", jsonData.iban);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "f69d3b92-789a-3528-0be9-d88c8df25d51",
+			"name": "Assign an IBAN for ledger",
+			"url": "{{baseurl}}/v1/customer/ledgers/{{ddledger_id1}}/assign-iban",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cdd76ac9-0bd1-414a-80d9-ffa48e75a42b",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ddiban1\", jsonData.iban);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ffa7280a-ad16-c320-15b7-90c340c844d7",
+			"name": "Create a EUR Ledger for Enduser",
+			"url": "{{baseurl}}/v1/customer/ledgers",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0fb4124d-dc12-4141-bf06-a4972aa594b8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ddledger_id1\", jsonData.ledger_id);"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\r\n  \"holder_id\": \"{{ddenduser_id}}\",\r\n  \"partner_product\": \"PayrNet-EUR-1\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ffb4bbcf-e174-6ed9-4f3d-2fef670d8d08",
+			"name": "Mandate",
+			"url": "{{baseurl}}/v1/customer/direct-debit/mandates/{{mandate_id}}",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "{{customer_api_key}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b3eba1f0-1470-4eb7-9096-351e50b9aa0d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: {{customer_api_key}}\n",
+			"pathVariables": {}
+		}
+	]
+}
