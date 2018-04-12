@@ -277,7 +277,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"webhook_url\": \"http://requestbin.fullcontact.com/qd0e4pqd\",\r\n  \"webhook_secret\": \"testing 0.24\"\r\n}"
+									"raw": "\r\n {\r\n \"webhook_secret\": \"testing0.25\",\r\n \"webhook_url\": \"http://requestbin.fullcontact.com/12cbiyv1\"\r\n}\r\n"
 								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/webhook",
@@ -364,7 +364,7 @@
 								],
 								"body": {},
 								"url": {
-									"raw": "{{baseurl}}/v1/customer/webhook/failed-to-deliver?from_date={{start_date}}&to_date={{end_date}}",
+									"raw": "{{baseurl}}/v1/customer/webhook/failed-to-deliver?from_date=2017-01-10&to_date=2019-01-10",
 									"host": [
 										"{{baseurl}}"
 									],
@@ -377,11 +377,11 @@
 									"query": [
 										{
 											"key": "from_date",
-											"value": "{{start_date}}"
+											"value": "2017-01-10"
 										},
 										{
 											"key": "to_date",
-											"value": "{{end_date}}"
+											"value": "2019-01-10"
 										}
 									]
 								}
@@ -586,58 +586,6 @@
 									"path": [
 										"delay",
 										"2"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Set product specific properties",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-											""
-										],
-										"id": "71e70546-9ba4-4819-b229-004dd424cb64",
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"api_key\": \"{{Airwallex_API_Key}}\",\r\n  \"client_id\": \"XS7OnlTgS8msEPDMLJ0l0g\"\r\n}"
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/my/products/Airwallex-FX-1",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"my",
-										"products",
-										"Airwallex-FX-1"
 									]
 								}
 							},
@@ -3148,58 +3096,6 @@
 										}
 									]
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "FX quote",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "d6c52a00-ef9e-4726-b6b5-0e30bd026760",
-										"type": "text/javascript",
-										"exec": [
-											"tests[\"Status code is 200\"] = responseCode.code === 200;",
-											""
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "{{customer_api_key}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"amount\": \"10\",\r\n  \"selling_currency\": \"GBP\",\r\n  \"buying_currency\": \"EUR\",\r\n  \"amount_fixed\": \"buy-amount\",\r\n  \"partner_product_fx\": \"Airwallex-FX-1\"\r\n}"
-								},
-								"url": {
-									"raw": "{{baseurl}}/v1/customer/transactions/fx/quote",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"v1",
-										"customer",
-										"transactions",
-										"fx",
-										"quote"
-									]
-								},
-								"description": "using SEPA\n"
 							},
 							"response": []
 						},
