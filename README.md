@@ -6,10 +6,10 @@ It may well fall out of date, as we primarily update the documentation, but if i
 
 To use this:
  - install Postman
- - add in the collection (`Railsbank API.postman_collection.json`)
+ - add in the collection (`Complete Railsbank API.postman_collection.json`)
  - add in the environment (`play.railsbank.com copy.postman_environment.json`)
- - dupicate the `play.railsbank.com copy` config to maybe `play.railsbank.com` 
+ - dupicate the `play.railsbank.com copy` config to maybe `play.railsbank.com`
  - add in your API key
- 
+
  WIN. 🦄
  
