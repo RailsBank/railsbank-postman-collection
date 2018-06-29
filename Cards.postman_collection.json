@@ -1,0 +1,1000 @@
+{
+	"info": {
+		"_postman_id": "8775238c-f000-4794-8acc-43dd7451136a",
+		"name": "Cards",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create an Enduser (individual) Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3186c25-6f81-4ab1-9325-4cc933c8f96f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    ",
+							"});",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"cardenduser_id\", jsonData.enduser_id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"London\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/endusers",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"endusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a EUR Ledger for Enduser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bd5f8d1e-618d-4010-8b05-3c36b78b0e8d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"cardEURledger_id\", jsonData.ledger_id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/ledgers",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"ledgers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a GBP Ledger for Enduser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7367b821-f1d4-4245-8127-b87413b3a641",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"cardGBPledger_id\", jsonData.ledger_id);",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/ledgers",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"ledgers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign an IBAN for ledger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6bedffb-ea47-4a9f-ac01-27e4c3f10cb2",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/ledgers/{{cardEURledger_id}}/assign-iban",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"ledgers",
+						"{{cardEURledger_id}}",
+						"assign-iban"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch first EUR ledger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c2f813d-67d0-4601-884f-6bf11722983c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"eur_iban_1\", jsonData.iban);",
+							"postman.setEnvironmentVariable(\"bic_swift_1\", jsonData.bic_swift);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/ledgers/{{cardEURledger_id}}/wait",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"ledgers",
+						"{{cardEURledger_id}}",
+						"wait"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch GBP ledger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"accountnumber\", jsonData.uk_account_number);",
+							"postman.setEnvironmentVariable(\"sortcode\", jsonData.uk_sort_code);"
+						],
+						"id": "4d572602-3677-4ac9-b654-94dd772e8282",
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/ledgers/{{cardGBPledger_id}}/wait",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"ledgers",
+						"{{cardGBPledger_id}}",
+						"wait"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issue Card for EUR ledger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc05f861-0520-46f1-9882-72a703f93e40",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"EURcard_id\", jsonData.ledger_id);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"partner_product\": \"{{cardprodref}}\",\r\n  \"ledger_id\": \"{{cardEURledger_id}}\",\r\n  \"card_program\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EUR card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6bedffb-ea47-4a9f-ac01-27e4c3f10cb2",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"partner_product\": \"{{cardprodref}}\",\r\n  \"ledger_id\": \"{{cardEURledger_id}}\",\r\n  \"card_program\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards/{{EURcard_id}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards",
+						"{{EURcard_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issue Card for GBP ledger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2941db8-a7b0-4a01-8e5a-71c7d83d5a61",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"GBPcard_id\", jsonData.ledger_id);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"partner_product\": \"{{cardprodref}}\",\r\n  \"ledger_id\": \"{{cardGBPledger_id}}\",\r\n  \"card_program\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GBP card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6bedffb-ea47-4a9f-ac01-27e4c3f10cb2",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"partner_product\": \"{{cardprodref}}\",\r\n  \"ledger_id\": \"{{cardEURledger_id}}\",\r\n  \"card_program\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards/{{GBPcard_id}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards",
+						"{{GBPcard_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate EUR card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6bedffb-ea47-4a9f-ac01-27e4c3f10cb2",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards/{{EURcard_id}}/activate",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards",
+						"{{EURcard_id}}",
+						"activate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate GBP card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6bedffb-ea47-4a9f-ac01-27e4c3f10cb2",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards/{{GBPcard_id}}/activate",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards",
+						"{{GBPcard_id}}",
+						"activate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disable EUR card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6bedffb-ea47-4a9f-ac01-27e4c3f10cb2",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards/{{EURcard_id}}/disable",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards",
+						"{{EURcard_id}}",
+						"disable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disable GBP card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6bedffb-ea47-4a9f-ac01-27e4c3f10cb2",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards/{{GBPcard_id}}/disable",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards",
+						"{{GBPcard_id}}",
+						"disable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all cards",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "366298c7-f705-485a-bb04-11a73740d6c9",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d72b2dfd-3462-4e39-a5c5-77f25e54256f",
+						"type": "text/javascript",
+						"exec": [
+							"[",
+							"  {",
+							"    \"card_id\": \"c91b339e-57d7-41ea-a805-8966ce8fe4ed\",",
+							"    \"card_status\": \"card-status-activating\",",
+							"    \"customer_id\": \"8763b5df-a61c-4f77-9724-41ca9cde3654\",",
+							"    \"partner_product\": \"ExampleBank-EUR-1\",",
+							"    \"ledger_id\": \"8763b5df-a61c-4f77-9724-41ca9cde3654\",",
+							"    \"card_program\": \"string\"",
+							"  },",
+							"  {",
+							"    \"card_id\": \"6630b391-c5ce-46c1-9d23-a82a9e27f82d\",",
+							"    \"card_status\": \"card-status-failed\",",
+							"    \"customer_id\": \"753fa673-66b4-4c94-9ddb-f9f4b5c1e9a3\",",
+							"    \"partner_product\": \"ExampleBank-EUR-1\",",
+							"    \"ledger_id\": \"8763b5df-a61c-4f77-9724-41ca9cde3654\",",
+							"    \"card_program\": \"some-chars\"",
+							"  },",
+							"  {",
+							"    \"card_id\": \"753fa673-66b4-4c94-9ddb-f9f4b5c1e9a3\",",
+							"    \"card_status\": \"card-status-activating\",",
+							"    \"customer_id\": \"bb8b2428-f94c-41df-8e82-a895ab4d6ac8\",",
+							"    \"partner_product\": \"ExampleBank-EUR-1\",",
+							"    \"ledger_id\": \"bb8b2428-f94c-41df-8e82-a895ab4d6ac8\",",
+							"    \"card_program\": \"string\"",
+							"  },",
+							"  {",
+							"    \"card_id\": \"6630b391-c5ce-46c1-9d23-a82a9e27f82d\",",
+							"    \"card_status\": \"card-status-failed\",",
+							"    \"customer_id\": \"753fa673-66b4-4c94-9ddb-f9f4b5c1e9a3\",",
+							"    \"partner_product\": \"ExampleBank-EUR-1\",",
+							"    \"ledger_id\": \"8763b5df-a61c-4f77-9724-41ca9cde3654\",",
+							"    \"card_program\": \"string\"",
+							"  }",
+							"]"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Card image",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "366298c7-f705-485a-bb04-11a73740d6c9",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d72b2dfd-3462-4e39-a5c5-77f25e54256f",
+						"type": "text/javascript",
+						"exec": [
+							"[",
+							"  {",
+							"    \"card_id\": \"c91b339e-57d7-41ea-a805-8966ce8fe4ed\",",
+							"    \"card_status\": \"card-status-activating\",",
+							"    \"customer_id\": \"8763b5df-a61c-4f77-9724-41ca9cde3654\",",
+							"    \"partner_product\": \"ExampleBank-EUR-1\",",
+							"    \"ledger_id\": \"8763b5df-a61c-4f77-9724-41ca9cde3654\",",
+							"    \"card_program\": \"string\"",
+							"  },",
+							"  {",
+							"    \"card_id\": \"6630b391-c5ce-46c1-9d23-a82a9e27f82d\",",
+							"    \"card_status\": \"card-status-failed\",",
+							"    \"customer_id\": \"753fa673-66b4-4c94-9ddb-f9f4b5c1e9a3\",",
+							"    \"partner_product\": \"ExampleBank-EUR-1\",",
+							"    \"ledger_id\": \"8763b5df-a61c-4f77-9724-41ca9cde3654\",",
+							"    \"card_program\": \"some-chars\"",
+							"  },",
+							"  {",
+							"    \"card_id\": \"753fa673-66b4-4c94-9ddb-f9f4b5c1e9a3\",",
+							"    \"card_status\": \"card-status-activating\",",
+							"    \"customer_id\": \"bb8b2428-f94c-41df-8e82-a895ab4d6ac8\",",
+							"    \"partner_product\": \"ExampleBank-EUR-1\",",
+							"    \"ledger_id\": \"bb8b2428-f94c-41df-8e82-a895ab4d6ac8\",",
+							"    \"card_program\": \"string\"",
+							"  },",
+							"  {",
+							"    \"card_id\": \"6630b391-c5ce-46c1-9d23-a82a9e27f82d\",",
+							"    \"card_status\": \"card-status-failed\",",
+							"    \"customer_id\": \"753fa673-66b4-4c94-9ddb-f9f4b5c1e9a3\",",
+							"    \"partner_product\": \"ExampleBank-EUR-1\",",
+							"    \"ledger_id\": \"8763b5df-a61c-4f77-9724-41ca9cde3654\",",
+							"    \"card_program\": \"string\"",
+							"  }",
+							"]"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/v1/customer/cards/{card_id}/image",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"v1",
+						"customer",
+						"cards",
+						"{card_id}",
+						"image"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
