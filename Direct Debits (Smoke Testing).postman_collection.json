@@ -360,7 +360,7 @@
 					"response": []
 				},
 				{
-					"name": "Recind mandate",
+					"name": "Cancel Mandate",
 					"event": [
 						{
 							"listen": "test",
@@ -404,7 +404,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"account\": {\n\t    \"iban\": \"{{ddiban}}\",\n\t    \"bank_country\": \"GB\",\n\t    \"bank_code\": \"040052\",\n\t    \"bank_name\": \"PayrNet\",\n\t    \"asset_type\": \"eur\",\n\t    \"asset_class\": \"currency\",\n\t    \"bank_code_type\": \"sort-code\"\n\t  },\n\t\"enduser_id\": \"{{ddenduser_id}}\",\n\t\"ledger_to_id\": \"{{ddledger_id2}}\",\n\t\"partner_product\": \"{{directdebitprodref}}\"\n}\t"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/direct-debit/mandates/{{mandate_id}}/cancel",
@@ -466,7 +466,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n      \"company\": { \n       \"name\": \"Southend Bakersr\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         },\n\t{\n       \"date_onboarded\": \"2015-11-21\" \n     },\n     {\n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+							"raw": "{\n      \"company\": { \n       \"name\": \"Southend Bakersr\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         },\n  {\n       \"date_onboarded\": \"2015-11-21\" \n     },\n     {\n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/endusers",
@@ -1142,7 +1142,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"mandate_id\": \"{{mandate_id))\",\n\t\"amount\": 3\n}\t"
+							"raw": "{\n  \"mandate_id\": \"{{mandate_id))\",\n  \"amount\": 3\n}  "
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/direct-debit/payments",
