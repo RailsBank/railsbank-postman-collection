@@ -47,7 +47,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"webhook_url\": \"http://requestbin.fullcontact.com/vbpxplvb\",\n\t\"webhook_secret\": \"Post release testing 0.24\"\n}"
+							"raw": "{\n  \"webhook_url\": \"http://requestbin.fullcontact.com/vbpxplvb\",\n  \"webhook_secret\": \"Post release testing 0.24\"\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/webhook",
@@ -803,7 +803,59 @@
 			"description": "Creates an transaction that breaks a set firewall rule. Displays that the transaction is in quarantine to prove the rules work.",
 			"item": [
 				{
-					"name": "Standard transaction",
+					"name": "Add a New Beneficiary (Check for BIC required)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "01c8e672-472b-4961-8a92-aab108e3ab86",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"businessGBPbeneficiary_id1\", jsonData.beneficiary_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"iban\": \"AU75700111106050110069\",\r\n  \"holder_id\": \"{{businessEURenduser_id1}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"EUR\",\r\n  \"company\": {\r\n    \"name\": \"Transferwise\",\r\n     \"address\": {  \r\n         \"address_refinement\": \"Apartment 42\", \r\n         \"address_number\": \"29\", \r\n         \"address_street\": \"Acacia Road\", \r\n         \"address_city\": \"London\", \r\n         \"address_postal_code\": \"SS0 8JH\", \r\n         \"address_iso_country\": \"GBR\" \r\n       }\r\n}\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries"
+							]
+						},
+						"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891"
+					},
+					"response": []
+				},
+				{
+					"name": "Standard transaction (No BIC, invalid IBAN)",
 					"event": [
 						{
 							"listen": "test",
@@ -840,7 +892,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"ledger_id\": \"{{businessGBPledger_id1}}\",\r\n  \"beneficiary_id\": \"{{transferwiseEURbeneficiary_id}}\",\r\n  \"payment_type\": \"payment-type-EU-SEPA-Step2\",\r\n  \"amount\": \"4\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"ledger_id\": \"{{businessGBPledger_id1}}\",\r\n  \"beneficiary_id\": \"{{businessGBPbeneficiary_id1}}\",\r\n  \"payment_type\": \"payment-type-EU-SEPA-Step2\",\r\n  \"amount\": \"2\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions",
@@ -853,58 +905,6 @@
 								"transactions"
 							]
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add a New Beneficiary (Transferwise EUR)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "01c8e672-472b-4961-8a92-aab108e3ab86",
-								"type": "text/javascript",
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									"var jsonData = JSON.parse(responseBody);",
-									"pm.environment.set(\"businessGBPbeneficiary_id1\", jsonData.beneficiary_id);"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"iban\": \"DE75700111106050110069\",\r\n  \"bic_swift\": \"DEKTDE7GXXX\",\r\n  \"holder_id\": \"{{businessEURenduser_id1}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"EUR\",\r\n  \"company\": {\r\n    \"name\": \"Transferwise\"\r\n}\r\n}"
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/beneficiaries",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"beneficiaries"
-							]
-						},
-						"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891"
 					},
 					"response": []
 				},
@@ -951,6 +951,314 @@
 								"customer",
 								"transactions",
 								"{{businessEURtransaction_id2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a New Beneficiary (Transferwise EUR 1- No BIC)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fb7440a3-ec49-4b06-9d31-82dbaf160d47",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"businessGBPbeneficiary_id2\", jsonData.beneficiary_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"iban\": \"DE75700111106050110069\",\r\n  \"holder_id\": \"{{businessEURenduser_id1}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"EUR\",\r\n  \"company\": {\r\n    \"name\": \"Transferwise\",\r\n     \"address\": {  \r\n         \"address_refinement\": \"Apartment 42\", \r\n         \"address_number\": \"29\", \r\n         \"address_street\": \"Acacia Road\", \r\n         \"address_city\": \"London\", \r\n         \"address_postal_code\": \"SS0 8JH\", \r\n         \"address_iso_country\": \"GBR\" \r\n       }\r\n}\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries"
+							]
+						},
+						"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891"
+					},
+					"response": []
+				},
+				{
+					"name": "Standard transaction (No BIC, valid IBAN)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0081a160-d3ae-4bc3-8463-d850e1d2ef2f",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"if (responseCode.code === 200){",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"businessEURtransaction_id3\", jsonData.transaction_id);",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ledger_id\": \"{{businessGBPledger_id1}}\",\r\n  \"beneficiary_id\": \"{{businessGBPbeneficiary_id2}}\",\r\n  \"payment_type\": \"payment-type-EU-SEPA-Step2\",\r\n  \"amount\": \"2\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"do_not_require_bic\": true\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Transaction Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e5e5d6f-2647-4196-a7f3-59530dd8edef",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Transaction firewall successful\"] = jsonData.transaction_status === \"transaction-status-accepted\";"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/{{businessEURtransaction_id3}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"{{businessEURtransaction_id3}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a New Beneficiary (Transferwise EUR 2- BIC)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ce30db14-0510-4fd8-b3d2-f08d76362aa1",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"businessGBPbeneficiary_id3\", jsonData.beneficiary_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"iban\": \"DE75700111106050110069\",\r\n  \"bic_swift\": \"DEKTDE7GXXX\",\r\n  \"holder_id\": \"{{businessEURenduser_id1}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"EUR\",\r\n  \"company\": {\r\n    \"name\": \"Transferwise\",\r\n     \"address\": {  \r\n         \"address_refinement\": \"Apartment 42\", \r\n         \"address_number\": \"29\", \r\n         \"address_street\": \"Acacia Road\", \r\n         \"address_city\": \"London\", \r\n         \"address_postal_code\": \"SS0 8JH\", \r\n         \"address_iso_country\": \"GBR\" \r\n       }\r\n}\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries"
+							]
+						},
+						"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891"
+					},
+					"response": []
+				},
+				{
+					"name": "Standard transaction (BIC + IBAN)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3ae67368-6bc4-4417-a80f-b424124f781d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"if (responseCode.code === 200){",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"businessEURtransaction_id4\", jsonData.transaction_id);",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ledger_id\": \"{{businessGBPledger_id1}}\",\r\n  \"beneficiary_id\": \"{{businessGBPbeneficiary_id3}}\",\r\n  \"payment_type\": \"payment-type-EU-SEPA-Step2\",\r\n  \"amount\": \"2\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Transaction Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e5e5d6f-2647-4196-a7f3-59530dd8edef",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Transaction firewall successful\"] = jsonData.transaction_status === \"transaction-status-accepted\";"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/{{businessEURtransaction_id4}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"{{businessEURtransaction_id4}}"
 							]
 						}
 					},
