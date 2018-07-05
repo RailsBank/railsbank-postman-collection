@@ -774,6 +774,7 @@
 							"formdata": [
 								{
 									"key": "file",
+									"value": "",
 									"description": "",
 									"type": "file"
 								},
@@ -909,6 +910,7 @@
 							"formdata": [
 								{
 									"key": "file",
+									"value": "",
 									"description": "",
 									"type": "file"
 								},
@@ -1155,7 +1157,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"compliance_firewall_rules\": \"\r\n  [rules\r\n          [rule\r\n           :document-driving-licence\r\n           [let [ic [identity-check! enduser]\r\n                 ic-status [get ic :status]]\r\n            [if [= ic-status \\\"ok\\\"]\r\n             [let [ca [screening enduser]\r\n                   hits [get ca \\\"total_hits\\\"]]\r\n              [if [> hits 0]\r\n               quarantine\r\n               ok]]\r\n             [let [dc [document-check-driving-licence! enduser]\r\n                   dc-status [get dc :status]]\r\n              [if [= dc-status \\\"ok\\\"]\r\n               [let [ca [screening enduser]\r\n                     hits [get ca \\\"total_hits\\\"]]\r\n                [if [> hits 0]\r\n                 quarantine\r\n                 ok]]\r\n               quarantine]]]]]]\r\n        \"\r\n           }"
+							"raw": "{\r\n  \"compliance_firewall_rules\": \"\r\n  [rules \\\"Quarantine if enduser fails identity check or document check or screening\\\"\r\n          [rule\r\n           :document-driving-licence \\\"Quarantine first if identity passes then screening fails\\\"\r\n           [let [ic [identity-check! enduser]\r\n                 ic-status [get ic :status]]\r\n            [if [= ic-status \\\"ok\\\"]\r\n             [let [ca [screening enduser]\r\n                   hits [get ca \\\"total_hits\\\"]]\r\n              [if [> hits 0]\r\n               quarantine\r\n               ok]]\r\n             [let [dc [document-check-driving-licence! enduser]\r\n                   dc-status [get dc :status]]\r\n              [if [= dc-status \\\"ok\\\"]\r\n               [let [ca [screening enduser]\r\n                     hits [get ca \\\"total_hits\\\"]]\r\n                [if [> hits 0]\r\n                 quarantine\r\n                 ok]]\r\n               quarantine]]]]]]\r\n        \"\r\n           }"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/endusers",
@@ -1173,7 +1175,7 @@
 					"response": []
 				},
 				{
-					"name": "Create an Enduser (Nigel)",
+					"name": "Create an Enduser (Harrison Smith)",
 					"event": [
 						{
 							"listen": "test",
@@ -1209,7 +1211,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n      \"person\": { \n       \"name\": \"Nigel Verdon\",\n          \"email\": \"nigel@railsbank.com\",\n          \"date_of_birth\": \"1967-04-01\",\n          \"telephone\": \"0012345678912\",\n          \"address\": {\n            \"address_refinement\": \"Apartment 124, Globe View\",\n            \"address_number\": \"10\",\n            \"address_street\": \"High Timber Street\",\n            \"address_city\": \"London\",\n            \"address_postal_code\": \"EC4V 3PN\",\n            \"address_region\": \"Greater London\",\n            \"address_iso_country\": \"GBR\"\n       }, \n       \"address_history\": [ \n         { \n        \"address_refinement\": \"Apartment 124, Globe View\",\n            \"address_number\": \"10\",\n            \"address_street\": \"High Timber Street\",\n            \"address_city\": \"London\",\n            \"address_postal_code\": \"EC4V 3PN\",\n            \"address_region\": \"Greater London\",\n            \"address_iso_country\": \"GBR\",\n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2022-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"British\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+							"raw": "{\n      \"person\": { \n       \"name\": \"Harrison Smith\", \n       \"email\": \"harrison@railsbank.com\", \n       \"date_of_birth\": \"1999-08-21\", \n       \"telephone\": \"+44 7429576044\", \n       \"address\": {  \n         \"address_refinement\": \"Bramber\", \n         \"address_number\": \"65\", \n         \"address_street\": \"Chalkwell Esplanade\", \n         \"address_city\": \"Westcliff-on-Sea\", \n         \"address_postal_code\": \"SS0 8JH\", \n         \"address_iso_country\": \"GBR\" \n       }, \n   \n       \"nationality\": [ \n         \"British\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2018-01-01\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/endusers",
@@ -1497,7 +1499,7 @@
 					"response": []
 				},
 				{
-					"name": "Upload Harrison Smith passport",
+					"name": "Upload Harrison Smith old passport",
 					"event": [
 						{
 							"listen": "test",
@@ -1536,13 +1538,11 @@
 								{
 									"key": "file",
 									"value": "",
-									"description": "",
 									"type": "file"
 								},
 								{
 									"key": "idv_document_type",
 									"value": "passport",
-									"description": "",
 									"type": "text"
 								}
 							]
@@ -1603,26 +1603,23 @@
 							"formdata": [
 								{
 									"key": "file",
-									"description": "",
+									"value": "",
 									"type": "file"
 								},
 								{
 									"key": "idv_document_type",
 									"value": "driving-licence-front",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "file",
 									"value": "",
-									"description": "",
 									"type": "file",
 									"disabled": true
 								},
 								{
 									"key": "idv_document_type",
 									"value": "driving-licence-back",
-									"description": "",
 									"type": "text",
 									"disabled": true
 								}
@@ -1962,7 +1959,7 @@
 					"response": []
 				},
 				{
-					"name": "Upload Harrison Smith passport",
+					"name": "Upload Harrison Smith new passport",
 					"event": [
 						{
 							"listen": "test",
@@ -2001,13 +1998,11 @@
 								{
 									"key": "file",
 									"value": "",
-									"description": "",
 									"type": "file"
 								},
 								{
 									"key": "idv_document_type",
 									"value": "passport",
-									"description": "",
 									"type": "text"
 								}
 							]
@@ -2068,26 +2063,23 @@
 							"formdata": [
 								{
 									"key": "file",
-									"description": "",
+									"value": "",
 									"type": "file"
 								},
 								{
 									"key": "idv_document_type",
 									"value": "driving-licence-front",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "file",
 									"value": "",
-									"description": "",
 									"type": "file",
 									"disabled": true
 								},
 								{
 									"key": "idv_document_type",
 									"value": "driving-licence-back",
-									"description": "",
 									"type": "text",
 									"disabled": true
 								}
@@ -2473,56 +2465,6 @@
 								"endusers",
 								"{{enduser_id}}",
 								"wait"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Set ID&V firewall rules (transactions)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-								],
-								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\"compliance_firewall_rules\": \r\n\t\t\" [rules \r\n\t\t\t[rule \r\n\t\t\t:identity-check\r\n\t\t\t[let [ic [identity-check! sender] \r\n\t\t\tstatus [get ic :status]] \r\n\t\t\t[if [= status \\\"ok\\\"\r\n\t\t\t] ok quarantine]]]]\r\n\t\t\t\" \r\n}"
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"compliance-firewall-rules",
-								"transactions"
 							]
 						}
 					},
@@ -2966,7 +2908,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"amount\": 4,\r\n  \"bic_swift\": \"PAYRGB21\",\r\n  \"iban\": \"{{iban}}\"\r\n}"
+							"raw": "{\r\n  \"amount\": 4,\r\n  \"bic_swift\": \"{{bic_swift_1}}\",\r\n  \"iban\": \"{{eur_iban_1}}\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/dev/customer/transactions/receive",
@@ -2978,6 +2920,56 @@
 								"customer",
 								"transactions",
 								"receive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set ID&V firewall rules (transactions)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"compliance_firewall_rules\": \r\n    \" [rules \r\n      [rule \r\n      :identity-check\r\n      [let [ic [identity-check! sender] \r\n      status [get ic :status]] \r\n      [if [= status \\\"ok\\\"\r\n      ] ok quarantine]]]]\r\n      \" \r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"transactions"
 							]
 						}
 					},
@@ -3357,13 +3349,11 @@
 								{
 									"key": "file",
 									"value": "",
-									"description": "",
 									"type": "file"
 								},
 								{
 									"key": "idv_document_type",
 									"value": "driving-licence-back",
-									"description": "",
 									"type": "text"
 								}
 							]
@@ -3583,7 +3573,7 @@
 					"response": []
 				},
 				{
-					"name": "Create an Enduser (individual)",
+					"name": "Create an Enduser (Harrison Smith)",
 					"event": [
 						{
 							"listen": "test",
@@ -3619,7 +3609,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\" \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+							"raw": "{\n      \"person\": { \n       \"name\": \"Harrison Smith\", \n       \"email\": \"harrison@railsbank.com\", \n       \"date_of_birth\": \"1999-08-21\", \n       \"telephone\": \"+44 7429576044\", \n       \"address\": {  \n         \"address_refinement\": \"Bramber\", \n         \"address_number\": \"65\", \n         \"address_street\": \"Chalkwell Esplanade\", \n         \"address_city\": \"Westcliff-on-Sea\", \n         \"address_postal_code\": \"SS0 8JH\", \n         \"address_iso_country\": \"GBR\" \n       }, \n   \n       \"nationality\": [ \n         \"British\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2018-01-01\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/endusers",
