@@ -7,6 +7,65 @@
 	},
 	"item": [
 		{
+			"name": "Webhook",
+			"description": "",
+			"item": [
+				{
+					"name": "Set webhook",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fbfcdcd4-5d63-421a-b2f4-1b594303554a",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"webhook_url\": \"http://requestbin.fullcontact.com/vbpxplvb\",\n  \"webhook_secret\": \"Post release testing 0.24\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/webhook",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Enduser Compliance ",
 			"description": "Creates an enduser that breaks a set firewall rule. Resolves the enduser's case in quarantine.",
 			"item": [
@@ -489,6 +548,58 @@
 					"response": []
 				},
 				{
+					"name": "Create a second GBP Ledger for Enduser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "33147145-1dab-4a57-b151-6f3645e805df",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"businessGBPledger_id2\", jsonData.ledger_id);",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{businessGBPenduser_id1}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Fetch GBP ledger entity",
 					"event": [
 						{
@@ -538,6 +649,55 @@
 					"response": []
 				},
 				{
+					"name": "Fetch second GBP ledger entity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "929e2953-d6a0-416a-b01e-bc5c37168464",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"accountnumber2\", jsonData.uk_account_number);",
+									"postman.setEnvironmentVariable(\"sortcode2\", jsonData.uk_sort_code);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{businessGBPledger_id2}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{businessGBPledger_id2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Add a New Beneficiary (Individual)",
 					"event": [
 						{
@@ -572,7 +732,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"uk-account_number\": \"{{accountnumber1}}\",\r\n  \"uk_sort_code\": \"{{sortcode1}}\",\r\n  \"holder_id\": \"{{businessGBPenduser_id1}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"uk-account_number\": \"{{accountnumber2}}\",\r\n  \"uk_sort_code\": \"{{sortcode2}}\",\r\n  \"holder_id\": \"{{businessGBPenduser_id1}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries",
@@ -627,7 +787,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"ledger_id\": \"{{LukeCartwrightGBPledger_id}}\",\r\n  \"beneficiary_id\": \"{{businessGBPbeneficiary_id1}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"4\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"ledger_id\": \"{{businessGBPledger_id1}}\",\r\n  \"beneficiary_id\": \"{{businessGBPbeneficiary_id1}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"4\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions",
@@ -695,232 +855,6 @@
 			"description": "Creates an enduser, creates a ledger for that enduser, transfers money to that ledger from the company ledger.",
 			"item": [
 				{
-					"name": "Create an Enduser (individual)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "4812944e-1e6b-4d89-b067-df480972ee02",
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"businessGBPenduser_id2\", jsonData.enduser_id);"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n      \"person\": { \n       \"name\": \"Robert Parker\", \n       \"email\": \"robertparker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\" \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/endusers",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"endusers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Enduser Wait",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/endusers/{{businessGBPenduser_id2}}/wait",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"endusers",
-								"{{businessGBPenduser_id2}}",
-								"wait"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create a GBP Ledger for Enduser",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "22f5d676-412e-445f-9235-a1ad5e60978d",
-								"type": "text/javascript",
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"businessGBPledger_id2\", jsonData.ledger_id);",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"holder_id\": \"{{businessGBPenduser_id2}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"ledgers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Helper: Delay 5s",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://postman-echo.com/delay/10",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"delay",
-								"10"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Ledger Wait",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "87c3789c-3460-4f3c-ab87-9559794962d6",
-								"type": "text/javascript",
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"accountnumber2\", jsonData.uk_account_number);",
-									"postman.setEnvironmentVariable(\"sortcode2\", jsonData.uk_sort_code);"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/{{businessGBPledger_id2}}/wait",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"ledgers",
-								"{{businessGBPledger_id2}}",
-								"wait"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Inter-Ledger Transfer",
 					"event": [
 						{
@@ -955,7 +889,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"amount\": \"2\",\n  \"ledger_from_id\": \"{{businessGBPledger_id1}}\",\n  \"ledger_to_id\": \"{{businessGBPledger_id2}}\",\n  \"transaction_meta\": {\n    \"foo\": \"bar\"\n  }\n}"
+							"raw": "{\n  \"amount\": \"2\",\n  \"ledger_from_id\": \"{{businessGBPledger_id2}}\",\n  \"ledger_to_id\": \"{{businessGBPledger_id1}}\",\n  \"transaction_meta\": {\n    \"foo\": \"bar\"\n  }\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions/inter-ledger",
@@ -970,141 +904,6 @@
 							]
 						},
 						"description": "from ledger id to second ledger id"
-					},
-					"response": []
-				},
-				{
-					"name": "Wait 30s",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "99e15175-46d9-4b3a-8d83-eaf3ae149e42",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://postman-echo.com/delay/10",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"delay",
-								"10"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Wait 30s",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "99e15175-46d9-4b3a-8d83-eaf3ae149e42",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://postman-echo.com/delay/10",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"delay",
-								"10"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Wait 30s",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "99e15175-46d9-4b3a-8d83-eaf3ae149e42",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://postman-echo.com/delay/10",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"delay",
-								"10"
-							]
-						}
 					},
 					"response": []
 				},
@@ -1565,7 +1364,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/{{whisky_ledger_id}}/",
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{second_whisky_ledger_id}}/",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -1573,7 +1372,7 @@
 								"v1",
 								"customer",
 								"ledgers",
-								"{{whisky_ledger_id}}",
+								"{{second_whisky_ledger_id}}",
 								""
 							]
 						}
@@ -1634,56 +1433,7 @@
 			"description": "",
 			"item": [
 				{
-					"name": "Fetch GBP ledger entity",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "a6b40347-3fec-469b-8841-4281ab779512",
-								"type": "text/javascript",
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"accountnumber2\", jsonData.uk_account_number);",
-									"postman.setEnvironmentVariable(\"sortcode2\", jsonData.uk_sort_code);"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/{{businessGBPledger_id2}}",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"ledgers",
-								"{{businessGBPledger_id2}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add a New Beneficiary (Individual) GBP",
+					"name": "Add beneficiary for first ledger",
 					"event": [
 						{
 							"listen": "test",
@@ -1717,7 +1467,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"uk_account_number\": \"{{accountnumber2}}\",\r\n  \"uk_sort_code\": \"{{sortcode2}}\",\r\n  \"holder_id\": \"{{businessGBPenduser_id2}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"bic_swift\": \"SPSRSKBAXXX\",\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"uk_account_number\": \"{{accountnumber1}}\",\r\n  \"uk_sort_code\": \"{{sortcode2}}\",\r\n  \"holder_id\": \"{{businessGBPenduser_id2}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"bic_swift\": \"SPSRSKBAXXX\",\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries",
@@ -1772,7 +1522,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"ledger_id\": \"{{businessGBPledger_id1}}\",\r\n  \"beneficiary_id\": \"{{businessGBPbeneficiary_id2}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"2\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"ledger_id\": \"{{businessGBPledger_id2}}\",\r\n  \"beneficiary_id\": \"{{businessGBPbeneficiary_id2}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"2\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions",
@@ -1927,7 +1677,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"ledger_id\": \"{{businessGBPledger_id2}}\",\r\n  \"beneficiary_id\": \"{{transferwiseGBPbeneficiary_id}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"4\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"ledger_id\": \"{{businessGBPledger_id1}}\",\r\n  \"beneficiary_id\": \"{{transferwiseGBPbeneficiary_id}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"4\",\r\n \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions",
