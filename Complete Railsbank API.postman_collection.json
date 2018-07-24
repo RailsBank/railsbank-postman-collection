@@ -57,7 +57,7 @@
 					"response": []
 				},
 				{
-					"name": "Customer's ledgers",
+					"name": "Customer's ledgers (items per page)",
 					"event": [
 						{
 							"listen": "test",
@@ -86,7 +86,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers",
+							"raw": "{{baseurl}}/v1/customer/ledgers?items_per_page=25",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -94,6 +94,12 @@
 								"v1",
 								"customer",
 								"ledgers"
+							],
+							"query": [
+								{
+									"key": "items_per_page",
+									"value": "25"
+								}
 							]
 						}
 					},
@@ -149,7 +155,7 @@
 					"response": []
 				},
 				{
-					"name": "Customer's ledgers partner product filter",
+					"name": "Customer's ledgers partner product filter (EUR)",
 					"event": [
 						{
 							"listen": "test",
@@ -198,6 +204,104 @@
 					"response": []
 				},
 				{
+					"name": "Customer's ledgers partner product filter (GBP)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers?partner_product={{gbpledger_prodref}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							],
+							"query": [
+								{
+									"key": "partner_product",
+									"value": "{{gbpledger_prodref}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer's ledgers partner product filter (Virtual)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers?partner_product={{virtual_prodref}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							],
+							"query": [
+								{
+									"key": "partner_product",
+									"value": "{{virtual_prodref}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Customer's endusers",
 					"event": [
 						{
@@ -227,7 +331,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/endusers",
+							"raw": "{{baseurl}}/v1/customer/endusers?items_per_page=75",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -235,6 +339,64 @@
 								"v1",
 								"customer",
 								"endusers"
+							],
+							"query": [
+								{
+									"key": "items_per_page",
+									"value": "75"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all beneficiaries (starting at date)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "366298c7-f705-485a-bb04-11a73740d6c9",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries?starting_at_date=2018-02-01",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries"
+							],
+							"query": [
+								{
+									"key": "starting_at_date",
+									"value": "2018-02-01"
+								}
 							]
 						}
 					},
@@ -273,7 +435,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"webhook_url\": \"http://requestbin.fullcontact.com/qd0e4pqd\",\r\n  \"webhook_secret\": \"testing 0.24\"\r\n}"
+							"raw": "{\r\n  \"webhook_url\": \"http://34.245.114.203:8000/150zxvr1\",\r\n  \"webhook_secret\": \"testing 0.31\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/webhook",
@@ -284,6 +446,56 @@
 								"v1",
 								"customer",
 								"webhook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ledger secret",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e170a48-b5b8-4dab-ac71-74c19a2f801a",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"webhook_secret\": \"new webhook\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/webhook/update-secret",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"webhook",
+								"update-secret"
 							]
 						}
 					},
@@ -432,7 +644,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "457d524a-cb78-4309-8784-c7a76f7f94b6",
+								"id": "3e450626-3846-4d68-9001-d865cd3be421",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 400\"] = responseCode.code === 400;",
@@ -564,82 +776,6 @@
 					"response": []
 				},
 				{
-					"name": "Helper: Delay 2s",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://postman-echo.com/delay/2",
-							"protocol": "https",
-							"host": [
-								"postman-echo",
-								"com"
-							],
-							"path": [
-								"delay",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Set product specific properties",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									""
-								],
-								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"api_key\": \"{{Airwallex_API_Key}}\",\r\n  \"client_id\": \"XS7OnlTgS8msEPDMLJ0l0g\"\r\n}"
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/my/products/Airwallex-FX-1",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"my",
-								"products",
-								"Airwallex-FX-1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "List of customer notifications",
 					"event": [
 						{
@@ -746,6 +882,58 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Set product specific properties",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"api_key\": \"{{Airwallex_API_Key}}\",\r\n  \"client_id\": \"XS7OnlTgS8msEPDMLJ0l0g\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/my/products/Airwallex-FX-1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"my",
+								"products",
+								"Airwallex-FX-1"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
@@ -813,7 +1001,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"London\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/endusers",
@@ -867,7 +1055,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca O'Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca O'Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Southend-on-Sea\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/endusers",
@@ -1206,6 +1394,58 @@
 				},
 				{
 					"name": "Create a GBP Ledger for Enduser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"GBPledger_id\", jsonData.ledger_id);",
+									""
+								],
+								"id": "bc166afe-bbaf-473c-b01e-6df91b76bf66",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a GBP float ledger",
 					"event": [
 						{
 							"listen": "test",
@@ -2213,7 +2453,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"uk_account_number\": \"{{accountnumber}}\",\r\n  \"uk_sort_code\": \"{{sortcode}}\",\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"California\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"bananaman@example.net\",\r\n    \"name\": \"Eric Wimp\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_region\": \"California\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"uk_account_number\": \"{{accountnumber}}\",\r\n  \"uk_sort_code\": \"{{sortcode}}\",\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"johnsmith@example.net\",\r\n    \"name\": \"Henry Jones\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"London\",\r\n      \"address_region\": \"Essex\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"British\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries",
@@ -2283,57 +2523,6 @@
 					"response": []
 				},
 				{
-					"name": "Initiate idv identity check",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-								],
-								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"idv_check_scenario\": \"PayrNet-IdVS1-identity-check\"\r\n}"
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/idv-checks",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"beneficiaries",
-								"{{beneficiary_id}}",
-								"idv-checks"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Update a Beneficiary",
 					"event": [
 						{
@@ -2381,52 +2570,6 @@
 							]
 						},
 						"description": "update receiver beneficiary\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Beneficiary idv checks",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/idv-checks",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"beneficiaries",
-								"{{beneficiary_id}}",
-								"idv-checks"
-							]
-						}
 					},
 					"response": []
 				},
@@ -2733,18 +2876,67 @@
 					"response": []
 				},
 				{
-					"name": "List all beneficiaries",
+					"name": "Initiate idv identity check",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "366298c7-f705-485a-bb04-11a73740d6c9",
-								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									""
-								]
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idv_check_scenario\": \"PayrNet-IdVS1-identity-check\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/idv-checks",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"idv-checks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Beneficiary idv checks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2765,14 +2957,16 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/beneficiaries",
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/idv-checks",
 							"host": [
 								"{{baseurl}}"
 							],
 							"path": [
 								"v1",
 								"customer",
-								"beneficiaries"
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"idv-checks"
 							]
 						}
 					},
@@ -3036,7 +3230,7 @@
 					"response": []
 				},
 				{
-					"name": "Transactions in time frame",
+					"name": "Transactions (last seen id)",
 					"event": [
 						{
 							"listen": "test",
@@ -3066,7 +3260,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/transactions?from-date={{start_date}}&to_date{{end_date}}",
+							"raw": "{{baseurl}}/v1/customer/transactions?last_seen_id={{enduser_id}}",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -3077,12 +3271,8 @@
 							],
 							"query": [
 								{
-									"key": "from-date",
-									"value": "{{start_date}}"
-								},
-								{
-									"key": "to_date{{end_date}}",
-									"value": null
+									"key": "last_seen_id",
+									"value": "{{enduser_id}}"
 								}
 							]
 						}
@@ -3483,7 +3673,7 @@
 					"response": []
 				},
 				{
-					"name": "Helper: Delay 10s",
+					"name": "Helper: Delay 5s",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3492,7 +3682,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://postman-echo.com/delay/10",
+							"raw": "https://postman-echo.com/delay/5",
 							"protocol": "https",
 							"host": [
 								"postman-echo",
@@ -3500,7 +3690,31 @@
 							],
 							"path": [
 								"delay",
-								"10"
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Helper: Delay 5s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/5",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"5"
 							]
 						}
 					},
@@ -3811,6 +4025,30 @@
 								"mandates",
 								"{{mandate_id}}",
 								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Helper: Delay 10s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/10",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"10"
 							]
 						}
 					},
