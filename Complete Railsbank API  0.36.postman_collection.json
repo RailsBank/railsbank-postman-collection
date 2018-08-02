@@ -1,0 +1,5404 @@
+{
+	"info": {
+		"_postman_id": "1dcc2d8b-77f8-47d9-932c-19da3af70860",
+		"name": "Complete Railsbank API  0.36",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "0a9e1672-471d-4551-abca-2b1ea15b7b84",
+			"name": "Info about self",
+			"item": [
+				{
+					"_postman_id": "3f47a62d-be60-4198-b99e-2b5e3815d30f",
+					"name": "Whoami",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "551aa043-0474-4c61-93d6-10301ef6b24b",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"customer_id\", jsonData.customer_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/me",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"me"
+							]
+						},
+						"description": "also set test time stamp"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "b1b8052d-f71d-47b9-81c6-dbd005f9d076",
+					"name": "Customer's ledgers (items per page)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers?items_per_page=25",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							],
+							"query": [
+								{
+									"key": "items_per_page",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "75efdd27-dc41-4434-8cd6-344af051336b",
+					"name": "Customer's ledgers holder id filter",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers?holder_id={{customer_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							],
+							"query": [
+								{
+									"key": "holder_id",
+									"value": "{{customer_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "22df9342-8443-43f6-a3ab-de662a4cb0c3",
+					"name": "Customer's ledgers partner product filter (EUR)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers?partner_product={{euroledger_prodref}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							],
+							"query": [
+								{
+									"key": "partner_product",
+									"value": "{{euroledger_prodref}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "fba1c5f1-3142-4674-9dac-f34a3da1ca79",
+					"name": "Customer's ledgers partner product filter (GBP)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers?partner_product={{gbpledger_prodref}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							],
+							"query": [
+								{
+									"key": "partner_product",
+									"value": "{{gbpledger_prodref}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "eb355e41-c49f-424b-ba22-c6cff641d405",
+					"name": "Customer's ledgers partner product filter (Virtual)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers?partner_product={{virtual_prodref}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							],
+							"query": [
+								{
+									"key": "partner_product",
+									"value": "{{virtual_prodref}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "0f8f02f7-433a-41ea-9a30-74d59dc7b385",
+					"name": "Customer's endusers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/endusers?items_per_page=75",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"endusers"
+							],
+							"query": [
+								{
+									"key": "items_per_page",
+									"value": "75"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "defe06f6-8f8c-4662-9545-10c542f2a639",
+					"name": "List all beneficiaries (starting at date)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "366298c7-f705-485a-bb04-11a73740d6c9",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries?starting_at_date=2018-02-01",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries"
+							],
+							"query": [
+								{
+									"key": "starting_at_date",
+									"value": "2018-02-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "1d2d2212-8e7b-41c6-8842-1754a45aa53c",
+					"name": "Attempt to set a good webhook",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e170a48-b5b8-4dab-ac71-74c19a2f801a",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"webhook_url\": \"http://34.245.114.203:8000/1ce71eb1\",\r\n  \"webhook_secret\": \"testing 0.36\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/webhook",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "4207f5cc-a509-4862-b977-84cb1d58a5d6",
+					"name": "Update ledger secret",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e170a48-b5b8-4dab-ac71-74c19a2f801a",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"webhook_secret\": \"0.36\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/webhook/update-secret",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"webhook",
+								"update-secret"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "c75653a5-7182-4e7d-a847-eb33b6b6f5a2",
+					"name": "Customer Webhook",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/webhook",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "049ea255-367d-4fb0-9fa8-70f3eb6c8d78",
+					"name": "Customer Webhook fails",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/webhook/failed-to-deliver?from_date={{start_date}}&to_date={{end_date}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"webhook",
+								"failed-to-deliver"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "{{start_date}}"
+								},
+								{
+									"key": "to_date",
+									"value": "{{end_date}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "090819b1-60f0-4b32-9664-b7ec3b4cc73b",
+					"name": "Customer Webhook",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3fead76-8909-4c14-b59f-abaa4919c4a1",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/webhook",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "705663ce-07ca-4cc3-acc1-bcba5bc07f19",
+					"name": "Attempt to set a bad webhook",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3e450626-3846-4d68-9001-d865cd3be421",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"webhook_url\": \"=efuheiufuerf\",\r\n  \"webhook_secret\": \"our_first_webhook\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/webhook",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "1eb759af-edf2-48cd-a584-91d4f5b1caff",
+					"name": "Customer's partners",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/my/partners",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"my",
+								"partners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "a1643a58-58f4-4209-84ff-93b05920bfda",
+					"name": "Customer's products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/my/products",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"my",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "c2ce0818-3a0c-4ad1-90de-7369381535c3",
+					"name": "List of customer notifications",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"from_date\", jsonData.from_date);",
+									"pm.environment.set(\"to_date\", jsonData.to_date);"
+								],
+								"id": "04ec3cf5-fec7-482b-8f26-9106bd9d405e",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/notifications?from_date=2017-11-09&to_date=2019-10-10",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "2017-11-09"
+								},
+								{
+									"key": "to_date",
+									"value": "2019-10-10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "8962ae11-b8f0-4ec5-accf-d11433ee9c99",
+					"name": "Billing summary for a month",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b1cd5ff-6951-4d4e-8d01-8d120599cd7a",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/billing/export-csv?year-month=2018-03",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"billing",
+								"export-csv"
+							],
+							"query": [
+								{
+									"key": "year-month",
+									"value": "2018-03"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9a1de29c-29fe-4229-bf0a-b4572bfedc02",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "59500dcc-18ae-4e49-a7b6-b9ef633e1232",
+						"type": "text/javascript",
+						"exec": [
+							"console.log(pm.response.responseTime)"
+						]
+					}
+				}
+			]
+		},
+		{
+			"_postman_id": "327a87ab-226d-4c31-a007-60a3ecbe91bf",
+			"name": "Endusers",
+			"item": [
+				{
+					"_postman_id": "e4041c94-cdb7-459e-a6ae-3bad9e5fedaf",
+					"name": "Create an Enduser (individual)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "69e041ad-1e29-4bc5-a561-7179a16c4e58",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    ",
+									"});",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"enduser_id\", jsonData.enduser_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"London\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/endusers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"endusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "67755478-875b-4821-92b7-36058c79b569",
+					"name": "Create an Enduser (apostrophe test)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "69e041ad-1e29-4bc5-a561-7179a16c4e58",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    ",
+									"});",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"enduser_id\", jsonData.enduser_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca O'Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Southend-on-Sea\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/endusers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"endusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "ad3b613d-e779-44a2-bdb4-61c08c6c0729",
+					"name": "Check Details for an Enduser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/endusers/{{enduser_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"endusers",
+								"{{enduser_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "ad1a3cc0-acfd-44b9-a436-654388d9d7c1",
+					"name": "Initiate idv identity check",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idv_check_scenario\": \"PayrNet-IdVS1-identity-check\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/endusers/{{enduser_id}}/idv-checks",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"endusers",
+								"{{enduser_id}}",
+								"idv-checks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "cd0d7fda-e00f-4fdb-a24c-eaad8d9dfa80",
+					"name": "Enduser idv checks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/endusers/{{enduser_id}}/idv-checks",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"endusers",
+								"{{enduser_id}}",
+								"idv-checks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "c1166adc-d23b-4e41-8d4c-7737018b6d0a",
+					"name": "Update an Enduser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"enduser_meta\": {\r\n     \"foo\": \"baa\",\r\n        \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n    },\r\n       \r\n  \"person\": {\r\n    \"name\": \"Sarah Jane Smith\",\r\n    \"pep\": false,\r\n    \"address\": {  \r\n         \"address_refinement\": \"Apartment 42\", \r\n         \"address_number\": \"29\", \r\n         \"address_street\": \"Acacia Road\", \r\n         \"address_city\": \"London\", \r\n         \"address_region\": \"London\",\r\n         \"address_postal_code\": \"FX20 7XS\", \r\n         \"address_iso_country\": \"GBR\"\r\n         \r\n       }\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/endusers/{{enduser_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"endusers",
+								"{{enduser_id}}"
+							]
+						},
+						"description": "update receiver beneficiary\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "55caa413-09d4-4fe9-b5dc-e389d75d7a94",
+			"name": "Ledgers",
+			"item": [
+				{
+					"_postman_id": "4057d1da-9c00-4a5a-a2fe-1f106e93c6f4",
+					"name": "Helper: Delay 5s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/5",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "e7ad48bb-2393-4928-ab9e-a08797be32dd",
+					"name": "Create a EUR Ledger for Enduser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65e2a74c-4703-47eb-a0be-0b9894eaa753",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"ledger_id\", jsonData.ledger_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "05a9651d-6995-4ac0-baff-76585e588d39",
+					"name": "Fetch first EUR ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_id}}",
+								"wait"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "1eae6e04-8a4d-400d-84e8-699aa0960387",
+					"name": "Create a GBP Ledger for Enduser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eff65019-4372-40d8-953a-cf7fd84f49d7",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"gbp_ledger_account_number\", jsonData.uk_account_number);",
+									"postman.setEnvironmentVariable(\"gbp_ledger_sort_code\", jsonData.uk_sort_code);",
+									"postman.setEnvironmentVariable(\"gbp_ledger_id\", jsonData.ledger_id);",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "3839a0ce-7120-482b-9f6b-60c8ccd48f64",
+					"name": "Create a GBP float ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"GBPledger_id\", jsonData.ledger_id);",
+									""
+								],
+								"id": "bc166afe-bbaf-473c-b01e-6df91b76bf66",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{gbpledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "179ac777-cd27-4964-9ea9-4173090bae9e",
+					"name": "Fetch GBP ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cd68cbe4-c990-4e5e-9899-8b7dbc7827c1",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/5b2d2dca-1b1a-404c-b3ef-f1106379d8bc",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"5b2d2dca-1b1a-404c-b3ef-f1106379d8bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "b24febfa-db54-4ed0-890e-0d5efac9a2c4",
+					"name": "Assign an IBAN for ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f6bedffb-ea47-4a9f-ac01-27e4c3f10cb2",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/assign-iban",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_id}}",
+								"assign-iban"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "21d5990d-8c3b-4a1c-ab87-da028c48c123",
+					"name": "Fetch first EUR ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0c2f813d-67d0-4601-884f-6bf11722983c",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"eur_iban_1\", jsonData.iban);",
+									"postman.setEnvironmentVariable(\"bic_swift_1\", jsonData.bic_swift);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}/wait",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_id}}",
+								"wait"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "d72e5240-d887-4a56-8354-c641b135608e",
+					"name": "Create Second EUR Ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"if (responseCode.code === 200){",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"second_ledger_id\", jsonData.ledger_id);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "e2b005c1-8d02-4a7f-8c80-e936613e9c23",
+					"name": "Helper: Delay 5s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/10",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "34a19646-e96b-43b2-ba32-1d23a1498464",
+					"name": "Assign IBAN to Second Ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}/assign-iban",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{second_ledger_id}}",
+								"assign-iban"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "5005d501-ff33-4411-954d-b16f5470fb65",
+					"name": "Fetch second EUR ledger entity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "be94c516-f8df-44da-8434-1dfad219879f",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"secondledgeriban\", jsonData.iban);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{second_ledger_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{second_ledger_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "8068a5e1-d7f4-4f4f-9681-da7cd4412a7b",
+					"name": "Create a Whisky Ledger for Enduser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"whisky_ledger_id\", jsonData.ledger_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"whisky\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/virtual",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"virtual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "bcd5db30-f576-4ccd-ba3c-d601caa9fabc",
+					"name": "Check Whisky Ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c9115137-53f9-4f92-9623-d08c8c7911f6",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody)",
+									"",
+									"pm.globals.unset(\"variable_key\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{whisky_ledger_id}}/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{whisky_ledger_id}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "023faf06-516e-4e2c-a294-52e5220bca31",
+					"name": "Create gold ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d031526f-3586-4402-946b-66a9c4055b36",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"gold_ledger_id\", jsonData.ledger_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"gold\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/virtual",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"virtual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "92ece87a-78de-4557-8784-9f3310b449c0",
+					"name": "Create goldbloc ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "33ac55a9-e595-4ac5-8534-d680db18d645",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"goldbloc_ledger_id\", jsonData.ledger_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"goldbloc\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/virtual",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"virtual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "6e6966ea-581e-4d52-b051-24c2ff11cd1c",
+					"name": "Create ledger empty string",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "67583dcc-3441-42a2-b3ea-99c0c0b93cdc",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/virtual",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"virtual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "a307e520-5a7f-42d9-ba30-205b865b0658",
+					"name": "Update first EUR ledger metadata",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "00bc3140-931d-4451-ab90-80e0285d947f",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"ledger_meta\": {\r\n    \"foo\": \"bar\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "5fa5225b-7513-4b3e-97a1-1f18b819056f",
+					"name": "Helper: Delay 5s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/10",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "5a1c1f51-d25a-4ae3-ad26-b5169260e39f",
+					"name": "List of modified ledgers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "fa967dca-5c3f-4c3b-8aa3-ccfdfd58d19a",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/changed?from_date={{start_date}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"changed"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "{{start_date}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "959f105e-2bcd-43f3-aa01-1cb52d0a3104",
+					"name": "Find ledgers based on account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0f5c2c8-a95a-43fe-be8f-74d6ccaf7188",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/by-uk-bank-account?uk_account_number=08827917&uk_sort_code=040052",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"by-uk-bank-account"
+							],
+							"query": [
+								{
+									"key": "uk_account_number",
+									"value": "08827917"
+								},
+								{
+									"key": "uk_sort_code",
+									"value": "040052"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "b660c84a-716f-4d4c-a063-ac09f42a83ed",
+					"name": "Find ledgers based on iban",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "f8bc122a-5c71-4ef8-b3d8-398b74e662a6",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/by-iban?iban={{eur_iban_1}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"by-iban"
+							],
+							"query": [
+								{
+									"key": "iban",
+									"value": "{{eur_iban_1}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "650132d5-8f05-49c9-91d7-6e8c69fd3e63",
+					"name": "List of ledger entries in time frame",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "fa967dca-5c3f-4c3b-8aa3-ccfdfd58d19a",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{GBPledger_id}}/entries?from_date={{start_date}}&to_date{{end_date}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{GBPledger_id}}",
+								"entries"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "{{start_date}}"
+								},
+								{
+									"key": "to_date{{end_date}}",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "9c77db74-0677-4fb4-9d5a-01e896271f28",
+					"name": "List of ledgers unassigned",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/unassigned",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"unassigned"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "e53fb5a5-23c7-4043-9cbb-952bb8bd8f75",
+			"name": "Beneficiaries",
+			"item": [
+				{
+					"_postman_id": "b86d78f7-6ca5-401b-9ed6-4b51ff700d1e",
+					"name": "Add a New Beneficiary (Individual) GBP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"beneficiary_id\", jsonData.beneficiary_id);"
+								],
+								"id": "b53e6b21-b686-4a85-8d43-d69794934f84",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"uk_account_number\": \"12345677\",\n \"uk_sort_code\": \"040053\",\n \"holder_id\": \"{{enduser_id}}\",\n \"asset_class\": \"currency\",\n \"asset_type\": \"gbp\",\n \"person\": {\n   \"country_of_residence\": [\n     \"GB\"\n   ],\n   \"address_history\": [\n     {\n       \"address_refinement\": \"Apartment 77\",\n       \"address_number\": \"42\",\n       \"address_street\": \"Kirschbaumstraße\",\n       \"address_city\": \"Berlin\",\n       \"address_region\": \"California\",\n       \"address_postal_code\": \"12059\",\n       \"address_iso_country\": \"GB\",\n       \"address_start_date\": \"2000-09-02\",\n       \"address_end_date\": \"2002-12-20\"\n     }\n   ],\n   \"date_onboarded\": \"2015-11-21\",\n   \"email\": \"selin@railsbank.com\",\n   \"name\": \"Selin Ucan\",\n   \"address\": {\n     \"address_refinement\": \"Apartment 8\",\n     \"address_number\": \"6\",\n     \"address_street\": \"Harold Road\",\n     \"address_city\": \"London\",\n     \"address_region\": \"London\",\n     \"address_postal_code\": \"SE19 3PU\",\n     \"address_iso_country\": \"GB\"\n   },\n   \"telephone\": \"+44 22 626 2626\",\n   \"date_of_birth\": \"1970-11-05\",\n   \"nationality\": [\n     \"British\"\n   ]\n },\n \"beneficiary_meta\": {\n   \"foo\": \"baa\",\n   \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\n }\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries"
+							]
+						},
+						"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "930258dc-e9ae-4ec4-b7c7-48ed0cffbbe2",
+					"name": "Add a New Beneficiary (company) EUR",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ab774e79-5e9a-4e9c-8528-bda46a522a74",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"beneficiary_id_2\", jsonData.beneficiary_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"iban\": \"{{eur_iban_1}}\",\r\n  \"bicswift\": \"{{eur_bicswift_1}}\",\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"company\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"Bremen\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"icecream@example.net\",\r\n    \"name\": \"John's Ice Creams Ltd\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Dinslaken\",\r\n      \"address_region\": \"Bremen\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"DE\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries"
+							]
+						},
+						"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "fe94a96e-6838-4ccf-871f-2fae4a435ce2",
+					"name": "Update a Beneficiary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"person\": {\r\n    \"name\": \"Jackson\",\r\n    \"pep\": false\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}"
+							]
+						},
+						"description": "update receiver beneficiary\n"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "ab4641d9-c465-46c8-8495-1fc7961ed512",
+					"name": "View Beneficiary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "95f3c57a-2dd8-4452-8805-015da070ee61",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/wait",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"wait"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "88e8a9b0-2053-4bf7-ac36-00eca0546a0c",
+					"name": "Add a GBP account for beneficiary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "421d2d0c-af65-493a-b692-8caacac6af8f",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"GBPbennyaccount_id\", jsonData.account_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"account_number\": \"08827917\",\r\n  \"bank_country\": \"GB\",\r\n  \"bank_code\": \"040052\",\r\n  \"bank_name\": \"PayrNET\",\r\n  \"asset_type\": \"gbp\",\r\n  \"asset_class\": \"currency\",\r\n  \"bank_code_type\": \"sort-code\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"accounts"
+							]
+						},
+						"description": "current receiver: \nuser: 59776cff-3b5e-4ad8-8c12-3301386ab7ab\nledger: 59777178-b126-436b-a6c7-4c4c18620937\niban: SK5500000011501000099891"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "033a35d7-5bce-4b20-acda-2b32bbd13a4a",
+					"name": "Return beneficiary's accounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b1cd5ff-6951-4d4e-8d01-8d120599cd7a",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "d8e5ec5d-6376-499d-b505-2c392f9746b6",
+					"name": "Return one of beneficiary's accounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "30d5944b-a594-4895-a29d-59bef0e80a90",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts/{{GBPbennyaccount_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"accounts",
+								"{{GBPbennyaccount_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "58a6ba89-2200-4398-b60b-b5b4db3fa6ea",
+					"name": "Update one of beneficiary's accounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"id": "e11dace6-a75f-4055-9fcf-c71f74c7bdf7",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"person\": \"Samira\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts/{{GBPbennyaccount_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"accounts",
+								"{{GBPbennyaccount_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "dba634d6-0ae9-4913-85ac-a4ef3b75eeff",
+					"name": "Make one of beneficiary's accounts default",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "223c2af1-895a-4378-9d05-74552d270dd5",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts/{{GBPbennyaccount_id}}/make-default",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"accounts",
+								"{{GBPbennyaccount_id}}",
+								"make-default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "f6410fd0-0c3a-43a5-a687-2e17e9d67a29",
+					"name": "Initiate idv identity check",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idv_check_scenario\": \"PayrNet-IdVS1-identity-check\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/idv-checks",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"idv-checks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "2fa8f274-68fb-4fd3-ad52-9f73bf4786b4",
+					"name": "Beneficiary idv checks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/idv-checks",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"idv-checks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "a38feef0-33b4-48c8-b155-4a216a5ed148",
+			"name": "Transactions",
+			"item": [
+				{
+					"_postman_id": "af2b51d5-8cf8-4dad-b9cc-50c1525fd9e0",
+					"name": "Standard transaction",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8b4fc592-be53-4d2f-9f0e-06b0b14c2013",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Amount not positve\"] = jsonData.error_detail === \"amount-not-positive\";"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ledger_from_id\": \"{{gbp_transaction_ledger}}\",\r\n  \"beneficiary_id\": \"{{beneficiary_id}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"0\",\r\n  \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "347b7f09-4026-4578-8aab-a29cfaf89cad",
+					"name": "Credit virtual ledger with 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"environment.delayTimerStart = new Date();"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ledger_id\": \"{{gold_ledger_id}}\",\r\n  \"amount\": \"4\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/manual-credit",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"manual-credit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "cd43f0aa-5b9c-4da6-aecd-881ec9891cc4",
+					"name": "Debit virtual ledger with 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ebcb1f75-eac3-403b-b39d-34dd8fb1393f",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"environment.delayTimerStart = new Date();",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"transaction_id\", jsonData.transaction_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ledger_id\": \"{{gold_ledger_id}}\",\r\n  \"amount\": \"4\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/manual-debit",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"manual-debit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "ea234b17-1ab7-4eec-9f8f-2069b915286c",
+					"name": "Check Transaction Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "91a80afd-7819-471b-b908-6ff12988b657",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/{{transaction_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"{{transaction_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "008a23a7-a3c4-4fb2-8f3c-21ad73ff38ef",
+					"name": "Inter-Ledger Transfer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9f4a12ef-5fc2-46a6-b7f6-f99104e68486",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"environment.delayTimerStart = new Date();",
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"inter-ledgertransaction_id\", jsonData.transaction_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": \"4\",\n  \"ledger_from_id\": \"{{ledger_id}}\",\n  \"ledger_to_id\": \"{{second_ledger_id}}\",\n  \"transaction_meta\": {\n    \"foo\": \"bar\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/inter-ledger",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"inter-ledger"
+							]
+						},
+						"description": "from ledger id to second ledger id"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "d240d050-944b-480f-bec5-48ad48b96b0a",
+					"name": "Transactions (last seen id)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions?last_seen_id={{enduser_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "last_seen_id",
+									"value": "{{enduser_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "eeb64a21-f8b1-4e0c-86ff-dceadd0964bc",
+					"name": "Standard Transaction Try",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8647a4b3-ca8e-4681-bdb9-1cf8b5e29549",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\n  \"who_pays_charges\": \"shared\",\n  \"reference\": \"123456789012345678\",\n  \"amount\": \"1\",\n  \"ledger_from_id\": \"5b2d2dca-1b1a-404c-b3ef-f1106379d8bc\",\n  \"beneficiary_id\": \"{{beneficiary_id}}\",\n  \"transaction_meta\": {\n    \"foo\": \"bar\"\n  },\n  \"cut_off_time_implementation\": \"loose\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/try",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"try"
+							]
+						},
+						"description": "from ledger id to second ledger id"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "ba25c59a-ba6e-4ca0-a835-fa9673f1ae9d",
+					"name": "Inter-ledger Transaction try",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": \"10\",\n  \"ledger_from_id\": \"{{ledger_id}}\",\n  \"ledger_to_id\": \"{{second_ledger_id}}\",\n  \"transaction_meta\": {\n    \"foo\": \"bar\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/inter-ledger/try",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"inter-ledger",
+								"try"
+							]
+						},
+						"description": "from ledger id to second ledger id"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "4adcc06f-458a-481c-a6db-18bc5e512b22",
+					"name": "Helper: Delay 2s",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"id": "2bfb4859-ea8e-4050-9b93-131d4511a4cc",
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/2",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "63a4b64f-c64f-4377-83e8-80ee2d3496f3",
+					"name": "Re-run firewalls",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/{{transaction_id}}/rerun-firewall",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"{{transaction_id}}",
+								"rerun-firewall"
+							]
+						},
+						"description": "from ledger id to second ledger id"
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "f488c3c6-cfcc-4814-b186-4e9e4068f317",
+					"name": "Update Transaction metadata",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions/{{inter-ledgertransaction_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions",
+								"{{inter-ledgertransaction_id}}"
+							]
+						},
+						"description": "update receiver beneficiary\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "b9a494d3-c213-44b0-a405-e1abb62ea95e",
+			"name": "Direct Debits",
+			"item": [
+				{
+					"_postman_id": "eb510ae6-b4c6-440d-845b-f67cd48d6652",
+					"name": "Create mandate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c423080-fa99-4dd6-868c-736cd557634c",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"mandate_id\", jsonData.mandate_id);"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test-team@railsbank.com\",\r\n  \"partner_product\": \"{{ddprodref}}\",\r\n  \"account_holder_name\": \"Selin Ucan\",\r\n  \"enduser_id\": \"{{enduser_id}}\",\r\n  \"scheme\": \"bacs\",\r\n  \"uk_account_number\": \"08827917\",\r\n  \"uk_sort_code\": \"040052\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/direct-debit/mandates",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"direct-debit",
+								"mandates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "77b625a6-2fe4-484a-99ab-a3cd45c5a0af",
+					"name": "Mandate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b3eba1f0-1470-4eb7-9096-351e50b9aa0d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/direct-debit/mandates/{{mandate_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"direct-debit",
+								"mandates",
+								"{{mandate_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "f60afcd6-6976-493c-8978-226101ff77b6",
+					"name": "Helper: Delay 5s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/5",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "7355f0f4-b88a-4b53-8ea4-82da66defc91",
+					"name": "Helper: Delay 5s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/5",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "0ac305be-62f7-4f63-afae-159d38d923ee",
+					"name": "Create payment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "27930a02-3cab-4cb0-ba72-2b8fbe564035",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"payment_id\", jsonData.payment_id);"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mandate_id\": \"{{mandate_id}}\",\n  \"amount\": 3,\n  \"description\": \"Gym membership\"\n}  "
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/direct-debit/payments",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"direct-debit",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "668a0a0b-84a1-4818-a3c4-1e6ca2a1ea2b",
+					"name": "Payment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "370e7e03-ee58-4243-94be-e0f240c33c04",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mandate_id\": \"{{mandate_id))\",\n  \"amount\": 3\n}  "
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/direct-debit/payments/{{payment_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"direct-debit",
+								"payments",
+								"{{payment_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "bf64b1cf-064d-4191-aa85-16e36a5e5bfd",
+					"name": "Payments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "370e7e03-ee58-4243-94be-e0f240c33c04",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mandate_id\": \"{{mandate_id))\",\n  \"amount\": 3\n}  "
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/direct-debit/payments",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"direct-debit",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "66eb9652-96cb-47c8-9bdc-4028aff0849f",
+					"name": "Mandates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b3eba1f0-1470-4eb7-9096-351e50b9aa0d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/direct-debit/mandates",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"direct-debit",
+								"mandates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "b4113728-cb2b-4434-ad73-9063ac70c54d",
+					"name": "Recind mandate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c423080-fa99-4dd6-868c-736cd557634c",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"mandate_id\", jsonData.mandate_id);"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": {\n      \"iban\": \"{{ddiban}}\",\n      \"bank_country\": \"GB\",\n      \"bank_code\": \"040052\",\n      \"bank_name\": \"PayrNet\",\n      \"asset_type\": \"eur\",\n      \"asset_class\": \"currency\",\n      \"bank_code_type\": \"sort-code\"\n    },\n  \"enduser_id\": \"{{ddenduser_id}}\",\n  \"ledger_to_id\": \"{{ddledger_id2}}\",\n  \"partner_product\": \"{{directdebitprodref}}\"\n}  "
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/direct-debit/mandates/{{mandate_id}}/cancel",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"direct-debit",
+								"mandates",
+								"{{mandate_id}}",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "3d7ef562-595c-4f6a-8a42-daa9cf9332c8",
+					"name": "Helper: Delay 10s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/10",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "0fb437d4-ab97-4666-9875-bd34f5c14b50",
+			"name": "Compliance",
+			"item": [
+				{
+					"_postman_id": "27ecc906-43d3-4a6e-8df7-8a680280fbdb",
+					"name": "Compliance officer info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-contact",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "3bef24a8-a2d9-4913-b78f-da2cb0448aa3",
+					"name": "Set firewall rules (endusers)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"compliance_firewall_rules\": \"[rule :always-pass ok]\"\r\n\r\n                       }"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/endusers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"endusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "572be188-b5f5-4195-be5f-d9f3bc12e942",
+					"name": "Set firewall rules (beneficiaries)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"compliance_firewall_rules\": \"[rule :always-pass ok]\"\r\n\r\n                       }"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/beneficiaries",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"beneficiaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "e82241bb-7604-4883-a5d3-8657b72cead2",
+					"name": "Set firewall rules (transactions)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"compliance_firewall_rules\": \"[rule :always-pass ok]\"\r\n\r\n                       }"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "dc0dbb78-4e5c-4620-ae16-e8cce667946a",
+					"name": "Test firewall rules",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"compliance_firewall_rules\": \"[rules [rule :always-pass ok]]\",\n  \"transaction_id\": \"{{inter-ledgertransaction_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions/test",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"transactions",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "997beb20-b72f-4c60-951e-c1702241c731",
+					"name": "Firewall rules history (transactions)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions/history",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"transactions",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "2baca197-d3c4-45f2-8aa9-45ec720c7fc6",
+					"name": "Firewall rules history (endusers)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/endusers/history",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"endusers",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "14bb9ba5-4f0a-4955-9986-fccd956fe84a",
+					"name": "Firewall rules history (beneficiaries)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/beneficiaries/history",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"beneficiaries",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "9acbe151-ebd2-4c37-8b27-262aa4801dfd",
+					"name": "Quarantine (beneficiaries)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine/beneficiaries/{{beneficiary_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine",
+								"beneficiaries",
+								"{{beneficiary_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "6c95ba50-a906-41b0-be0c-d5edf61fd733",
+					"name": "Quarantine (transactions)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine/transactions/{{transaction_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine",
+								"transactions",
+								"{{transaction_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "92258de5-3321-4ced-84fc-080580980651",
+					"name": "Quarantine (endusers)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine/endusers/{{enduser_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine",
+								"endusers",
+								"{{enduser_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "1ff6b514-b17e-4c05-83f2-41b9adfd7e46",
+					"name": "Firewall rules (beneficiaries)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/beneficiaries",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"beneficiaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "9fa98504-a4e8-42e8-b8ec-d349ba3ce073",
+					"name": "Firewall rules (transactions)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "687189ff-fced-4261-b843-fbf107801e4d",
+					"name": "Firewall rules (endusers)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/endusers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"endusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "cd992f64-0227-4554-9f30-f02abf292e14",
+					"name": "Firewall dataset",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b220a4a-2d05-45a7-8136-da722a125ba9",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"dataset_id\", jsonData.dataset_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataset_data\": \"Country,Risk\\nUSA,low\\nISR,high\",\n  \"dataset_name\": \"countries-by-risk-level\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-static-data",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-static-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "303df4fa-0d20-4023-b598-7563f105ab73",
+					"name": "Firewall dataset",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-static-data/{{dataset_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-static-data",
+								"{{dataset_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "f42797e7-8c99-4e67-b395-8110c5f85255",
+					"name": "Compliance manual",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-manual",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-manual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "c6b3c025-dbd7-4174-bb52-dcac37f1f844",
+					"name": "List of objects in quarantine",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "2db685e6-9e78-4b1b-9f92-9e0672bbbaf4",
+					"name": "Resolve beneficiary in quarantine",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "21d6e1c2-26b8-4bf0-87e3-f41537205db8",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"invalid-state-of-entity\"] = jsonData.error === \"invalid-state-of-entity\";"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"qr_status\": \"pass\",\n  \"comment\": \"smells like roses\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine/beneficiaries/{{beneficiary_id}}/resolve",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"resolve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "a598b803-aaee-4c38-924e-7ed44ffcca2e",
+					"name": "Comment on beneficiary in quarantine",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"comment\": \"looks pretty good to me\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine/beneficiaries/{{beneficiary_id}}/comments",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine",
+								"beneficiaries",
+								"{{beneficiary_id}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "efc456c8-0a96-4679-a1db-85a5c0b7fff4",
+					"name": "Resolve enduser in quarantine",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1512f41b-1d8c-4c9a-a2cb-82d866f73c84",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"invalid-state-of-entity\"] = jsonData.error === \"invalid-state-of-entity\";",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"qr_status\": \"pass\",\n  \"comment\": \"smells like roses\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine/endusers/{{enduser_id}}/resolve",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine",
+								"endusers",
+								"{{enduser_id}}",
+								"resolve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "94e8f28f-8ecf-4db7-afc2-2bc9261a458c",
+					"name": "Comment on enduser in quarantine",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"comment\": \"looks pretty good to me\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine/endusers/{{enduser_id}}/comments",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine",
+								"endusers",
+								"{{enduser_id}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "c31ef699-5fbc-4f88-af1c-85d99cdbabc2",
+					"name": "Resolve transaction in quarantine",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0c007861-2631-4cc4-af15-ed99db1d3400",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"incorrect-state\"] = jsonData.error === \"incorrect-state\";",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"qr_status\": \"pass\",\n  \"comment\": \"smells like roses\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine/transactions/{{transaction_id}}/resolve",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine",
+								"transactions",
+								"{{transaction_id}}",
+								"resolve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "21a1f5f5-15fb-460d-b53c-d83e96c4e2ff",
+					"name": "Comment on transaction in quarantine",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e7aa756e-d16c-427e-b211-d340a97e93f3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"incorrect-state\"] = jsonData.error === \"incorrect-state\";"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"comment\": \"looks pretty good to me\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/quarantine/transactions/{{transaction_id}}/comments",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"quarantine",
+								"transactions",
+								"{{transaction_id}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "dda6009b-d6bc-4e93-835d-766aa0f6f52d",
+					"name": "Set firewall rules (transactions)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"id": "bb9ea43d-2a2a-4169-b1e3-355a50272b41",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"compliance_firewall_rules\": \"[rule :always-pass ok]\"\r\n\r\n                       }"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"compliance-firewall-rules",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "8291d42f-fa05-4ab5-8b9c-0c9b2413ae16",
+			"name": "Other",
+			"item": [
+				{
+					"_postman_id": "fd80b681-7ae8-4f83-82c2-81c8fb942c92",
+					"name": "Get Version ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"if (responseCode.code === 200){",
+									"    var jsonData = JSON.parse(responseBody);",
+									"    var version = jsonData.version;",
+									"    var info = new Date().toISOString() + \" | \"+version;",
+									"    postman.setEnvironmentVariable(\"test_info\", info);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/version",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"version"
+							]
+						},
+						"description": "also set test time stamp"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "76d90e6b-0448-418e-9425-64a39e2b1f71",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "de317e8e-be2e-4f84-97ab-0490eeadb6f4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
