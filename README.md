@@ -9,7 +9,6 @@ To use this:
  - add in the collection (`Complete Railsbank API.postman_collection.json`)
  - add in the environment (`play.railsbank.com copy.postman_environment.json`)
  - dupicate the `play.railsbank.com copy` config to maybe `play.railsbank.com`
- - add in your API key
+ - add in your API keys
 
  WIN. 🦄
- 
