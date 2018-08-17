@@ -1,13 +1,12 @@
 {
 	"info": {
-		"_postman_id": "03618109-6a02-4fc2-aa43-036c6331663e",
-		"name": "Complete Railsbank API ",
+		"_postman_id": "1dcc2d8b-77f8-47d9-932c-19da3af70860",
+		"name": "Complete Railsbank API  0.38",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Info about self",
-			"description": null,
 			"item": [
 				{
 					"name": "Whoami",
@@ -435,7 +434,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"webhook_url\": \"http://34.245.114.203:8000/150zxvr1\",\r\n  \"webhook_secret\": \"testing 0.31\"\r\n}"
+							"raw": "{\r\n  \"webhook_url\": \"http://34.245.114.203:8000/1fc5rni1\",\r\n  \"webhook_secret\": \"0.38\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/webhook",
@@ -484,7 +483,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"webhook_secret\": \"new webhook\"\r\n}"
+							"raw": "{\r\n  \"webhook_secret\": \"{{update_secret}}\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/webhook/update-secret",
@@ -621,6 +620,10 @@
 							{
 								"key": "Authorization",
 								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
 							}
 						],
 						"body": {},
@@ -882,58 +885,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "Set product specific properties",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									""
-								],
-								"id": "71e70546-9ba4-4819-b229-004dd424cb64",
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{customer_api_key}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"api_key\": \"{{Airwallex_API_Key}}\",\r\n  \"client_id\": \"XS7OnlTgS8msEPDMLJ0l0g\"\r\n}"
-						},
-						"url": {
-							"raw": "{{baseurl}}/v1/customer/my/products/Airwallex-FX-1",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"v1",
-								"customer",
-								"my",
-								"products",
-								"Airwallex-FX-1"
-							]
-						}
-					},
-					"response": []
 				}
 			],
 			"event": [
@@ -961,7 +912,6 @@
 		},
 		{
 			"name": "Endusers",
-			"description": null,
 			"item": [
 				{
 					"name": "Create an Enduser (individual)",
@@ -1001,7 +951,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"London\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+							"raw": "{\n      \"person\": { \n       \"name\": \"Selin Test Fx\", \n       \"email\": \"test-team@railsbank.com\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"London\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"British\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/endusers",
@@ -1055,7 +1005,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca O'Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Southend-on-Sea\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca O'Baker\", \n       \"email\": \"blackhole@railsbank.com\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Southend-on-Sea\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\"\n         \n       }, \n       \"address_history\": [ \n         { \n           \"address_refinement\": \"Apartment 77\", \n           \"address_number\": \"42\", \n           \"address_street\": \"Kirschbaumstraße\", \n           \"address_city\": \"Berlin\", \n           \"address_postal_code\": \"12059\", \n           \"address_iso_country\": \"DE\", \n           \"address_start_date\": \"2000-09-02\", \n           \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/endusers",
@@ -1246,7 +1196,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"enduser_meta\": {\r\n     \"foo\": \"baa\",\r\n        \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n    },\r\n       \r\n  \"person\": {\r\n    \"name\": \"Eric Wimp\",\r\n    \"pep\": false,\r\n    \"address\": {  \r\n         \"address_refinement\": \"Apartment 42\", \r\n         \"address_number\": \"29\", \r\n         \"address_street\": \"Acacia Road\", \r\n         \"address_city\": \"Nuttytown\", \r\n         \"address_region\": \"Essex\",\r\n         \"address_postal_code\": \"FX20 7XS\", \r\n         \"address_iso_country\": \"GBR\"\r\n         \r\n       }\r\n  }\r\n}"
+							"raw": "{\r\n  \"enduser_meta\": {\r\n     \"foo\": \"baa\",\r\n        \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n    },\r\n       \r\n  \"person\": {\r\n    \"name\": \"Sarah Jane Smith\",\r\n    \"pep\": false,\r\n    \"address\": {  \r\n         \"address_refinement\": \"Apartment 42\", \r\n         \"address_number\": \"29\", \r\n         \"address_street\": \"Acacia Road\", \r\n         \"address_city\": \"London\", \r\n         \"address_region\": \"London\",\r\n         \"address_postal_code\": \"FX20 7XS\", \r\n         \"address_iso_country\": \"GBR\"\r\n         \r\n       }\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/endusers/{{enduser_id}}",
@@ -1268,7 +1218,6 @@
 		},
 		{
 			"name": "Ledgers",
-			"description": null,
 			"item": [
 				{
 					"name": "Helper: Delay 5s",
@@ -1329,7 +1278,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"{{euroledger_prodref}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
+							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"partner_product\": \"PayrNet-EUR-1\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"ledger_type\": \"ledger-type-single-user\",\r\n  \"ledger_who_owns_assets\": \"ledger-assets-owned-by-me\",\r\n  \"ledger_primary_use_types\": [\"ledger-primary-use-types-payments\"],\r\n  \"ledger_t_and_cs_country_of_jurisdiction\": \"GB\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/ledgers",
@@ -1398,15 +1347,17 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "eff65019-4372-40d8-953a-cf7fd84f49d7",
+								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
 									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"GBPledger_id\", jsonData.ledger_id);",
+									"postman.setEnvironmentVariable(\"gbp_ledger_account_number\", jsonData.uk_account_number);",
+									"postman.setEnvironmentVariable(\"gbp_ledger_sort_code\", jsonData.uk_sort_code);",
+									"postman.setEnvironmentVariable(\"gbp_ledger_id\", jsonData.ledger_id);",
 									""
-								],
-								"id": "bc166afe-bbaf-473c-b01e-6df91b76bf66",
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -1502,15 +1453,13 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "cd68cbe4-c990-4e5e-9899-8b7dbc7827c1",
+								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"accountnumber\", jsonData.uk_account_number);",
-									"postman.setEnvironmentVariable(\"sortcode\", jsonData.uk_sort_code);"
-								],
-								"id": "4d572602-3677-4ac9-b654-94dd772e8282",
-								"type": "text/javascript"
+									"",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								]
 							}
 						}
 					],
@@ -1531,7 +1480,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/{{GBPledger_id}}/wait",
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{gbp_ledger_id}}/wait",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -1539,7 +1488,7 @@
 								"v1",
 								"customer",
 								"ledgers",
-								"{{GBPledger_id}}",
+								"{{gbp_ledger_id}}",
 								"wait"
 							]
 						}
@@ -1577,7 +1526,7 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
+								"value": "application/json"
 							},
 							{
 								"key": "Accept",
@@ -1866,7 +1815,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"whisky\"\r\n}"
+							"raw": "{\r\n  \"holder_id\": \"5b6822a2-479c-4c6b-9248-c470a3389888\",\r\n  \"asset_class\": \"commodity\",\r\n  \"asset_type\": \"whisky\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/ledgers/virtual",
@@ -2219,12 +2168,13 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "e0f5c2c8-a95a-43fe-be8f-74d6ccaf7188",
+								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
-								],
-								"id": "f8bc122a-5c71-4ef8-b3d8-398b74e662a6",
-								"type": "text/javascript"
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
 							}
 						}
 					],
@@ -2242,7 +2192,7 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/by-uk-bank-account?uk_account_number={{accountnumber}}&uk_sort_code={{sortcode}}",
+							"raw": "{{baseurl}}/v1/customer/ledgers/by-uk-bank-account?uk_account_number=08827917&uk_sort_code=040052",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -2255,11 +2205,11 @@
 							"query": [
 								{
 									"key": "uk_account_number",
-									"value": "{{accountnumber}}"
+									"value": "08827917"
 								},
 								{
 									"key": "uk_sort_code",
-									"value": "{{sortcode}}"
+									"value": "040052"
 								}
 							]
 						}
@@ -2416,7 +2366,6 @@
 		},
 		{
 			"name": "Beneficiaries",
-			"description": null,
 			"item": [
 				{
 					"name": "Add a New Beneficiary (Individual) GBP",
@@ -2453,7 +2402,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"uk_account_number\": \"{{accountnumber}}\",\r\n  \"uk_sort_code\": \"{{sortcode}}\",\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"gbp\",\r\n  \"person\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"johnsmith@example.net\",\r\n    \"name\": \"Henry Jones\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"London\",\r\n      \"address_region\": \"Essex\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"British\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+							"raw": "{\n \"uk_account_number\": \"12345677\",\n \"uk_sort_code\": \"040053\",\n \"holder_id\": \"{{enduser_id}}\",\n \"asset_class\": \"currency\",\n \"asset_type\": \"gbp\",\n \"person\": {\n   \"country_of_residence\": [\n     \"GB\"\n   ],\n   \"address_history\": [\n     {\n       \"address_refinement\": \"Apartment 77\",\n       \"address_number\": \"42\",\n       \"address_street\": \"Kirschbaumstraße\",\n       \"address_city\": \"Berlin\",\n       \"address_region\": \"California\",\n       \"address_postal_code\": \"12059\",\n       \"address_iso_country\": \"GB\",\n       \"address_start_date\": \"2000-09-02\",\n       \"address_end_date\": \"2002-12-20\"\n     }\n   ],\n   \"date_onboarded\": \"2015-11-21\",\n   \"email\": \"blackhole@railsbank.com\",\n   \"name\": \"Sally Smith\",\n   \"address\": {\n     \"address_refinement\": \"Apartment 8\",\n     \"address_number\": \"6\",\n     \"address_street\": \"Harold Road\",\n     \"address_city\": \"London\",\n     \"address_region\": \"London\",\n     \"address_postal_code\": \"SE19 3PU\",\n     \"address_iso_country\": \"GB\"\n   },\n   \"telephone\": \"+44 22 626 2626\",\n   \"date_of_birth\": \"1970-11-05\",\n   \"nationality\": [\n     \"British\"\n   ]\n },\n \"beneficiary_meta\": {\n   \"foo\": \"baa\",\n   \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\n }\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries",
@@ -2505,7 +2454,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"iban\": \"GB48BARC20172242909977\",\r\n  \"bic_swift\": \"BARCGB22\",\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"company\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"California\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"icecream@example.net\",\r\n    \"name\": \"John's Ice Creams Ltd\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Nuttytown\",\r\n      \"address_region\": \"California\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"GB\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"iban\": \"{{eur_iban_1}}\",\r\n  \"bicswift\": \"{{eur_bicswift_1}}\",\r\n  \"holder_id\": \"5b681ccc-579f-44fe-9a2b-0f267d7ad859\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"company\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"Bremen\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"icecream@example.net\",\r\n    \"name\": \"John's Ice Creams Ltd\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Dinslaken\",\r\n      \"address_region\": \"Bremen\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"DE\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries",
@@ -2555,7 +2504,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "\r\n{\r\n  \"person\": {\r\n    \"name\": \"Bananaman\",\r\n    \"pep\": false\r\n  }\r\n}"
+							"raw": "\r\n{\r\n  \"person\": {\r\n    \"name\": \"Jackson\",\r\n    \"pep\": false\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}",
@@ -2656,7 +2605,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"account_number\": \"{{accountnumber}}\",\r\n  \"bank_country\": \"GB\",\r\n  \"bank_code\": \"040052\",\r\n  \"bank_name\": \"PayrNET\",\r\n  \"asset_type\": \"gbp\",\r\n  \"asset_class\": \"currency\",\r\n  \"bank_code_type\": \"sort-code\"\r\n}"
+							"raw": "{\r\n  \"account_number\": \"08827917\",\r\n  \"bank_country\": \"GB\",\r\n  \"bank_code\": \"040052\",\r\n  \"bank_name\": \"PayrNET\",\r\n  \"asset_type\": \"gbp\",\r\n  \"asset_class\": \"currency\",\r\n  \"bank_code_type\": \"sort-code\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts",
@@ -2806,7 +2755,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"person\": \"Manzanaman\"\n}"
+							"raw": "{\n  \"person\": \"Samira\"\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts/{{GBPbennyaccount_id}}",
@@ -2851,6 +2800,10 @@
 							{
 								"key": "Authorization",
 								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -2976,7 +2929,6 @@
 		},
 		{
 			"name": "Transactions",
-			"description": null,
 			"item": [
 				{
 					"name": "Standard transaction",
@@ -3012,7 +2964,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"ledger_from_id\": \"{{GBPledger_id}}\",\r\n  \"beneficiary_id\": \"{{beneficiary_id}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"0\",\r\n  \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"ledger_from_id\": \"{{gbp_transaction_ledger}}\",\r\n  \"beneficiary_id\": \"{{beneficiary_id}}\",\r\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\r\n  \"amount\": \"0\",\r\n  \"reference\": \"xyz\",\r\n  \"transaction_meta\": {\r\n    \"info\": \"{{test_info}}\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions",
@@ -3312,7 +3264,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"payment_type\": \"payment-type-UK-FasterPayments\",\n  \"who_pays_charges\": \"shared\",\n  \"reference\": \"123456789012345678\",\n  \"amount\": \"4.00\",\n  \"ledger_from_id\": \"{{GBPledger_id}}\",\n  \"beneficiary_id\": \"{{beneficiary_id}}\",\n  \"transaction_meta\": {\n    \"foo\": \"bar\"\n  },\n  \"cut_off_time_implementation\": \"loose\"\n}"
+							"raw": "{\n \"payment_type\": \"payment-type-UK-FasterPayments\",\n \"who_pays_charges\": \"shared\",\n \"reference\": \"123456789012345678\",\n \"amount\": \"1\",\n \"ledger_from_id\": \"5b2d2dca-1b1a-404c-b3ef-f1106379d8bc\",\n \"beneficiary_id\": \"{{beneficiary_id}}\",\n \"transaction_meta\": {\n   \"foo\": \"bar\"\n },\n \"cut_off_time_implementation\": \"loose\"\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions/try",
@@ -3541,20 +3493,220 @@
 						"description": "update receiver beneficiary\n"
 					},
 					"response": []
+				},
+				{
+					"name": "Create an Enduser (individual)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8cc5cddf-276e-44b0-8730-b6e9d6def4bc",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"FXenduser_id1\", jsonData.enduser_id);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"person\": { \n       \"name\": \"Rebecca Baker\", \n       \"email\": \"rebeccabaker@example.net\", \n       \"date_of_birth\": \"1970-11-05\", \n       \"telephone\": \"+44 22 626 2626\", \n       \"address\": {  \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"Nuttytown\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\"\n         \n       }, \n       \"address_history\": [ \n         { \n         \"address_refinement\": \"Apartment 42\", \n         \"address_number\": \"29\", \n         \"address_street\": \"Acacia Road\", \n         \"address_city\": \"London\", \n         \"address_postal_code\": \"FX20 7XS\", \n         \"address_iso_country\": \"GBR\",\n         \"address_region\": \"Essex\",\n         \"address_start_date\": \"2000-09-02\", \n         \"address_end_date\": \"2002-12-20\" \n         } \n       ], \n       \"nationality\": [ \n         \"Czech\" \n       ], \n       \"country_of_residence\": [ \n         \"GBR\" \n       ], \n       \"date_onboarded\": \"2015-11-21\" \n     }, \n      \"enduser_meta\": { \n       \"foo\": \"baa\", \n      \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\" \n     } \n   }\n"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/endusers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"endusers"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "Direct Debits",
-			"description": "",
 			"item": [
 				{
-					"name": "Create mandate",
+					"name": "Create Invalid Mandate",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "6c423080-fa99-4dd6-868c-736cd557634c",
+								"id": "1daa15fc-7959-4d67-8f5b-0e536b122e31",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"failed_mandate_id\", jsonData.mandate_id);"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"blackhole@railsbank.com\",\r\n  \"partner_product\": \"{{ddprodref}}\",\r\n  \"account_holder_name\": \"{{name}}\",\r\n  \"enduser_id\": \"{{enduser_id}}\",\r\n  \"scheme\": \"bacs\",\r\n  \"uk_account_number\": \"12345677\",\r\n  \"uk_sort_code\": \"040052\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/direct-debit/mandates",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"direct-debit",
+								"mandates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Helper: Delay 5s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/5",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Mandate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b5732fc1-552f-4d70-9082-9e10eee1b7f2",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									"tests[\"Check for failed mandate\"] = responseBody.has(\"mandate-status-failed\");"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "adff4a29-c4f1-4746-b644-c1b309fa69c9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/direct-debit/mandates/{{failed_mandate_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"direct-debit",
+								"mandates",
+								"{{failed_mandate_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Mandate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "520beaed-9456-48bf-b3d3-41472a5f824b",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -3593,7 +3745,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"harrison@railsbank.com\",\r\n  \"partner_product\": \"{{ddprodref}}\",\r\n  \"account_holder_name\": \"Harrison Smith\",\r\n  \"enduser_id\": \"{{enduser_id}}\",\r\n  \"scheme\": \"bacs\",\r\n  \"uk_account_number\": \"{{accountnumber}}\",\r\n  \"uk_sort_code\": \"{{sortcode}}\"\r\n}"
+							"raw": "{\r\n  \"email\": \"blackhole@railsbank.com\",\r\n  \"partner_product\": \"{{ddprodref}}\",\r\n  \"account_holder_name\": \"{{name}}\",\r\n  \"enduser_id\": \"{{enduser_id}}\",\r\n  \"scheme\": \"bacs\",\r\n  \"uk_account_number\": \"79278722\",\r\n  \"uk_sort_code\": \"608371\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/direct-debit/mandates",
@@ -3611,17 +3763,41 @@
 					"response": []
 				},
 				{
+					"name": "Helper: Delay 5s",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://postman-echo.com/delay/5",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"delay",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Mandate",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "b3eba1f0-1470-4eb7-9096-351e50b9aa0d",
+								"id": "8f22f882-ff99-4652-bfe4-7920a0961c17",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
-									""
+									"tests[\"Check for successful mandate\"] = responseBody.has(\"mandate-status-active\");"
 								]
 							}
 						},
@@ -4058,7 +4234,6 @@
 		},
 		{
 			"name": "Compliance",
-			"description": null,
 			"item": [
 				{
 					"name": "Compliance officer info",
@@ -4137,7 +4312,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"compliance_firewall_rules\": \"[rule :always-pass ok]\"\r\n\r\n                       }"
+							"raw": "{\n\"compliance_firewall_rules\":\n\"[rule :always-pass ok]\"\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/endusers",
@@ -5249,7 +5424,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"compliance_firewall_rules\": \"[rule :always-pass ok]\"\r\n\r\n                       }"
+							"raw": "{\n\"compliance_firewall_rules\": \"[rule :noone-from-GBR [if [= [get person \\\"address_iso_country\\\"]       GBR]  quarantine]]\"\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions",
@@ -5270,7 +5445,6 @@
 		},
 		{
 			"name": "Other",
-			"description": null,
 			"item": [
 				{
 					"name": "Get Version ",
@@ -5319,6 +5493,58 @@
 							]
 						},
 						"description": "also set test time stamp"
+					},
+					"response": []
+				},
+				{
+					"name": "Close Ledger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8b54aab0-5279-4f16-ac55-f67601490c73",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{gbp_ledger_id}}/close",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{gbp_ledger_id}}",
+								"close"
+							]
+						}
 					},
 					"response": []
 				}
