@@ -557,7 +557,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"default_account\": {\n    \"bank_code_type\": \"sort-code\",\n    \"bank_code\": \"{{uk_sort_code}}\",\n    \"account_number\": \"{{uk_sort_code}}\"\n  }\n}"
+							"raw": "{\n  \"default_account\": {\n    \"bank_code_type\": \"sort-code\",\n    \"bank_code\": \"{{uk_sort_code}}\",\n    \"account_number\": \"{{uk_account_number}}\"\n  }\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}",
@@ -889,7 +889,7 @@
 				{
 					"name": "11. Move existing Beneficiary from missing data to state which will rerun firewalls",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Accept",
@@ -2937,7 +2937,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/by-iban",
+							"raw": "{{baseurl}}/v1/customer/ledgers/by-iban?iban",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -2946,6 +2946,12 @@
 								"customer",
 								"ledgers",
 								"by-iban"
+							],
+							"query": [
+								{
+									"key": "iban",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -2972,7 +2978,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/by-uk-bank-account",
+							"raw": "{{baseurl}}/v1/customer/ledgers/by-uk-bank-account?uk_account_number&uk_sort_code",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -2981,6 +2987,16 @@
 								"customer",
 								"ledgers",
 								"by-uk-bank-account"
+							],
+							"query": [
+								{
+									"key": "uk_account_number",
+									"value": null
+								},
+								{
+									"key": "uk_sort_code",
+									"value": null
+								}
 							]
 						}
 					},
@@ -3157,7 +3173,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger1_id}}",
+							"raw": "{{baseurl}}/v1/customer/ledgers/5bed3df1-9fb6-4c23-8d61-814a0e61113c",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -3165,7 +3181,7 @@
 								"v1",
 								"customer",
 								"ledgers",
-								"{{ledger1_id}}"
+								"5bed3df1-9fb6-4c23-8d61-814a0e61113c"
 							]
 						}
 					},
@@ -3316,7 +3332,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger1_id}}/entries",
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger1_id}}/entries?ledger_id",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -3326,6 +3342,12 @@
 								"ledgers",
 								"{{ledger1_id}}",
 								"entries"
+							],
+							"query": [
+								{
+									"key": "ledger_id",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -4511,7 +4533,7 @@
 					"response": []
 				},
 				{
-					"name": "13. Update existing transaction mandate",
+					"name": "13. Update existing transaction meta data",
 					"request": {
 						"method": "PUT",
 						"header": [
