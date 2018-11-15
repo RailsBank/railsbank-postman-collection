@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "39bc22a6-d020-4523-8201-bc12d24a90eb",
+		"name": "Customer Dev Tools (For Play Only)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Add iban for specific ledger",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bic_swift\": \"{{bic_swift}}\",\n  \"iban\": \"{{iban}}\"\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/dev/customer/ledgers/{{ledger_id}}/iban",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"dev",
+						"customer",
+						"ledgers",
+						"{{ledger_id}}",
+						"iban"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2a. Simulate crediting a GBP ledger with funds (minimal ver.)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"uk_sort_code\": \"009975\",\n  \"uk_account_number\": \"45564658\",\n  \"amount\": \"0\"\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/dev/customer/transactions/receive",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"dev",
+						"customer",
+						"transactions",
+						"receive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2b. Simulate crediting a EUR ledger with funds (minimal ver.)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bic_swift\": \"SPSRSKBAXXX\",\n  \"iban\": \"SK4402005678901234567890\",\n  \"amount\": \"0\"\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/dev/customer/transactions/receive",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"dev",
+						"customer",
+						"transactions",
+						"receive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Simulate creating a ledger with funds (full ver.)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{customer_api_key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"settlement_date\": \"2017-03-01\",\n  \"end_to_end_id\": \"NOTPROVIDED\",\n  \"instructed_agent\": {\n    \"bic\": \"random sequence of characters0\"\n  },\n  \"purpose_category\": \"SALA\",\n  \"receiver_account\": {\n    \"iban\": \"SK4402005678901234567890\"\n  },\n  \"receiver_agent\": {\n    \"bic\": \"random sequence of characters0\"\n  },\n  \"receiver\": {\n    \"issuer\": \"string\",\n    \"birth_country\": \"abcdefghijklmnopqrstuvwxyz\",\n    \"bic\": \"random sequence of characters\",\n    \"id\": \"random sequence of characters\",\n    \"name\": \"John Doe\",\n    \"address\": {\n      \"country\": \"GB\",\n      \"lines\": \"27 Old Gloucester Street\\nLondon\"\n    },\n    \"birth_date\": \"random sequence of characters\",\n    \"scheme_proprietary\": \"string\",\n    \"birth_city\": \"string\",\n    \"scheme\": \"string\",\n    \"birth_province\": \"abcdefghijklmnopqrstuvwxyz\"\n  },\n  \"sender_account\": {\n    \"iban\": \"SK4402005678901234567890\"\n  },\n  \"amount\": \"1.00\",\n  \"transaction_id\": \"TEST-001-TX\",\n  \"remittance_information_unstructured\": \"this is a test payment\",\n  \"partner_product\": \"ExampleBank-EUR-1\",\n  \"sender_agent\": {\n    \"bic\": \"SPSRSKBAXXX\"\n  },\n  \"asset_type\": \"eur\",\n  \"asset_class\": \"currency\",\n  \"message_schema\": \"pacs.008.001.02\",\n  \"sender\": {\n    \"name\": \"Sandy Sender\",\n    \"address\": {\n      \"country\": \"GB\",\n      \"lines\": \"Staveley Road\\nLondon\"\n    }\n  },\n  \"instructing_agent\": {\n    \"bic\": \"SPSRSKBAXXX\"\n  },\n  \"purpose\": \"SALA\",\n  \"message_id\": \"TEST-001-MSG\"\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/dev/customer/transactions/receive/fullsimulation",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"dev",
+						"customer",
+						"transactions",
+						"receive",
+						"fullsimulation"
+					]
+				},
+				"description": "Please make changes accordingly to your discretion"
+			},
+			"response": []
+		},
+		{
+			"name": "4. Send event over webhook (providing a ledger id)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{customer_api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ledger_id\": \"{{ledger_id}}\"\n}\n"
+				},
+				"url": {
+					"raw": "{{baseurl}}/dev/customer/webhook/test",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"dev",
+						"customer",
+						"webhook",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d2a85b15-b60b-4f5a-8640-c4f496810758",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "088535e9-5da4-4416-bcfc-97cabe855f73",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
