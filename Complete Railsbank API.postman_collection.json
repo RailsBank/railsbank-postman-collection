@@ -3173,7 +3173,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/5bed3df1-9fb6-4c23-8d61-814a0e61113c",
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_id}}",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -3181,7 +3181,7 @@
 								"v1",
 								"customer",
 								"ledgers",
-								"5bed3df1-9fb6-4c23-8d61-814a0e61113c"
+								"{{ledger_id}}"
 							]
 						}
 					},
@@ -4725,7 +4725,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"webhook_secret\": \"some_secret_key_sended_with_every_event\",\n  \"webhook_url\": \"{{webhook_url}}\"\n}"
+							"raw": "{\n  \"webhook_secret\": \"some_secret_key_sent_with_every_event\",\n  \"webhook_url\": \"{{webhook_url}}\"\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/webhook",
@@ -4867,7 +4867,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"webhook_secret\": \"another_secret_key_sended_with_every_event\"\n}"
+							"raw": "{\n  \"webhook_secret\": \"another_secret_key_sendt_with_every_event\"\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/webhook/update-secret",
