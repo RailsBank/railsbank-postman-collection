@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "563e1b51-f81e-4bef-897c-d3374c277c91",
-		"name": "XiTi Regression Pack (prod_play_live)",
+		"name": "🐨 XiTi Regression Pack (prod_play_live)",
 		"description": "\n-xiti",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -288,7 +288,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"webhook_url\": \"https://reqbin-int.railsbank.com/1at2v6b1\",\r\n  \"webhook_secret\": \"{{version}}\"\r\n}"
+							"raw": "{\r\n  \"webhook_url\": \"https://reqbin-int.railsbank.com/q0944oq0\",\r\n  \"webhook_secret\": \"{{version}}\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/webhook",
@@ -2237,6 +2237,19 @@
 				},
 				{
 					"name": "4j. Update Ledger Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "920381ce-0c1b-445d-90cf-3c1a2b69392b",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -2261,7 +2274,7 @@
 							"raw": "{\n  \"ledger_meta\": {\n    \"foo\": \"bar\"\n  }\n}"
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger1_id}}",
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_eur_enduserC}}",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -2269,7 +2282,7 @@
 								"v1",
 								"customer",
 								"ledgers",
-								"{{ledger1_id}}"
+								"{{ledger_eur_enduserC}}"
 							]
 						}
 					},
@@ -2310,6 +2323,17 @@
 									"var moment = require('moment')",
 									"    postman.setGlobalVariable(\"timestamp-UtcIso8601\", moment().toISOString())",
 									"    postman.setGlobalVariable(\"yesterday_timestamp-UtcIso8601\", moment().subtract(1, 'day').toISOString())"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "723c14e5-6f1d-4076-a91e-31423b0a1378",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
 								],
 								"type": "text/javascript"
 							}
@@ -4949,6 +4973,19 @@
 						},
 						{
 							"name": "8 Last. Test Firewall rules (Transactions) Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "38d7ff2c-3823-4374-b94a-43fab4ad81fe",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4970,7 +5007,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"compliance_firewall_rules\": \"[rules [rule :rule-name (fn data)]]\",\n  \"transaction_id\": \"{{transaction_id}}\"\n}"
+									"raw": "{\n  \"compliance_firewall_rules\": \"[rules [rule :always-pass ok]]\",\n  \"transaction_id\": \"{{transaction_id_funded_to_unfunded}}\"\n}"
 								},
 								"url": {
 									"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions/test",
@@ -5509,7 +5546,7 @@
 							"response": []
 						},
 						{
-							"name": "*****11. Fetch quarantine for transaction Copy",
+							"name": "11. Fetch quarantine for transaction Copy",
 							"event": [
 								{
 									"listen": "test",
@@ -5558,7 +5595,7 @@
 							"response": []
 						},
 						{
-							"name": "*****12. Comment transaction in quarantine (transaction,enduser) Copy",
+							"name": "12. Comment transaction in quarantine (transaction,enduser) Copy",
 							"event": [
 								{
 									"listen": "test",
@@ -5596,7 +5633,7 @@
 									"raw": "{\n  \"comment\": \"single line comment\"\n}"
 								},
 								"url": {
-									"raw": "{{baseurl}}/v1/customer/quarantine/transactions/{{transaction_id}}/comments",
+									"raw": "{{baseurl}}/v1/customer/quarantine/transactions/{{transaction_id_funded_to_unfunded}}/comments",
 									"host": [
 										"{{baseurl}}"
 									],
@@ -5605,7 +5642,7 @@
 										"customer",
 										"quarantine",
 										"transactions",
-										"{{transaction_id}}",
+										"{{transaction_id_funded_to_unfunded}}",
 										"comments"
 									]
 								}
@@ -5613,7 +5650,7 @@
 							"response": []
 						},
 						{
-							"name": "*****13. Resolve transaction in quarantine Copy",
+							"name": "13. Resolve transaction in quarantine Copy",
 							"event": [
 								{
 									"listen": "test",
@@ -5652,7 +5689,7 @@
 									"raw": "{\n  \"comment\": \"single line comment\",\n  \"qr_status\": \"pass\"\n}"
 								},
 								"url": {
-									"raw": "{{baseurl}}/v1/customer/quarantine/transactions/{{transaction_id}}/resolve",
+									"raw": "{{baseurl}}/v1/customer/quarantine/transactions/{{transaction_id_funded_to_unfunded}}/resolve",
 									"host": [
 										"{{baseurl}}"
 									],
@@ -5661,7 +5698,7 @@
 										"customer",
 										"quarantine",
 										"transactions",
-										"{{transaction_id}}",
+										"{{transaction_id_funded_to_unfunded}}",
 										"resolve"
 									]
 								}
@@ -5670,6 +5707,335 @@
 						}
 					],
 					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "part 9 - Closing Ledgers [to complete when all is cleared]",
+			"item": [
+				{
+					"name": "9a. Close Ledger Account (customer - gbp)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ca342375-93af-4503-b27f-a585b52554ec",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_gbp_customer}}/close",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_gbp_customer}}",
+								"close"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9b. Close Ledger Account (customer- eur)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "083dff6d-40e9-4828-bc7f-957aa5672745",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_eur_customer}}/close",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_eur_customer}}",
+								"close"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9c. Close Ledger Account (enduserP - gbp)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1bae5dbd-f8b4-4d99-bce1-c73b1fbfbb8d",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_gbp_enduserP}}/close",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_gbp_enduserP}}",
+								"close"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9d. Close Ledger Account (enduserP - eur)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2478da4-8cbb-4490-883d-92d561751eb2",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_eur_enduserP}}/close",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_eur_enduserP}}",
+								"close"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9d. Close Ledger Account (enduserC - gbp)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f8944bca-847e-4485-881a-cac79319aa35",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_gbp_enduserC}}/close",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_gbp_enduserC}}",
+								"close"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9d. Close Ledger Account (enduserC - eur)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "55cccf27-f254-4c37-a8f7-08503373e8e3",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"CORS is present\"] = postman.getResponseHeader(\"access-control-allow-origin\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/ledgers/{{ledger_eur_enduserC}}/close",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"ledgers",
+								"{{ledger_eur_enduserC}}",
+								"close"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
