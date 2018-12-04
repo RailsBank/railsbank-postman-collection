@@ -788,7 +788,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"bank_code_type\": \"sort-code\",\n  \"bank_country\": \"GB\",\n  \"bic_swift\": \"SPSRSKBAXXX\",\n  \"bank_code\": \"45564658\",\n  \"iban\": \"SK4402005678901234567890\",\n  \"account_number\": \"45564658\",\n  \"bank_name\": \"Bank of America\"\n}"
+							"raw": "{\n  \"bank_name\": \"Bank of America\",\n  \"bank_country\": \"GB\",\n  \"bank_code_type\": \"sort-code\",\n  \"bank_code\": \"{{uk_sort_code}}\",\n  \"account_number\": \"{{uk_account_number}}\",\n  \"bic_swift\": \"{{bicswift}}\",\n  \"iban\": \"{{iban}}\"\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts/{{account_id}}",
@@ -1021,7 +1021,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"card_programme\": \"some-chars\",\n  \"ledger_id\": \"{{ledger1_id}}\",\n  \"partner_product\": \"ExampleBank-Direct-Debit-1\"\n}"
+							"raw": "{\n  \"card_programme\": \"{{card_programme}}\",\n  \"ledger_id\": \"{{ledger1_id}}\",\n  \"partner_product\": \"ExampleBank-Direct-Debit-1\",\n  \"card_rules\": \n\t[\n\t\t\"{{card_rule_1}}\",\n\t    \"{{card_rule_2}}\",\n\t    \"{{card_rule_3}}\"\t\t\n  \t]\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/cards",
@@ -1109,7 +1109,202 @@
 					"response": []
 				},
 				{
-					"name": "4. Get card details from card_id",
+					"name": "4. Create new card rule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"card_rule_type\": \"card-max-spend-per-transaction\",\n  \"card_rule_name\": \"Maximum Transaction of 1000 over card life-time\",\n  \"card_rule_meta\": {\n    \"foo\": \"bar\"\n  },\n  \"card_rule_body\": \"100000\",\n  \"card_rule_description\": \"Rule declining all payments with amount above 1000\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/cards/rules",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"cards",
+								"rules"
+							]
+						},
+						"description": "List of card_rule_types:\n\n card-mid-blacklist\n card-max-spend-per-transaction\n card-mcc-whitelist\n card-mcc-blacklist\n card-mid-whitelist"
+					},
+					"response": []
+				},
+				{
+					"name": "5. List Card rules",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/cards/rules",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"cards",
+								"rules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Get Card rule details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/cards/rules/{{card_rule_1}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"cards",
+								"rules",
+								"{{card_rule_1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7. Update active card rule attributes",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"card_rule_name\": \"Maximum Transaction of 1000 over card life-time\",\n  \"card_rule_meta\": {\n    \"foo\": \"bar\"\n  },\n  \"card_rule_description\": \"Rule declining all payments with amount above 1000\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/cards/rules/{{card_rule_1}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"cards",
+								"rules",
+								"{{card_rule_1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8. Disable Card rule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/cards/rules/{{card_rule_1}}/disable",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"cards",
+								"rules",
+								"{{card_rule_1}}",
+								"disable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9. Get card details from card_id",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1144,7 +1339,48 @@
 					"response": []
 				},
 				{
-					"name": "5. Activate card",
+					"name": "10. Update card data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{customer_api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"card_rules\": [\n    \"{{card_rule_1}}\",\n    \"{{card_rule_2}}\",\n    \"{{card_rule_3}}\"\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/cards/{{card_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"cards",
+								"{{card_id}}"
+							]
+						},
+						"description": "Currently only card rules can be changed.\n\nSet card_rules to empty array to remove card rules from card."
+					},
+					"response": []
+				},
+				{
+					"name": "11. Activate card",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1185,7 +1421,7 @@
 					"response": []
 				},
 				{
-					"name": "6. Get card image (valid for 10 mins)",
+					"name": "12. Get card image (valid for 10 mins)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1221,7 +1457,7 @@
 					"response": []
 				},
 				{
-					"name": "7. Suspend card",
+					"name": "13. Suspend card",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1701,7 +1937,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/{compliance_firewall_type}/reload",
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/beneficiaries/reload",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -1709,7 +1945,7 @@
 								"v1",
 								"customer",
 								"compliance-firewall-rules",
-								"{compliance_firewall_type}",
+								"beneficiaries",
 								"reload"
 							]
 						}
@@ -1742,7 +1978,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/{compliance_firewall_type}/reload",
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/transactions/reload",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -1750,7 +1986,7 @@
 								"v1",
 								"customer",
 								"compliance-firewall-rules",
-								"{compliance_firewall_type}",
+								"transactions",
 								"reload"
 							]
 						}
@@ -1783,7 +2019,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/{compliance_firewall_type}/reload",
+							"raw": "{{baseurl}}/v1/customer/compliance-firewall-rules/endusers/reload",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -1791,7 +2027,7 @@
 								"v1",
 								"customer",
 								"compliance-firewall-rules",
-								"{compliance_firewall_type}",
+								"endusers",
 								"reload"
 							]
 						}
