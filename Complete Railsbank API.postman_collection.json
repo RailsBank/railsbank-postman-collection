@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "d5871b28-694e-44e1-a40e-8fb26bc37336",
 		"name": "Complete Railsbank API",
-		"description": "README:\n\nAll the customer endpoints available in the 'Play Live' arena\n\nNOT to be used for regression test. includes 'dangerous' endpoints\n\nSome bodies contain the minimum required fields. To see the full list, please refer to the docs\n(https://docs.railsbank.com/)",
+		"description": "README:\n\nAll the customer endpoints available in the 'Play Live' arena\n\nNOT to be used for regression test. includes 'dangerous' endpoints\n\nSome bodies contain the minimum required fields. To see the full list, please refer to the docs\n(https://docs.railsbank.com/)\n\n-xiti",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -2407,7 +2407,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "/v1/customer/direct-debit/mandates/{{mandate_id}}",
+							"raw": "{{baseurl}}/v1/customer/direct-debit/mandates/{{mandate_id}}",
+							"host": [
+								"{{baseurl}}"
+							],
 							"path": [
 								"v1",
 								"customer",
