@@ -7,10 +7,10 @@
 	},
 	"item": [
 		{
-			"name": "About Customer and Misc.",
+			"name": "1. About Customer and Misc.",
 			"item": [
 				{
-					"name": "1. Returns version of API",
+					"name": "1.1 Returns version of API",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -44,7 +44,7 @@
 					"response": []
 				},
 				{
-					"name": "2. Get Customer's own information",
+					"name": "1.2 Get Customer's own information",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -78,7 +78,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Get a list of Customer's authorised banks",
+					"name": "1.3 Get a list of Customer's authorised banks",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -113,7 +113,7 @@
 					"response": []
 				},
 				{
-					"name": "4. Get list of Customer's enabled products",
+					"name": "1.4 Get list of Customer's enabled products",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -148,7 +148,7 @@
 					"response": []
 				},
 				{
-					"name": "5a. List card programmes assigned with specific product (ExampleBank-Direct-Debit-1)",
+					"name": "1.5 List card programmes assigned with (PlayLive's ExampleBank-Direct-Debit-1)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -185,7 +185,7 @@
 					"response": []
 				},
 				{
-					"name": "5b. List card programmes assigned with specific product (Railsbank-Debit-Card-1)",
+					"name": "1.6 List card programmes assigned with specific product (Live's Railsbank-Debit-Card-1)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -222,19 +222,19 @@
 					"response": []
 				},
 				{
-					"name": "6. Return list of notifications created between dates",
+					"name": "1.7 Return list of notifications created starting from yesterday",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							},
 							{
 								"key": "Authorization",
-								"value": "{{customer_api_key}}",
-								"type": "text"
+								"type": "text",
+								"value": "{{customer_api_key}}"
 							}
 						],
 						"body": {
@@ -242,7 +242,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/notifications",
+							"raw": "{{baseurl}}/v1/customer/notifications?starting_at_date={{starting_at_date}}",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -250,6 +250,13 @@
 								"v1",
 								"customer",
 								"notifications"
+							],
+							"query": [
+								{
+									"key": "starting_at_date",
+									"value": "{{starting_at_date}}",
+									"description": "e.g. \"2000-01-01\""
+								}
 							]
 						}
 					},
@@ -258,10 +265,10 @@
 			]
 		},
 		{
-			"name": "Beneficiaries",
+			"name": "2. Beneficiaries",
 			"item": [
 				{
-					"name": "1a. Create New Beneficiary (person GBP)",
+					"name": "2.1a. Create New Beneficiary (person GBP)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -301,7 +308,7 @@
 					"response": []
 				},
 				{
-					"name": "1b. Create New Beneficiary (person EUR)",
+					"name": "2.1b. Create New Beneficiary (person EUR)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -341,7 +348,7 @@
 					"response": []
 				},
 				{
-					"name": "1c. Create New Beneficiary (company GBP)",
+					"name": "2.1c. Create New Beneficiary (company GBP)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -363,7 +370,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"uk_account_number\": \"{{uk_account_number}}\",\r\n \"uk_sort_code\": \"{{uk_sort_code}}\",\r\n \"holder_id\": \"{{enduser_id}}\",\r\n \"asset_class\": \"currency\",\r\n \"asset_type\": \"gbp\",\r\n  \"company\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"Bremen\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"icecream@example.net\",\r\n    \"name\": \"John's Ice Creams Ltd\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Dinslaken\",\r\n      \"address_region\": \"Bremen\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"DE\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+							"raw": "{\r\n \"uk_account_number\": \"{{uk_account_number}}\",\r\n \"uk_sort_code\": \"{{uk_sort_code}}\",\r\n \"holder_id\": \"{{enduser_id}}\",\r\n \"asset_class\": \"currency\",\r\n \"asset_type\": \"gbp\",\r\n  \"company\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"Bremen\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"icecream@example.net\",\r\n    \"name\": \"John's Ice Creams Ltd\",\r\n    \"registration_address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Dinslaken\",\r\n      \"address_region\": \"Bremen\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"DE\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries",
@@ -381,7 +388,7 @@
 					"response": []
 				},
 				{
-					"name": "1d. Create New Beneficiary (company EUR)",
+					"name": "2.1d. Create New Beneficiary (company EUR)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -403,7 +410,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"iban\": \"{{iban}}\",\r\n  \"bicswift\": \"{{bicswift}}\",\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"company\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"Bremen\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"icecream@example.net\",\r\n    \"name\": \"John's Ice Creams Ltd\",\r\n    \"address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Dinslaken\",\r\n      \"address_region\": \"Bremen\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"DE\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"iban\": \"{{iban}}\",\r\n  \"bicswift\": \"{{bicswift}}\",\r\n  \"holder_id\": \"{{enduser_id}}\",\r\n  \"asset_class\": \"currency\",\r\n  \"asset_type\": \"eur\",\r\n  \"company\": {\r\n    \"country_of_residence\": [\r\n      \"GB\"\r\n    ],\r\n    \"address_history\": [\r\n      {\r\n        \"address_refinement\": \"Apartment 77\",\r\n        \"address_number\": \"42\",\r\n        \"address_street\": \"Kirschbaumstraße\",\r\n        \"address_city\": \"Berlin\",\r\n        \"address_region\": \"Bremen\",\r\n        \"address_postal_code\": \"12059\",\r\n        \"address_iso_country\": \"DE\",\r\n        \"address_start_date\": \"2000-09-02\",\r\n        \"address_end_date\": \"2002-12-20\"\r\n      }\r\n    ],\r\n    \"date_onboarded\": \"2015-11-21\",\r\n    \"email\": \"icecream@example.net\",\r\n    \"name\": \"John's Ice Creams Ltd\",\r\n    \"registration_address\": {\r\n      \"address_refinement\": \"Apartment 42\",\r\n      \"address_number\": \"29\",\r\n      \"address_street\": \"Acacia Road\",\r\n      \"address_city\": \"Dinslaken\",\r\n      \"address_region\": \"Bremen\",\r\n      \"address_postal_code\": \"FX20 7XS\",\r\n      \"address_iso_country\": \"DE\"\r\n    },\r\n    \"telephone\": \"+44 22 626 2626\",\r\n    \"date_of_birth\": \"1970-11-05\",\r\n    \"nationality\": [\r\n      \"Czech\"\r\n    ]\r\n  },\r\n  \"beneficiary_meta\": {\r\n    \"foo\": \"baa\",\r\n    \"our_salesforce_reference\": \"http://na1.salesforce.com/5003000000D8cuI\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/beneficiaries",
@@ -421,7 +428,7 @@
 					"response": []
 				},
 				{
-					"name": "2. List all Beneficiary",
+					"name": "2.2. List all Beneficiary",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -455,7 +462,7 @@
 					"response": []
 				},
 				{
-					"name": "2b. List Customer's Beneficiary",
+					"name": "2.2b. List Customer's Beneficiary",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -495,19 +502,19 @@
 					"response": []
 				},
 				{
-					"name": "2c. List Enduser's Beneficiary",
+					"name": "2.2c. List a specific Enduser's Beneficiary",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							},
 							{
 								"key": "Authorization",
-								"value": "{{customer_api_key}}",
-								"type": "text"
+								"type": "text",
+								"value": "{{customer_api_key}}"
 							}
 						],
 						"body": {
@@ -535,7 +542,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Update Beneficiary (GBP)",
+					"name": "2.3. Update Beneficiary (GBP)",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -575,7 +582,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Update Beneficiary (EUR)",
+					"name": "2.3. Update Beneficiary (EUR)",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -615,7 +622,7 @@
 					"response": []
 				},
 				{
-					"name": "4. Fetch Beneficiary",
+					"name": "2.4. Fetch Beneficiary",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -650,7 +657,7 @@
 					"response": []
 				},
 				{
-					"name": "5. Create New Account for Beneficiary (GBP)",
+					"name": "2.5. Create New Account for Beneficiary (GBP)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -692,7 +699,7 @@
 					"response": []
 				},
 				{
-					"name": "6. Return accounts of Beneficiary",
+					"name": "2.6. Return accounts of Beneficiary",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -712,7 +719,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}}/accounts",
+							"raw": "{{baseurl}}/v1/customer/beneficiaries/{{beneficiary_id}}/accounts",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -720,7 +727,7 @@
 								"v1",
 								"customer",
 								"beneficiaries",
-								"{{beneficiary_id}}}",
+								"{{beneficiary_id}}",
 								"accounts"
 							]
 						}
@@ -728,7 +735,7 @@
 					"response": []
 				},
 				{
-					"name": "7. Return account for Beneficiary* (bene_id and acc_id)",
+					"name": "2.7. Return account for Beneficiary* (bene_id and acc_id)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -766,7 +773,7 @@
 					"response": []
 				},
 				{
-					"name": "8. Update existing account for Beneficiary",
+					"name": "2.8. Update existing account for Beneficiary",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -808,7 +815,7 @@
 					"response": []
 				},
 				{
-					"name": "9. Change default account of Beneficiary",
+					"name": "2.9. Change default account of Beneficiary",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -851,7 +858,7 @@
 					"response": []
 				},
 				{
-					"name": "10. Fetch latest f/w calc report for Beneficiary",
+					"name": "2.10. Fetch latest f/w calc report for Beneficiary",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -887,7 +894,7 @@
 					"response": []
 				},
 				{
-					"name": "11. Move existing Beneficiary from missing data to state which will rerun firewalls",
+					"name": "2.11. Move existing Beneficiary from missing data to state which will rerun firewalls",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -923,7 +930,7 @@
 					"response": []
 				},
 				{
-					"name": "12. Wait until Beneficiary will be in final state",
+					"name": "2.12. Wait until Beneficiary will be in final state",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -959,7 +966,7 @@
 					"response": []
 				},
 				{
-					"name": "13. Return account for Beneficiary* (acc_id only)",
+					"name": "2.13. Return account for Beneficiary* (acc_id only)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -996,18 +1003,13 @@
 			]
 		},
 		{
-			"name": "Cards",
+			"name": "3. Cards",
 			"item": [
 				{
-					"name": "1. Add a new card to the ledger",
+					"name": "3.0. List card programmes assigned",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
 							{
 								"key": "Accept",
 								"value": "application/json",
@@ -1021,7 +1023,49 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"card_programme\": \"{{card_programme}}\",\n  \"ledger_id\": \"{{ledger1_id}}\",\n  \"partner_product\": \"ExampleBank-Direct-Debit-1\",\n  \"card_rules\": \n\t[\n\t\t\"{{card_rule_1}}\",\n\t    \"{{card_rule_2}}\",\n\t    \"{{card_rule_3}}\"\t\t\n  \t]\n}"
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/my/products/Railsbank-Debit-Card-1/card-programmes",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"my",
+								"products",
+								"Railsbank-Debit-Card-1",
+								"card-programmes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.1a. Add a new Virtual Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ledger_id\": \"{{ledger_id}}\",\n  \"card_type\": \"virtual\",\n  \"card_design\": \"{{card_design}}\",\n  \"card_programme\": \"{{card_programme}}\",\n  \"card_rules\": []\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/cards",
@@ -1038,7 +1082,46 @@
 					"response": []
 				},
 				{
-					"name": "2. List Cards",
+					"name": "3.1b. Add a new Physical Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{customer_api_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ledger_id\": \"{{ledger_of_card_holder}}\",\n  \"card_carrier_type\": \"{{carrier_type}}\",\n  \"card_delivery_name\": \"{{Name}}\",\n  \"card_type\": \"physical\",\n  \"card_delivery_method\": \"{{delivery_method}}\",\n  \"card_design\": \"{{design_name}}\",\n  \"card_delivery_address\": {\n    \"address_region\": \"England\",\n    \"address_iso_country\": \"GBR\",\n    \"address_number\": \"35\",\n    \"address_postal_code\": \"WC1R 4AQ\",\n    \"address_refinement\": \"First Floor\",\n    \"address_street\": \"Eagle Street\",\n    \"address_city\": \"London\"\n  },\n  \"card_rules\": [],\n  \"card_programme\": \"qa-person-gbp\"\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/cards",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.2. List Cards",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1072,7 +1155,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Get Card Details from token",
+					"name": "3.3. Get Card Details (using Card Token)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1109,7 +1192,7 @@
 					"response": []
 				},
 				{
-					"name": "4. Create new card rule",
+					"name": "3.4. Create new card rule",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1150,7 +1233,7 @@
 					"response": []
 				},
 				{
-					"name": "5. List Card rules",
+					"name": "3.5. List Card rules",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1185,7 +1268,7 @@
 					"response": []
 				},
 				{
-					"name": "6. Get Card rule details",
+					"name": "3.6. Get Card rule details",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1221,7 +1304,7 @@
 					"response": []
 				},
 				{
-					"name": "7. Update active card rule attributes",
+					"name": "3.7. Update active card rule attributes",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -1262,7 +1345,7 @@
 					"response": []
 				},
 				{
-					"name": "8. Disable Card rule",
+					"name": "3.8. Disable Card rule",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1304,7 +1387,7 @@
 					"response": []
 				},
 				{
-					"name": "9. Get card details from card_id",
+					"name": "3.9. Get card details (using Card ID)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1339,7 +1422,7 @@
 					"response": []
 				},
 				{
-					"name": "10. Update card data",
+					"name": "3.10. Update card data",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -1380,7 +1463,7 @@
 					"response": []
 				},
 				{
-					"name": "11. Activate card",
+					"name": "3.11. Activate card",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1421,7 +1504,7 @@
 					"response": []
 				},
 				{
-					"name": "12. Get card image (valid for 10 mins)",
+					"name": "3.12. Get card image (valid for 10 mins)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1457,7 +1540,7 @@
 					"response": []
 				},
 				{
-					"name": "13. Suspend card",
+					"name": "3.13. Suspend card",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1496,14 +1579,39 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "3.14. Get PIN for physical card",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/cards/{{card_id}}/pin",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"cards",
+								"{{card_id}}",
+								"pin"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
-			"name": "Compliance",
+			"name": "4. Compliance",
 			"item": [
 				{
-					"name": "1. Set contact information for Customer's compliance officer",
+					"name": "4.1. Set contact information for Customer's compliance officer",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1542,7 +1650,7 @@
 					"response": []
 				},
 				{
-					"name": "2. Get contact information for Customer's compliance officer",
+					"name": "4.2. Get contact information for Customer's compliance officer",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1576,7 +1684,7 @@
 					"response": []
 				},
 				{
-					"name": "3a. Set / Update Firewall rules (Beneficiaries)",
+					"name": "4.3a. Set / Update Firewall rules (Beneficiaries)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1617,7 +1725,7 @@
 					"response": []
 				},
 				{
-					"name": "3b. Set / Update Firewall rules (Transactions)",
+					"name": "4.3b. Set / Update Firewall rules (Transactions)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1658,7 +1766,7 @@
 					"response": []
 				},
 				{
-					"name": "3c. Set / Update Firewall rules (Endusers)",
+					"name": "4.3c. Set / Update Firewall rules (Endusers)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1699,7 +1807,7 @@
 					"response": []
 				},
 				{
-					"name": "4a. Get Firewall rules (Beneficiaries)",
+					"name": "4.4a. Get Firewall rules (Beneficiaries)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1734,7 +1842,7 @@
 					"response": []
 				},
 				{
-					"name": "4b. Get Firewall rules (Transactions)",
+					"name": "4.4b. Get Firewall rules (Transactions)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1769,7 +1877,7 @@
 					"response": []
 				},
 				{
-					"name": "4c. Get Firewall rules (Endusers)",
+					"name": "4.4c. Get Firewall rules (Endusers)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1804,7 +1912,7 @@
 					"response": []
 				},
 				{
-					"name": "5a. Get firewall rules history (Beneficiaries)",
+					"name": "4.5a. Get firewall rules history (Beneficiaries)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1840,7 +1948,7 @@
 					"response": []
 				},
 				{
-					"name": "5b. Get firewall rules history (Transactions)",
+					"name": "4.5b. Get firewall rules history (Transactions)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1876,7 +1984,7 @@
 					"response": []
 				},
 				{
-					"name": "5c. Get firewall rules history (Endusers)",
+					"name": "4.5c. Get firewall rules history (Endusers)",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1912,7 +2020,7 @@
 					"response": []
 				},
 				{
-					"name": "6a. Applies most recent firewall rules with current datasets (Beneficiaries)",
+					"name": "4.6a. Applies most recent firewall rules with current datasets (Beneficiaries)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1953,7 +2061,7 @@
 					"response": []
 				},
 				{
-					"name": "6b. Applies most recent firewall rules with current datasets (Transactions)",
+					"name": "4.6b. Applies most recent firewall rules with current datasets (Transactions)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1994,7 +2102,7 @@
 					"response": []
 				},
 				{
-					"name": "6c. Applies most recent firewall rules with current datasets (Endusers)",
+					"name": "4.6c. Applies most recent firewall rules with current datasets (Endusers)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2035,7 +2143,7 @@
 					"response": []
 				},
 				{
-					"name": "7a. Test Firewall rules (Beneficiaries)",
+					"name": "4.7a. Test Firewall rules (Beneficiaries)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2076,7 +2184,7 @@
 					"response": []
 				},
 				{
-					"name": "7b. Test Firewall rules (Transactions)",
+					"name": "4.7b. Test Firewall rules (Transactions)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2117,7 +2225,7 @@
 					"response": []
 				},
 				{
-					"name": "7c. Test Firewall rules (Endusers)",
+					"name": "4.7c. Test Firewall rules (Endusers)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2158,7 +2266,7 @@
 					"response": []
 				},
 				{
-					"name": "8. Create Firewall dataset",
+					"name": "4.8. Create Firewall dataset",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2197,7 +2305,7 @@
 					"response": []
 				},
 				{
-					"name": "9. Read Firewall dataset",
+					"name": "4.9. Read Firewall dataset",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2233,7 +2341,7 @@
 					"response": []
 				},
 				{
-					"name": "10. Get compliance manual that includes all the Firewalls and related data",
+					"name": "4.10. Get compliance manual that includes all the Firewalls and related data",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2267,7 +2375,7 @@
 					"response": []
 				},
 				{
-					"name": "10b. Get compliance manual that includes all the Firewalls and related data (at some specific point in time",
+					"name": "4.10b. Get compliance manual that includes all the Firewalls and related data (at some specific point in time",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2309,10 +2417,10 @@
 			]
 		},
 		{
-			"name": "Direct Debit",
+			"name": "5. Direct Debit",
 			"item": [
 				{
-					"name": "1. Creates a mandate",
+					"name": "5.1. Creates a mandate",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2352,7 +2460,7 @@
 					"response": []
 				},
 				{
-					"name": "2. List mandates",
+					"name": "5.2. List mandates",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2387,7 +2495,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Get a single mandate",
+					"name": "5.3. Get a single mandate",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2423,7 +2531,7 @@
 					"response": []
 				},
 				{
-					"name": "4. Cancel active mandate and all associated cancellable payments",
+					"name": "5.4. Cancel active mandate and all associated cancellable payments",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2465,7 +2573,7 @@
 					"response": []
 				},
 				{
-					"name": "5. Create payment",
+					"name": "5.5. Create payment",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2505,7 +2613,7 @@
 					"response": []
 				},
 				{
-					"name": "6. List payments",
+					"name": "5.6. List payments",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2540,7 +2648,7 @@
 					"response": []
 				},
 				{
-					"name": "7. Get a single payment",
+					"name": "5.7. Get a single payment",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2578,10 +2686,10 @@
 			]
 		},
 		{
-			"name": "Endusers",
+			"name": "6. Endusers",
 			"item": [
 				{
-					"name": "1. List all Endusers created by the Customer",
+					"name": "6.1. List all Endusers created by the Customer",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2615,7 +2723,7 @@
 					"response": []
 				},
 				{
-					"name": "2a. Add new Enduser (Person)",
+					"name": "6.2a. Add new Enduser (Person)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2654,7 +2762,7 @@
 					"response": []
 				},
 				{
-					"name": "2b. Add new Enduser (Company)",
+					"name": "6.2b. Add new Enduser (Company)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2676,7 +2784,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "  { \n \"company\": {\n    \"name\": \"Example Company\",\n    \"trading_name\": \"Example Company Ltd.\",\n    \"web_site\": \"www.website.com\",\n    \"industry\": \"Financial Services\",\n    \"listed_on_stock_exchange\": false,\n    \"trading_addresses\": [\n      {\n         \"address_refinement\": \"Floor 15\", \n         \"address_number\": \"20\", \n         \"address_street\": \"The Strand\", \n         \"address_city\": \"London\", \n         \"address_postal_code\": \"SS8 9JH\", \n         \"address_iso_country\": \"GBR\" \n      }\n    ],\n    \"directors\": [\n      {\n        \"date_appointed\": \"1990-01-01\",\n        \"job_title\": \"CEO\",\n        \"is_also_ubo\": false,\n        \"person\": {\n          \"country_of_residence\": [\n            \"USA\"\n          ],\n          \"pep\": false,\n          \"email\": \"johnsmith@gmail.com\",\n          \"name\": \"John Smith\",\n          \"social_security_number\": \"090606\",\n          \"telephone\": \"+44 98 765 4321\",\n          \"date_of_birth\": \"1981-02-03\",\n          \"nationality\": [\n            \"American\"\n          ]\n        }\n      }\n    ]\n }\n}"
+							"raw": "{ \n \"company\": {\n    \"name\": \"Example Company\",\n    \"trading_name\": \"Example Company Ltd.\",\n    \"web_site\": \"www.website.com\",\n    \"industry\": \"Telecommunications\",\n    \"listed_on_stock_exchange\": false,\n    \"registration_address\": \n      {\n         \"address_refinement\": \"Floor 15\", \n         \"address_number\": \"20\", \n         \"address_street\": \"The Strand\", \n         \"address_city\": \"London\", \n         \"address_postal_code\": \"SS8 9JH\", \n         \"address_iso_country\": \"GBR\" \n      }\n\t}\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/endusers",
@@ -2693,7 +2801,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Fetch Enduser entity",
+					"name": "6.3. Fetch Enduser entity",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2728,7 +2836,7 @@
 					"response": []
 				},
 				{
-					"name": "4. Update existing Enduser",
+					"name": "6.4. Update existing Enduser",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -2753,7 +2861,7 @@
 							"raw": "{\n  \"company\": {\n    \"trading_addresses\": [\n      {\n        \"address_iso_country\": \"GB\"\n      },\n      {\n        \"address_iso_country\": \"GB\"\n      }\n    ],\n    \"regulated_financial_service_firm\": true,\n    \"registration_number\": \"8574-897512-964\",\n    \"incorporation_locality\": \"home\",\n    \"regulatory_licenses\": [\n      {\n        \"regulatory_license_type\": \"Other\",\n        \"regulatory_license_body\": \"MT-Malta-Financial-Services-Authority-MFSA\",\n        \"regulatory_license_reference_number\": \"abcdefghijklmnopqrstuvwxyz\"\n      },\n      {\n        \"regulatory_license_type\": \"GB-EMI\",\n        \"regulatory_license_body\": \"FR-French-Takeover-Panel\",\n        \"regulatory_license_reference_number\": \"random sequence of characters\"\n      }\n    ],\n    \"vat\": \"string\",\n    \"directors\": [\n      {\n        \"date_appointed\": \"2000-01-01\",\n        \"company\": {\n          \"trading_addresses\": [],\n          \"regulated_financial_service_firm\": true,\n          \"registration_number\": \"8574-897512-964\",\n          \"incorporation_locality\": \"home\",\n          \"regulatory_licenses\": [],\n          \"vat\": \"string\",\n          \"directors\": [],\n          \"type_other\": \"string\",\n          \"date_onboarded\": \"2011-11-21\",\n          \"legal_entry_number\": \"2187-99\",\n          \"industry\": \"spot welding\",\n          \"web_site\": \"http://foo.bar\",\n          \"tin\": \"some-chars\",\n          \"name\": \"Acme Corporation Ltd\",\n          \"trading_address_history\": [],\n          \"registration_address_history\": [],\n          \"corporate_entity_type\": \"trust\",\n          \"registration_address\": {\n            \"address_iso_country\": \"US\"\n          },\n          \"type\": \"UA-Vidkryte-Aktsionerne-Tovarystv-VAT\",\n          \"listed_on_stock_exchange\": true,\n          \"trading_name\": \"Bob's Burgers\",\n          \"ultimate_beneficial_owners\": [],\n          \"eu_vat\": \"BE49818\",\n          \"stock_exchanges\": []\n        },\n        \"job_title\": \"CFO\",\n        \"is_also_ubo\": false,\n        \"person\": {\n          \"country_of_residence\": [\n            \"USA\"\n          ],\n          \"pep_type\": \"direct\",\n          \"pep_notes\": \"comment\",\n          \"address_history\": [],\n          \"pep\": true,\n          \"date_onboarded\": \"2011-11-21\",\n          \"email\": \"alice@short.com\",\n          \"tin\": \"541571\",\n          \"name\": \"Bob\",\n          \"address\": {\n            \"address_iso_country\": \"US\"\n          },\n          \"social_security_number\": \"090606\",\n          \"telephone\": \"0012345678912\",\n          \"date_of_birth\": \"1981-02-03\",\n          \"tin_type\": \"type\",\n          \"nationality\": [\n            \"Hungarian\"\n          ]\n        }\n      },\n      {\n        \"date_appointed\": \"2000-01-01\",\n        \"company\": {\n          \"trading_addresses\": [],\n          \"regulated_financial_service_firm\": true,\n          \"registration_number\": \"8574-897512-964\",\n          \"incorporation_locality\": \"home\",\n          \"regulatory_licenses\": [],\n          \"vat\": \"string\",\n          \"directors\": [],\n          \"type_other\": \"random sequence of characters\",\n          \"date_onboarded\": \"2011-11-21\",\n          \"legal_entry_number\": \"2187-99\",\n          \"industry\": \"spot welding\",\n          \"web_site\": \"http://foo.bar\",\n          \"tin\": \"string\",\n          \"name\": \"Acme Corporation Ltd\",\n          \"trading_address_history\": [],\n          \"registration_address_history\": [],\n          \"corporate_entity_type\": \"trust\",\n          \"registration_address\": {\n            \"address_iso_country\": \"US\"\n          },\n          \"type\": \"US-Doing-Business-As\",\n          \"listed_on_stock_exchange\": true,\n          \"trading_name\": \"Bob's Burgers\",\n          \"ultimate_beneficial_owners\": [],\n          \"eu_vat\": \"BE49818\",\n          \"stock_exchanges\": []\n        },\n        \"job_title\": \"CFO\",\n        \"is_also_ubo\": false,\n        \"person\": {\n          \"country_of_residence\": [\n            \"USA\"\n          ],\n          \"pep_type\": \"direct\",\n          \"pep_notes\": \"comment\",\n          \"address_history\": [],\n          \"pep\": true,\n          \"date_onboarded\": \"2011-11-21\",\n          \"email\": \"alice@short.com\",\n          \"tin\": \"541571\",\n          \"name\": \"Bob\",\n          \"address\": {\n            \"address_iso_country\": \"GB\"\n          },\n          \"social_security_number\": \"090606\",\n          \"telephone\": \"0012345678912\",\n          \"date_of_birth\": \"1981-02-03\",\n          \"tin_type\": \"type\",\n          \"nationality\": [\n            \"Hungarian\"\n          ]\n        }\n      }\n    ],\n    \"type_other\": \"string\",\n    \"date_onboarded\": \"2011-11-21\",\n    \"legal_entry_number\": \"2187-99\",\n    \"industry\": \"spot welding\",\n    \"web_site\": \"http://foo.bar\",\n    \"tin\": \"short\",\n    \"name\": \"Acme Corporation Ltd\",\n    \"trading_address_history\": [\n      {\n        \"address_end_date\": \"2047-10-16\",\n        \"address_start_date\": \"2015-03-07\",\n        \"address_iso_country\": \"GB\"\n      },\n      {\n        \"address_end_date\": \"2099-12-31\",\n        \"address_start_date\": \"2000-01-01\",\n        \"address_iso_country\": \"US\"\n      }\n    ],\n    \"registration_address_history\": [\n      {\n        \"address_end_date\": \"2078-03-05\",\n        \"address_start_date\": \"2015-03-07\",\n        \"address_iso_country\": \"US\"\n      },\n      {\n        \"address_end_date\": \"2099-12-31\",\n        \"address_start_date\": \"1964-11-17\",\n        \"address_iso_country\": \"US\"\n      }\n    ],\n    \"corporate_entity_type\": \"trust\",\n    \"registration_address\": {\n      \"address_region\": \"Oregon\",\n      \"address_iso_country\": \"US\",\n      \"address_number\": \"47\",\n      \"address_postal_code\": \"94501\",\n      \"address_refinement\": \"Apartment 17\",\n      \"address_street\": \"Hudson Street\",\n      \"address_city\": \"Bratislava\"\n    },\n    \"type\": \"HR-slobodna-djelatnost\",\n    \"listed_on_stock_exchange\": true,\n    \"trading_name\": \"Bob's Burgers\",\n    \"ultimate_beneficial_owners\": [\n      {\n        \"company\": {\n          \"trading_addresses\": [],\n          \"regulated_financial_service_firm\": true,\n          \"registration_number\": \"8574-897512-964\",\n          \"incorporation_locality\": \"home\",\n          \"regulatory_licenses\": [],\n          \"vat\": \"some-chars\",\n          \"directors\": [],\n          \"type_other\": \"abcdefghijklmnopqrstuvwxyz\",\n          \"date_onboarded\": \"2011-11-21\",\n          \"legal_entry_number\": \"2187-99\",\n          \"industry\": \"spot welding\",\n          \"web_site\": \"http://foo.bar\",\n          \"tin\": \"string\",\n          \"name\": \"Acme Corporation Ltd\",\n          \"trading_address_history\": [],\n          \"registration_address_history\": [],\n          \"corporate_entity_type\": \"trust\",\n          \"registration_address\": {\n            \"address_iso_country\": \"GB\"\n          },\n          \"type\": \"ET-cooperative-societies-Amharic-CS\",\n          \"listed_on_stock_exchange\": true,\n          \"trading_name\": \"Bob's Burgers\",\n          \"ultimate_beneficial_owners\": [],\n          \"eu_vat\": \"BE49818\",\n          \"stock_exchanges\": []\n        },\n        \"percentage_holding\": 49.8,\n        \"person\": {\n          \"country_of_residence\": [\n            \"USA\"\n          ],\n          \"pep_type\": \"direct\",\n          \"pep_notes\": \"comment\",\n          \"address_history\": [],\n          \"pep\": true,\n          \"date_onboarded\": \"2011-11-21\",\n          \"email\": \"alice@short.com\",\n          \"tin\": \"541571\",\n          \"name\": \"Bob\",\n          \"address\": {\n            \"address_iso_country\": \"GB\"\n          },\n          \"social_security_number\": \"090606\",\n          \"telephone\": \"0012345678912\",\n          \"date_of_birth\": \"1981-02-03\",\n          \"tin_type\": \"type\",\n          \"nationality\": [\n            \"Hungarian\"\n          ]\n        }\n      },\n      {\n        \"company\": {\n          \"trading_addresses\": [],\n          \"regulated_financial_service_firm\": true,\n          \"registration_number\": \"8574-897512-964\",\n          \"incorporation_locality\": \"home\",\n          \"regulatory_licenses\": [],\n          \"vat\": \"some-chars\",\n          \"directors\": [],\n          \"type_other\": \"random sequence of characters\",\n          \"date_onboarded\": \"2011-11-21\",\n          \"legal_entry_number\": \"2187-99\",\n          \"industry\": \"spot welding\",\n          \"web_site\": \"http://foo.bar\",\n          \"tin\": \"string\",\n          \"name\": \"Acme Corporation Ltd\",\n          \"trading_address_history\": [],\n          \"registration_address_history\": [],\n          \"corporate_entity_type\": \"trust\",\n          \"registration_address\": {\n            \"address_iso_country\": \"US\"\n          },\n          \"type\": \"CH-societe-simple\",\n          \"listed_on_stock_exchange\": true,\n          \"trading_name\": \"Bob's Burgers\",\n          \"ultimate_beneficial_owners\": [],\n          \"eu_vat\": \"BE49818\",\n          \"stock_exchanges\": []\n        },\n        \"percentage_holding\": 49.8,\n        \"person\": {\n          \"country_of_residence\": [\n            \"USA\"\n          ],\n          \"pep_type\": \"direct\",\n          \"pep_notes\": \"comment\",\n          \"address_history\": [],\n          \"pep\": true,\n          \"date_onboarded\": \"2011-11-21\",\n          \"email\": \"alice@short.com\",\n          \"tin\": \"541571\",\n          \"name\": \"Bob\",\n          \"address\": {\n            \"address_iso_country\": \"US\"\n          },\n          \"social_security_number\": \"090606\",\n          \"telephone\": \"0012345678912\",\n          \"date_of_birth\": \"1981-02-03\",\n          \"tin_type\": \"type\",\n          \"nationality\": [\n            \"Hungarian\"\n          ]\n        }\n      }\n    ],\n    \"eu_vat\": \"BE49818\",\n    \"stock_exchanges\": [\n      {\n        \"stock_exchange_ticker\": \"string\",\n        \"stock_exchange_name\": \"SI-Ljubljana-Stock-Exchange-XLJU\"\n      },\n      {\n        \"stock_exchange_ticker\": \"random sequence of characters\",\n        \"stock_exchange_name\": \"IN-UP-Stock-Exchange\"\n      }\n    ]\n  },\n  \"enduser_meta\": {\n    \"foo\": \"bar\"\n  },\n  \"person\": {\n    \"country_of_residence\": [\n      \"USA\"\n    ],\n    \"pep_type\": \"direct\",\n    \"pep_notes\": \"comment\",\n    \"address_history\": [\n      {\n        \"address_end_date\": \"2099-12-31\",\n        \"address_start_date\": \"2000-01-01\",\n        \"address_iso_country\": \"US\"\n      },\n      {\n        \"address_end_date\": \"2099-12-31\",\n        \"address_start_date\": \"1964-11-17\",\n        \"address_iso_country\": \"GB\"\n      }\n    ],\n    \"pep\": true,\n    \"date_onboarded\": \"2011-11-21\",\n    \"email\": \"alice@short.com\",\n    \"tin\": \"541571\",\n    \"name\": \"Bob\",\n    \"address\": {\n      \"address_region\": \"Mississippi\",\n      \"address_iso_country\": \"GB\",\n      \"address_number\": \"5\",\n      \"address_postal_code\": \"123456\",\n      \"address_refinement\": \"Apartment 42\",\n      \"address_street\": \"Hudson Street\",\n      \"address_city\": \"Bratislava\"\n    },\n    \"social_security_number\": \"090606\",\n    \"telephone\": \"0012345678912\",\n    \"date_of_birth\": \"1981-02-03\",\n    \"tin_type\": \"type\",\n    \"nationality\": [\n      \"Hungarian\"\n    ]\n  }\n}"
 						},
 						"url": {
-							"raw": "{{baseurl}}/v1/customer/endusers/{{enduser_id}}",
+							"raw": "{{baseurl}}/v1/customer/endusers/{{enduser_company_id}}",
 							"host": [
 								"{{baseurl}}"
 							],
@@ -2761,14 +2869,14 @@
 								"v1",
 								"customer",
 								"endusers",
-								"{{enduser_id}}"
+								"{{enduser_company_id}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "5. Fetch latest firewall calculation report for Enduser",
+					"name": "6.5. Fetch latest firewall calculation report for Enduser",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2804,7 +2912,7 @@
 					"response": []
 				},
 				{
-					"name": "6. Move existing Enduser from missing data to state which will rerun firewalls",
+					"name": "6.6. Move existing Enduser from missing data to state which will rerun firewalls",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2845,7 +2953,7 @@
 					"response": []
 				},
 				{
-					"name": "7. Wait until Enduser is in final state",
+					"name": "6.7. Wait until Enduser is in final state",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2883,10 +2991,10 @@
 			]
 		},
 		{
-			"name": "Ledgers",
+			"name": "7. Ledgers",
 			"item": [
 				{
-					"name": "1a. List all Ledgers",
+					"name": "7.1a. List all Ledgers",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2920,7 +3028,7 @@
 					"response": []
 				},
 				{
-					"name": "1b. List Customer's Ledgers",
+					"name": "7.1b. List Customer's Ledgers",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2960,7 +3068,7 @@
 					"response": []
 				},
 				{
-					"name": "1c. List a specifc Enduser's Ledgers",
+					"name": "7.1c. List a specifc Enduser's Ledgers",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3000,7 +3108,7 @@
 					"response": []
 				},
 				{
-					"name": "2a. Add new Ledger for the Customer (GBP)",
+					"name": "7.2a. Add new Ledger for the Customer (GBP)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3039,7 +3147,7 @@
 					"response": []
 				},
 				{
-					"name": "2b. Add new Ledger for the Customer (EUR)",
+					"name": "7.2b. Add new Ledger for the Customer (EUR)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3078,7 +3186,7 @@
 					"response": []
 				},
 				{
-					"name": "2c. Add new Ledger for a given Enduser (GBP)",
+					"name": "7.2c. Add new Ledger for a given Enduser (GBP)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3117,7 +3225,7 @@
 					"response": []
 				},
 				{
-					"name": "2d. Add new Ledger for a given Enduser (EUR)",
+					"name": "7.2d. Add new Ledger for a given Enduser (EUR)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3156,7 +3264,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Find Ledger based on IBAN",
+					"name": "7.3. Find Ledger based on IBAN",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3197,7 +3305,7 @@
 					"response": []
 				},
 				{
-					"name": "4. Find Ledger based on UK address",
+					"name": "7.4. Find Ledger based on UK address",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3242,7 +3350,7 @@
 					"response": []
 				},
 				{
-					"name": "5. Get list of Ledgers that were modified from a specific time",
+					"name": "7.5. Get list of Ledgers that were modified from a specific time",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3277,7 +3385,7 @@
 					"response": []
 				},
 				{
-					"name": "6. Get list of Ledgers that Customer is able to assign to holders",
+					"name": "7.6. Get list of Ledgers that Customer is able to assign to holders",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3312,7 +3420,7 @@
 					"response": []
 				},
 				{
-					"name": "7. Add new virtual Ledger for a given holder",
+					"name": "7.7. Add new virtual Ledger for a given holder",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3352,7 +3460,7 @@
 					"response": []
 				},
 				{
-					"name": "8. Update Ledger",
+					"name": "7.8. Update Ledger",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -3392,7 +3500,7 @@
 					"response": []
 				},
 				{
-					"name": "9. Fetch Ledger",
+					"name": "7.9. Fetch Ledger",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3427,7 +3535,7 @@
 					"response": []
 				},
 				{
-					"name": "10. Assign Ledger to holder",
+					"name": "7.10. Assign Ledger to holder",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3468,7 +3576,7 @@
 					"response": []
 				},
 				{
-					"name": "11. Assign IBAN and BIC for given Ledger",
+					"name": "7.11. Assign IBAN and BIC for given Ledger",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3509,7 +3617,7 @@
 					"response": []
 				},
 				{
-					"name": "12. Close Ledger Account",
+					"name": "7.12. Close Ledger Account",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3551,7 +3659,7 @@
 					"response": []
 				},
 				{
-					"name": "13. Get Ledger entries in a specified time range",
+					"name": "7.13. Get Ledger entries in a specified time range",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3593,7 +3701,7 @@
 					"response": []
 				},
 				{
-					"name": "14. Move existing Ledger from missing data to state which will rerun firewalls",
+					"name": "7.14. Move existing Ledger from missing data to state which will rerun firewalls",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3634,7 +3742,7 @@
 					"response": []
 				},
 				{
-					"name": "15. Wait until Ledger is in final state",
+					"name": "7.15. Wait until Ledger is in final state",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3672,10 +3780,10 @@
 			]
 		},
 		{
-			"name": "Quarantine (as Customer)",
+			"name": "8. Quarantine (as Customer)",
 			"item": [
 				{
-					"name": "1. List all objects (transactions,endusers) in quarantine",
+					"name": "8.1. List all objects (transactions,endusers) in quarantine",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3709,7 +3817,7 @@
 					"response": []
 				},
 				{
-					"name": "2. List all Beneficiaries in the quarantine",
+					"name": "8.2. List all Beneficiaries in the quarantine",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3745,7 +3853,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Fetch quarantine for Beneficiary",
+					"name": "8.3. Fetch quarantine for Beneficiary",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3781,7 +3889,7 @@
 					"response": []
 				},
 				{
-					"name": "4. Comment beneficiary in quarantine (transaction,enduser)",
+					"name": "8.4. Comment beneficiary in quarantine (transaction,enduser)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3823,7 +3931,7 @@
 					"response": []
 				},
 				{
-					"name": "5. Resolve object Beneficiary in quarantine",
+					"name": "8.5. Resolve object Beneficiary in quarantine",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3865,7 +3973,7 @@
 					"response": []
 				},
 				{
-					"name": "6. List all Endusers in the quarantine",
+					"name": "8.6. List all Endusers in the quarantine",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3901,7 +4009,7 @@
 					"response": []
 				},
 				{
-					"name": "7. Fetch quarantine for Enduser",
+					"name": "8.7. Fetch quarantine for Enduser",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -3937,7 +4045,7 @@
 					"response": []
 				},
 				{
-					"name": "8. Comment Enduser in quarantine (transactions,enduser)",
+					"name": "8.8. Comment Enduser in quarantine (transactions,enduser)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3979,7 +4087,7 @@
 					"response": []
 				},
 				{
-					"name": "9. Resolve object Enduser in quarantine",
+					"name": "8.9. Resolve object Enduser in quarantine",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4021,7 +4129,7 @@
 					"response": []
 				},
 				{
-					"name": "10. List all transactions in the quarantine",
+					"name": "8.10. List all transactions in the quarantine",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -4057,7 +4165,7 @@
 					"response": []
 				},
 				{
-					"name": "11. Fetch quarantine for transaction",
+					"name": "8.11. Fetch quarantine for transaction",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -4093,7 +4201,7 @@
 					"response": []
 				},
 				{
-					"name": "12. Comment transaction in quarantine (transaction,enduser)",
+					"name": "8.12. Comment transaction in quarantine (transaction,enduser)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4135,7 +4243,7 @@
 					"response": []
 				},
 				{
-					"name": "13. Resolve transaction in quarantine",
+					"name": "8.13. Resolve transaction in quarantine",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4179,10 +4287,10 @@
 			]
 		},
 		{
-			"name": "Transactions",
+			"name": "9. Transactions",
 			"item": [
 				{
-					"name": "1a. Create new transaction (GBP - UKFasterPayment)",
+					"name": "9.1a. Create new transaction (GBP - UKFasterPayment)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4221,7 +4329,7 @@
 					"response": []
 				},
 				{
-					"name": "1b. Create new transaction (GBP - BACS)",
+					"name": "9.1b. Create new transaction (GBP - BACS)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4260,7 +4368,7 @@
 					"response": []
 				},
 				{
-					"name": "1c. Create new transaction (EUR - SEPA step2)",
+					"name": "9.1c. Create new transaction (EUR - SEPA step2)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4299,7 +4407,7 @@
 					"response": []
 				},
 				{
-					"name": "1d. Create new transaction (EUR - SEPA target2)",
+					"name": "9.1d. Create new transaction (EUR - SEPA target2)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4338,7 +4446,7 @@
 					"response": []
 				},
 				{
-					"name": "2. Fetch all transactions in specified time range",
+					"name": "9.2. Fetch all transactions in specified time range",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -4372,7 +4480,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Creates multiple send transaction atomically",
+					"name": "9.3. Creates multiple send transaction atomically",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4412,7 +4520,7 @@
 					"response": []
 				},
 				{
-					"name": "4. Create new FX transaction (beneficiary,PayrNet,swift)",
+					"name": "9.4. Create new FX transaction (beneficiary,PayrNet,swift)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4434,7 +4542,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"partner_product_fx\": \"PayrNet-FX-1\",\n  \"payment_method\": \"swift\",\n  \"fixed_side\": \"beneficiary\",\n  \"reference\": \"this is a test payment\",\n  \"amount\": \"0\",\n  \"ledger_from_id\": \"6630b391-c5ce-46c1-9d23-a82a9e27f82d\",\n  \"reason\": \"random sequence of characters\",\n  \"beneficiary_id\": \"6630b391-c5ce-46c1-9d23-a82a9e27f82d\",\n  \"beneficiary_account_id\": \"bb8b2428-f94c-41df-8e82-a895ab4d6ac8\"\n}"
+							"raw": "{\n  \"partner_product_fx\": \"PayrNet-FX-1\",\n  \"payment_method\": \"swift\",\n  \"fixed_side\": \"beneficiary\",\n  \"reference\": \"this is a test payment\",\n  \"amount\": \"0\",\n  \"ledger_from_id\": \"6630b391-c5ce-46c1-9d23-a82a9e27f82d\",\n  \"reason\": \"random sequence of characters\",\n  \"beneficiary_id\": \"{{beneficiary_id}}\",\n  \"beneficiary_account_id\": \"{{only_if_beneficiary_has_more_than_one_account}}\"\n}"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/transactions/fx",
@@ -4452,7 +4560,7 @@
 					"response": []
 				},
 				{
-					"name": "5. Get Quote for currency pair exchange",
+					"name": "9.5. Get Quote for currency pair exchange",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -4494,7 +4602,7 @@
 					"response": []
 				},
 				{
-					"name": "6. Create new inter-ledger transaction",
+					"name": "9.6. Create new inter-ledger transaction",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4534,7 +4642,7 @@
 					"response": []
 				},
 				{
-					"name": "7. Create multiple new inter-ledger transactions atomically",
+					"name": "9.7. Create multiple new inter-ledger transactions atomically",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4575,7 +4683,7 @@
 					"response": []
 				},
 				{
-					"name": "8. Try if inter-ledger transactions is valid and if it's missing any data needed in customer/partner firewall",
+					"name": "9.8. Try if inter-ledger transactions is valid and if it's missing any data needed in customer/partner firewall",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4617,7 +4725,7 @@
 					"response": []
 				},
 				{
-					"name": "9. Credit the specified virtual ledger with set amount",
+					"name": "9.9. Credit the specified virtual ledger with set amount",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4657,7 +4765,7 @@
 					"response": []
 				},
 				{
-					"name": "10. Debit the specified virtual ledger with the set amount",
+					"name": "9.10. Debit the specified virtual ledger with the set amount",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4697,7 +4805,7 @@
 					"response": []
 				},
 				{
-					"name": "11. Try if transaction is valid and if it's missing any data needed in customer/partner firewall",
+					"name": "9.11. Try if transaction is valid and if it's missing any data needed in customer/partner firewall",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4737,7 +4845,7 @@
 					"response": []
 				},
 				{
-					"name": "12. Fetch transaction object",
+					"name": "9.12. Fetch transaction object",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -4772,7 +4880,7 @@
 					"response": []
 				},
 				{
-					"name": "13. Update existing transaction meta data",
+					"name": "9.13. Update existing transaction meta data",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -4812,7 +4920,7 @@
 					"response": []
 				},
 				{
-					"name": "14. Fetch latest firewall calculation report for transaction",
+					"name": "9.14. Fetch latest firewall calculation report for transaction",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -4848,7 +4956,7 @@
 					"response": []
 				},
 				{
-					"name": "15. Upload invoice or other proofing document for transaction",
+					"name": "9.15. Upload invoice or other proofing document for transaction",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4896,7 +5004,7 @@
 					"response": []
 				},
 				{
-					"name": "16. Move existing transaction from missing data state which will rerun firewalls",
+					"name": "9.16. Move existing transaction from missing data state which will rerun firewalls",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4939,10 +5047,10 @@
 			]
 		},
 		{
-			"name": "Webhook",
+			"name": "10. Webhook",
 			"item": [
 				{
-					"name": "1. Set your webhook URL and secret",
+					"name": "10.1. Set your webhook URL and secret",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4964,7 +5072,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"webhook_secret\": \"some_secret_key_sent_with_every_event\",\n  \"webhook_url\": \"{{webhook_url}}\"\n}"
+							"raw": "{\n  \"webhook_secret\": \"{{webhook_secret}}\",\n  \"webhook_url\": \"{{webhook_url}}\"\n}\n\n\n"
 						},
 						"url": {
 							"raw": "{{baseurl}}/v1/customer/webhook",
@@ -4981,7 +5089,7 @@
 					"response": []
 				},
 				{
-					"name": "2. Delete your webhook settings",
+					"name": "10.2. Delete your webhook settings",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -5015,7 +5123,7 @@
 					"response": []
 				},
 				{
-					"name": "3. Get your webhook information",
+					"name": "10.3. Get your webhook information",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -5049,7 +5157,7 @@
 					"response": []
 				},
 				{
-					"name": "4. Get your failed webhook deliveries information",
+					"name": "10.4. Get your failed webhook deliveries information",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -5084,7 +5192,7 @@
 					"response": []
 				},
 				{
-					"name": "5. Update your webhook secret",
+					"name": "10.5. Update your webhook secret",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -5118,6 +5226,231 @@
 								"customer",
 								"webhook",
 								"update-secret"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "11. Idempotency Test",
+			"item": [
+				{
+					"name": "11.1. transaction 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Idempotency-Key",
+								"value": "101010101010101010109993",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_type\": \"payment-type-UK-FasterPayments\",\n    \"reference\": \"reference 1\",\n    \"amount\": \"0.01\",\n\t\"ledger_from_id\": \"5c45eebb-4a2d-4690-9c78-2dde23c326ed\",\n    \"beneficiary_id\": \"5c45f04d-c7e4-4d91-8e93-af2f85f19389\"\n  }\t\n"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11.2. transaction 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Idempotency-Key",
+								"value": "101010101010101010109993",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_type\": \"payment-type-UK-FasterPayments\",\n    \"reference\": \"reference 1\",\n    \"amount\": \"0.01\",\n\t\"ledger_from_id\": \"5c45eebb-4a2d-4690-9c78-2dde23c326ed\",\n    \"beneficiary_id\": \"5c45f04d-c7e4-4d91-8e93-af2f85f19389\"\n  }\t\n"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11.3. transaction 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Idempotency-Key",
+								"value": "101010101010101010109993",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_type\": \"payment-type-UK-FasterPayments\",\n    \"reference\": \"reference 1\",\n    \"amount\": \"0.01\",\n\t\"ledger_from_id\": \"5c45eebb-4a2d-4690-9c78-2dde23c326ed\",\n    \"beneficiary_id\": \"5c45f04d-c7e4-4d91-8e93-af2f85f19389\"\n  }\t\n"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11.4. transaction 4",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Idempotency-Key",
+								"value": "101010101010101010109993",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_type\": \"payment-type-UK-FasterPayments\",\n    \"reference\": \"reference 1\",\n    \"amount\": \"0.01\",\n\t\"ledger_from_id\": \"5c45eebb-4a2d-4690-9c78-2dde23c326ed\",\n    \"beneficiary_id\": \"5c45f04d-c7e4-4d91-8e93-af2f85f19389\"\n  }\t\n"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11.5. transaction 5",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{customer_api_key}}"
+							},
+							{
+								"key": "Idempotency-Key",
+								"value": "101010101010101010109993",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_type\": \"payment-type-UK-FasterPayments\",\n    \"reference\": \"reference 1\",\n    \"amount\": \"0.01\",\n\t\"ledger_from_id\": \"5c45eebb-4a2d-4690-9c78-2dde23c326ed\",\n    \"beneficiary_id\": \"5c45f04d-c7e4-4d91-8e93-af2f85f19389\"\n  }\t\n"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/customer/transactions",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"customer",
+								"transactions"
 							]
 						}
 					},
